@@ -2,7 +2,11 @@
 const nextConfig = {
     output: 'export',
     distDir: 'dist',
-    assetPrefix: '.'
+    assetPrefix: './',
+    images: {
+        loader: "akamai",
+        path: "",
+    },
 };
 
 export default nextConfig;

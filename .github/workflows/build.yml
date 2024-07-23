@@ -21,7 +21,7 @@ jobs:
       - uses: ./.github/actions/install-dependencies
 
       - name: Build
-        run: pnpm build
+        run: pnpm build && touch ./dist/.nojekyll
 
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
