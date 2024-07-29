@@ -9,9 +9,9 @@
     "lint": "next lint --fix && prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
-    "0xsequence": "^1.9.37",
+    "0xsequence": "1.9.37",
     "@0xsequence/design-system": "^1.7.5",
-    "@0xsequence/kit": "^2.9.2",
+    "@0xsequence/kit": "2.9.2",
     "@0xsequence/kit-connectors": "^2.9.2",
     "@tanstack/react-query": "^5.51.15",
     "ethers": "5.7.2",
