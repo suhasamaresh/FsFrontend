@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-import CardButton from "../../../CardButton";
-import { useSendTransaction, useWalletClient } from "wagmi";
-import React from "react";
 import { Box, Text } from "@0xsequence/design-system";
+import React, { useEffect, useState } from "react";
+import { useSendTransaction, useWalletClient } from "wagmi";
+import CardButton from "../../../CardButton";
 
 const TestSendTransaction = () => {
   const { data: walletClient } = useWalletClient();

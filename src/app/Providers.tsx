@@ -5,11 +5,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode, useEffect, useState } from "react";
 import { createConfig, http, WagmiProvider } from "wagmi";
 import {
+  arbitrumSepolia,
+  Chain,
   mainnet,
   polygon,
-  Chain,
   polygonAmoy,
-  arbitrumSepolia,
 } from "wagmi/chains";
 import FullScreenLoading from "./components/FullScreenLoading";
 

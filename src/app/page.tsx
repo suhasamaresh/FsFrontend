@@ -1,11 +1,11 @@
 "use client";
-import { useAccount } from "wagmi";
 import { Text } from "@0xsequence/design-system";
+import { useAccount } from "wagmi";
 import Connected from "./components/blockchain/Connected";
 import NotConnected from "./components/blockchain/NotConnected";
 
 const HomePage = () => {
-  const { isConnected, chain } = useAccount();
+  const { isConnected } = useAccount();
   return (
     <div>
       <h1>Sequence Kit Starter - Nextjs</h1>

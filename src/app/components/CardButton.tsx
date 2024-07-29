@@ -1,5 +1,5 @@
 "use client";
-import { Card, Box, Text, Spinner } from "@0xsequence/design-system";
+import { Box, Card, Spinner, Text } from "@0xsequence/design-system";
 
 interface CardButtonProps {
   title: string;

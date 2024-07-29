@@ -1,3 +1,62 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": ["import", "unused-imports"],
+  "rules": {
+    "import/no-duplicates": ["error", { "prefer-inline": true }],
+    "import/order": [
+      1,
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": [
+          "external",
+          "builtin",
+          "internal",
+          "sibling",
+          "parent",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "group": "internal",
+            "pattern": "components"
+          },
+          {
+            "group": "internal",
+            "pattern": "common"
+          },
+          {
+            "group": "internal",
+            "pattern": "routes/ **"
+          },
+          {
+            "group": "internal",
+            "pattern": "assets/**",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["internal"]
+      }
+    ],
+    "no-duplicate-imports": "error",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "vars": "all",
+        "varsIgnorePattern": "^_"
+      }
+    ]
+  }
 }

@@ -1,6 +1,3 @@
-import { ChangeEvent, useEffect, useState } from "react";
-import { useSignMessage } from "wagmi";
-import React from "react";
 import {
   Box,
   Card,
@@ -9,6 +6,8 @@ import {
   Text,
   TextInput,
 } from "@0xsequence/design-system";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { useSignMessage } from "wagmi";
 
 const TestSignMessage = () => {
   const [message, setMessage] = useState<string>();

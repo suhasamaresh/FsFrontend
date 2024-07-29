@@ -1,8 +1,8 @@
 import { Text } from "@0xsequence/design-system";
 import { useAccount } from "wagmi";
+import ChainInfo from "./ChainInfo";
 import Disconnect from "./Disconnect";
 import Tests from "./Tests";
-import ChainInfo from "./ChainInfo";
 
 const Connected = () => {
   const { address, chain } = useAccount();
