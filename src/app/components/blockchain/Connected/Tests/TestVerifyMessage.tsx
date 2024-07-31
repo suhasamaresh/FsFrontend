@@ -1,5 +1,3 @@
-import { ChangeEvent, useState } from "react";
-import React from "react";
 import {
   Box,
   Card,
@@ -8,6 +6,7 @@ import {
   Text,
   TextInput,
 } from "@0xsequence/design-system";
+import React, { ChangeEvent, useState } from "react";
 import { Address, Signature } from "viem";
 import { usePublicClient } from "wagmi";
 
