@@ -10,7 +10,7 @@ const projectAccessKey =
 
 const NativeBalance = (props: { chain: Chain; address: Address }) => {
   const { chain, address } = props;
-  const [balance, setBalance] = useState<number | undefined>();
+  const [balance, setBalance] = useState<string | undefined>();
 
   const loadNativeNetworkBalance = async (chainId: number) => {
     const chainName = INDEXER_SUPPORTED_NETWORKS.find(
