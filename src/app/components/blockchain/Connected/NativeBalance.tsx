@@ -2,7 +2,7 @@ import { Box, Text } from "@0xsequence/design-system";
 import { SequenceIndexer } from "@0xsequence/indexer";
 import { useEffect, useState } from "react";
 import { Address, Chain } from "viem";
-import { INDEXER_SUPPORTED_NETWORKS } from "@/app/Providers";
+import { INDEXER_SUPPORTED_NETWORKS } from "../../../../app/Providers";
 
 const projectAccessKey =
   process.env.NEXT_PUBLIC_PROJECT_ACCESS_KEY ||
