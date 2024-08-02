@@ -12,7 +12,7 @@ const Connected = () => {
         Connected with address: {address}
       </Text>
       <Disconnect />
-      {chain && <ChainInfo chain={chain} />}
+      {chain && <ChainInfo chain={chain} address={address!} />}
       <Tests chainId={chainId!} />
     </>
   );
