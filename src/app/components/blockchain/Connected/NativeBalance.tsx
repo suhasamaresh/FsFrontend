@@ -1,8 +1,8 @@
 import { Box, Text } from "@0xsequence/design-system";
 import { SequenceIndexer } from "@0xsequence/indexer";
+import { allNetworks } from "@0xsequence/network";
 import { useEffect, useState } from "react";
 import { Address, Chain } from "viem";
-import { INDEXER_SUPPORTED_NETWORKS } from "../../../../app/Providers";
 
 const projectAccessKey =
   process.env.NEXT_PUBLIC_PROJECT_ACCESS_KEY ||
@@ -13,10 +13,13 @@ const NativeBalance = (props: { chain: Chain; address: Address }) => {
   const [balance, setBalance] = useState<string | undefined>();
 
   const loadNativeNetworkBalance = async (chainId: number) => {
-    const chainName = INDEXER_SUPPORTED_NETWORKS.find(
-      (chainInfo) => chainInfo.id === chainId,
+    const chainName = allNetworks.find(
+      (chainInfo) => chainInfo.chainId === chainId,
     )?.name;
-    if (!chainName) return;
+    if (!chainName) {
+      setBalance("ERROR");
+      return;
+    }
     const indexer = new SequenceIndexer(
       `https://${chainName}-indexer.sequence.app`,
       projectAccessKey,
