@@ -1,6 +1,5 @@
 "use client";
-import { KitProvider } from "@0xsequence/kit";
-import { getDefaultWaasConnectors } from "@0xsequence/kit-connectors";
+import { getDefaultWaasConnectors, KitProvider } from "@0xsequence/kit";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode, useEffect, useState } from "react";
 import { createConfig, http, WagmiProvider } from "wagmi";
