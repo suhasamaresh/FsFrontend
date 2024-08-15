@@ -25,20 +25,12 @@ const Providers = (props: { children: ReactNode }) => {
   const [isClient, setIsClient] = useState(false);
 
   // Get your own keys on sequence.build
-  const projectAccessKey =
-    process.env.NEXT_PUBLIC_PROJECT_ACCESS_KEY ||
-    "AQAAAAAAADVH8R2AGuQhwQ1y8NaEf1T7PJM";
-  const waasConfigKey =
-    process.env.NEXT_PUBLIC_WAAS_CONFIG_KEY ||
-    "eyJwcm9qZWN0SWQiOjEzNjM5LCJycGNTZXJ2ZXIiOiJodHRwczovL3dhYXMuc2VxdWVuY2UuYXBwIn0=";
-  const googleClientId =
-    process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ||
-    "970987756660-35a6tc48hvi8cev9cnknp0iugv9poa23.apps.googleusercontent.com";
-  // const appleClientId = process.env.NEXT_PUBLIC_APPLE_CLIENT_ID || 'com.horizon.sequence.waas'
+  const projectAccessKey = process.env.NEXT_PUBLIC_PROJECT_ACCESS_KEY;
+  const waasConfigKey = process.env.NEXT_PUBLIC_WAAS_CONFIG_KEY;
+  const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+  // const appleClientId = process.env.NEXT_PUBLIC_APPLE_CLIENT_ID
   // const appleRedirectURI = window.location.origin + window.location.pathname //this approach doesn't work with nextjs
-  const walletConnectProjectId =
-    process.env.NEXT_PUBLIC_WALLET_CONNECT_ID ||
-    "c65a6cb1aa83c4e24500130f23a437d8";
+  const walletConnectProjectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_ID;
 
   if (!projectAccessKey) {
     throw new Error("projectAccessKey is not defined");
