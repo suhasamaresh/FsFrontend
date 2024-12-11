@@ -6,7 +6,7 @@ const waasConfigKey = process.env.NEXT_PUBLIC_WAAS_CONFIG_KEY!;
 const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 const appleClientId = process.env.NEXT_PUBLIC_APPLE_CLIENT_ID;
 const appleRedirectURI =
-  "https://kit-embedded-wallet-nextjs-boilerplate.pages.dev";
+  typeof window !== "undefined" ? `https://${window.location.host}` : "";
 const walletConnectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_ID;
 
 export const config: any = createConfig("waas", {
