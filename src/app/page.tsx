@@ -1,20 +1,24 @@
 "use client";
+
 import { useAccount } from "wagmi";
 
 import Connector from "./components/Connector";
-import { Footer } from "./components/Footer";
 import MainConnected from "./components/MainConnected";
+import { SequenceBoilerplate } from "boilerplate-design-system";
 
-const HomePage = () => {
+const Home = () => {
   const { isConnected } = useAccount();
+
   return (
-    <div>
-      <h1>Sequence Kit Starter - Nextjs</h1>
-      <h2 className="homepage__marginBtNormal">Embedded Wallet</h2>
+    <SequenceBoilerplate
+      githubUrl="https://github.com/0xsequence-demos/kit-embedded-wallet-nextjs-boilerplate"
+      name="Sequence Kit Starter - Nextjs"
+      description="Embedded Wallet"
+      docsUrl="https://docs.sequence.xyz/solutions/wallets/sequence-kit/overview/"
+    >
       {isConnected ? <MainConnected /> : <Connector />}
-      <Footer />
-    </div>
+    </SequenceBoilerplate>
   );
 };
 
-export default HomePage;
+export default Home;
