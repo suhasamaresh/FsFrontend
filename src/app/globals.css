@@ -1,8 +1,9 @@
+@import "../../node_modules/boilerplate-design-system/dist/styles/src/index.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "./components/FullScreenLoading/style.css";
 @layer utilities {
   [data-visible] {
     @apply col-start-1 row-start-1 data-[visible='false']:invisible;
