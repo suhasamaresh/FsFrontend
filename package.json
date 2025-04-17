@@ -15,12 +15,12 @@
     "@0xsequence/design-system": "^1.8.0",
     "@react-oauth/google": "^0.11.1",
     "@tanstack/react-query": "^5.74.4",
-    "boilerplate-design-system": "github:0xsequence-demos/boilerplate-design-system#fed9fa2f7ecb904380c7b3e8550665af4be771ba",
+    "boilerplate-design-system": "github:0xsequence-demos/boilerplate-design-system#ee41a96d41ae0ae8048114c53bd8020136583556",
     "ethers": "6.13.5",
-    "next": "14.2.28",
+    "next": "15.3.0",
     "pino-pretty": "^13.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "viem": "^2.21.48",
     "wagmi": "^2.14.16",
     "zod": "^3.24.1"
@@ -41,5 +41,6 @@
   },
   "engines": {
     "node": ">=22.0.0"
-  }
+  },
+  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
 }
