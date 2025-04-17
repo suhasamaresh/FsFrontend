@@ -1,4 +1,4 @@
-import { createConfig } from "@0xsequence/kit";
+import { createConfig } from "@0xsequence/connect";
 
 // Get your own keys on sequence.build
 export const projectAccessKey = process.env.NEXT_PUBLIC_PROJECT_ACCESS_KEY!;
@@ -8,15 +8,21 @@ const appleClientId = process.env.NEXT_PUBLIC_APPLE_CLIENT_ID;
 const appleRedirectURI =
   typeof window !== "undefined" ? `https://${window.location.host}` : "";
 const walletConnectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_ID;
+const appName =
+  process.env.NEXT_PUBLIC_APP_NAME || "Web SDK Embedded Wallet (NextJs)";
 
 export const config: any = createConfig("waas", {
-  projectAccessKey: projectAccessKey,
+  appName,
+  projectAccessKey,
   chainIds: [1, 421614], // 13473 Not supported by sequence error
   defaultChainId: 421614,
-  appName: "Kit Starter",
   waasConfigKey: waasConfigKey,
-  googleClientId: googleClientId,
-  appleClientId: appleClientId,
-  appleRedirectURI: appleRedirectURI,
-  walletConnectProjectId: walletConnectId,
+  google: { clientId: googleClientId as string },
+  apple: {
+    clientId: appleClientId as string,
+    redirectURI: appleRedirectURI as string,
+  },
+  walletConnect: {
+    projectId: walletConnectId as string,
+  },
 });

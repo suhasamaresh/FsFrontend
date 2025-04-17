@@ -1,3 +1,4 @@
+"use client";
 import { Spinner } from "@0xsequence/design-system";
 import {
   Button,

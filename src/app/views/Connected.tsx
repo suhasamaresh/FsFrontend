@@ -1,3 +1,4 @@
+"use client";
 import { Card, Group } from "boilerplate-design-system";
 import { useAccount } from "wagmi";
 import TestSendTransaction from "../components/TestSendTransaction";
