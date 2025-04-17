@@ -16,6 +16,7 @@
     "boilerplate-design-system": "github:0xsequence-demos/boilerplate-design-system#fed9fa2f7ecb904380c7b3e8550665af4be771ba",
     "ethers": "6.13.5",
     "next": "14.2.25",
+    "pino-pretty": "^13.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "viem": "^2.21.48",
