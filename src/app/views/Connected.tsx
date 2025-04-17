@@ -29,7 +29,7 @@ export function Connected() {
           collapsable
           title="Sign message"
           data-id="sign-message"
-          className="bg-white/10 border border-white/10 backdrop-blur-sm"
+          className="bg-white/10 border border-white/10 backdrop-blur-xs"
         >
           <TestSignMessage />
         </Card>
@@ -38,7 +38,7 @@ export function Connected() {
           collapsable
           title="Verify message"
           data-id="verify-message"
-          className="bg-white/10 border border-white/10 backdrop-blur-sm"
+          className="bg-white/10 border border-white/10 backdrop-blur-xs"
         >
           <TestVerifyMessage chainId={chainId} />
         </Card>
@@ -47,7 +47,7 @@ export function Connected() {
           collapsable
           title="Send transaction"
           data-id="send-transaction"
-          className="bg-white/10 border border-white/10 backdrop-blur-sm"
+          className="bg-white/10 border border-white/10 backdrop-blur-xs"
         >
           <TestSendTransaction chainId={chainId} />
         </Card>
