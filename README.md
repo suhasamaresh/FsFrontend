@@ -1,6 +1,6 @@
 # Sequence Kit Embedded Wallet Nextjs Starter Boilerplate
 
-Starter Sequence Embedded Wallet boilerplate that uses [Sequence Kit](https://github.com/0xsequence/kit) with Nextjs.
+Starter Sequence Embedded Wallet boilerplate that uses [Sequence Web SDK](https://github.com/0xsequence/web-sdk) with Nextjs.
 
 ## Quickstart
 
