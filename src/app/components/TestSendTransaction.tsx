@@ -5,7 +5,7 @@ import {
   Form,
   FormHandler,
   useStoreData,
-} from "boilerplate-design-system";
+} from "@0xsequence-demos/boilerplate-design-system";
 
 import { Chain } from "viem";
 import { useSendTransaction, useWalletClient } from "wagmi";
@@ -71,7 +71,7 @@ const TestSendTransaction = (props: { chainId: number }) => {
             type="submit"
             variant="primary"
             subvariants={{ padding: "comfortable" }}
-            className="self-start disabled:opacity-50 contents-layered"
+            className="self-start disabled:opacity-50 !grid !grid-cols-1 !grid-rows-1 *:row-start-1 *:col-start-1"
             disabled={isPending}
           >
             <span data-visible={!isPending}>Send Test Transaction</span>

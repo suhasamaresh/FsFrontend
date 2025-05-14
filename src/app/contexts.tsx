@@ -1,5 +1,6 @@
 "use client";
 import { SequenceConnect } from "@0xsequence/connect";
+import { SequenceWalletProvider } from "@0xsequence/wallet-widget";
 import { useEffect, useState } from "react";
 import { Loading } from "@/app/views/Loading";
 import { config } from "../config";
@@ -20,5 +21,9 @@ export function Contexts({ children }: { children: React.ReactNode }) {
     return <Loading />;
   }
 
-  return <SequenceConnect config={config}>{children}</SequenceConnect>;
+  return (
+    <SequenceConnect config={config}>
+      <SequenceWalletProvider>{children}</SequenceWalletProvider>
+    </SequenceConnect>
+  );
 }

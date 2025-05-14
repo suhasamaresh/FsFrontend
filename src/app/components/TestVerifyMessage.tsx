@@ -14,7 +14,7 @@ import {
   Svg,
   useForm,
   useStoreData,
-} from "boilerplate-design-system";
+} from "@0xsequence-demos/boilerplate-design-system";
 
 import { usePublicClient } from "wagmi";
 import { z } from "zod";
