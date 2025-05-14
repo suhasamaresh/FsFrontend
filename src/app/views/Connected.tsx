@@ -1,5 +1,5 @@
 "use client";
-import { Card, Group } from "boilerplate-design-system";
+import { Card, Group } from "@0xsequence-demos/boilerplate-design-system";
 import { useAccount } from "wagmi";
 import { TestLinkWallet } from "../components/TestLinkWallet";
 import TestSendTransaction from "../components/TestSendTransaction";

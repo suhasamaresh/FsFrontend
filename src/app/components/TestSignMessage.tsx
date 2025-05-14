@@ -8,7 +8,7 @@ import {
   setStoreData,
   useForm,
   useStoreData,
-} from "boilerplate-design-system";
+} from "@0xsequence-demos/boilerplate-design-system";
 import { SignableMessage } from "viem";
 import { useAccount, useSignMessage } from "wagmi";
 import { z } from "zod";
