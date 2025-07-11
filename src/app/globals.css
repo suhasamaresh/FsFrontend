@@ -1,6 +1,5 @@
-@import "tailwindcss";
-@import "@0xsequence-demos/boilerplate-design-system/styles/index.css";
-@source "../../node_modules/@0xsequence-demos/boilerplate-design-system";
+@import 'tailwindcss';
+@import '@0xsequence-demos/boilerplate-design-system/tailwind';
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
