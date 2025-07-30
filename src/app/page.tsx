@@ -1,29 +1,14 @@
 "use client";
+import FeaturesSection from "./components/features";
+import Hero from "./components/hero";
+import Navbar from "./components/navbar";
 
-import { useOpenWalletModal } from "@0xsequence/wallet-widget";
-import { SequenceBoilerplate } from "@0xsequence-demos/boilerplate-design-system";
-import { useAccount, useDisconnect, useSwitchChain } from "wagmi";
-
-import { Connected } from "./views/Connected";
-import { NotConnected } from "./views/NotConnected";
-
-const Home = () => {
-  const { isConnected } = useAccount();
-
-  const { setOpenWalletModal } = useOpenWalletModal();
-
+export default function Page() {
   return (
-    <SequenceBoilerplate
-      githubUrl="https://github.com/0xsequence-demos/kit-embedded-wallet-nextjs-boilerplate"
-      name="Sequence Kit Starter - Nextjs"
-      description="Embedded Wallet"
-      docsUrl="https://docs.sequence.xyz/solutions/wallets/sequence-kit/overview/"
-      wagmi={{ useAccount, useDisconnect, useSwitchChain }}
-      walletCallback={() => setOpenWalletModal(true)}
-    >
-      {isConnected ? <Connected /> : <NotConnected />}
-    </SequenceBoilerplate>
+    <>
+    <Navbar />
+      <Hero />
+      <FeaturesSection />
+    </>
   );
-};
-
-export default Home;
+}

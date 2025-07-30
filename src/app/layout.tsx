@@ -1,3 +1,4 @@
+import Navbar from "./components/navbar";
 import "./globals.css";
 // import "@0xsequence/design-system/styles.css";
 
@@ -12,10 +13,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.svg" />
-        <title>Sequence Kit Starter - Nextjs</title>
+        <title>FlashSplit</title>
       </head>
       <body>
-        <Contexts>{children}</Contexts>
+        <Contexts>
+          {children}
+        </Contexts>
       </body>
     </html>
   );
