@@ -35,3 +35,12 @@ jobs:
         
       - name: Build the project
         run: pnpm build
+        env:
+            NEXT_PUBLIC_WALLET_CONNECT_ID: ${{ secrets.NEXT_PUBLIC_WALLET_CONNECT_ID }}
+            NEXT_PUBLIC_APP_NAME: ${{ secrets.NEXT_PUBLIC_APP_NAME }}
+            NEXT_PUBLIC_CHAINS: ${{ secrets.NEXT_PUBLIC_CHAINS }}
+            NEXT_PUBLIC_DEFAULT_CHAIN: ${{ secrets.NEXT_PUBLIC_DEFAULT_CHAIN }}
+            NEXT_PUBLIC_PROJECT_ACCESS_KEY: ${{ secrets.NEXT_PUBLIC_PROJECT_ACCESS_KEY }}
+            NEXT_PUBLIC_WAAS_CONFIG_KEY: ${{ secrets.NEXT_PUBLIC_WAAS_CONFIG_KEY }}
+            NEXT_PUBLIC_GOOGLE_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_CLIENT_ID }}
+            NEXT_PUBLIC_APPLE_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_APPLE_CLIENT_ID }}
