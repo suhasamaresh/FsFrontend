@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useAccount, useWriteContract, useWaitForTransactionReceipt, useReadContract } from "wagmi";
-import { GraphQLClient, gql } from "graphql-request";
-import { formatUnits, parseUnits, erc20Abi } from "viem";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { abi as FlashStudyAbi } from "../../../FlashStudy.json";
+import { erc20Abi, formatUnits, parseUnits } from "viem";
+import { useAccount, useReadContract, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
+import { GraphQLClient, gql } from "graphql-request";
+
+import FlashStudyabi from "../../../FlashStudy.json";
+
 
 const CONTRACT_ADDRESS = "0x0d6484Ae57198Fe38d8EFcD45338cFfda58C2D64" as const;
 const USDC_ADDRESS = "0x4C2AA252BEe766D3399850569713b55178934849" as const;
@@ -325,7 +327,7 @@ export default function MyStudyFunds() {
 
       await writeContract({
         address: CONTRACT_ADDRESS,
-        abi: FlashStudyAbi,
+        abi: FlashStudyabi.abi,
         functionName: "finalizeFund",
         args: [BigInt(fundId)],
       });
@@ -344,7 +346,7 @@ export default function MyStudyFunds() {
 
       await writeContract({
         address: CONTRACT_ADDRESS,
-        abi: FlashStudyAbi,
+        abi: FlashStudyabi.abi,
         functionName: "recordResourcePurchase",
         args: [BigInt(fundId), resourceURI],
       });
@@ -363,7 +365,7 @@ export default function MyStudyFunds() {
 
       await writeContract({
         address: CONTRACT_ADDRESS,
-        abi: FlashStudyAbi,
+        abi: FlashStudyabi.abi,
         functionName: "distributeAccess",
         args: [BigInt(fundId), accessURI],
       });
@@ -382,7 +384,7 @@ export default function MyStudyFunds() {
 
       await writeContract({
         address: CONTRACT_ADDRESS,
-        abi: FlashStudyAbi,
+        abi: FlashStudyabi.abi,
         functionName: "claimAccess",
         args: [BigInt(fundId)],
       });

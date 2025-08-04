@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { ethers } from "ethers";
 import { useAccount, useWalletClient } from "wagmi";
 import { GraphQLClient, gql } from "graphql-request";
-import { motion } from "framer-motion";
+
 import FlashSplitAbi from "../../../FlashSplit.json";
 
 const CONTRACT_ADDRESS = "0x710B24E1e66244165728CDcfbe4916b48cE20faB";

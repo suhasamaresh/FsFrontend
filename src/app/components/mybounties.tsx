@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useAccount, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
-import { GraphQLClient, gql } from "graphql-request";
+import { AnimatePresence, motion } from "framer-motion";
 import { formatEther } from "viem";
-import { motion, AnimatePresence } from "framer-motion";
+import { useAccount, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
+import { GraphQLClient, gql } from "graphql-request";
+
 import FlashBountyAbi from "../../../FlashBounty.json";
+
 
 const CONTRACT_ADDRESS = "0x0d6484Ae57198Fe38d8EFcD45338cFfda58C2D64" as const;
 const GRAPHQL_ENDPOINT =

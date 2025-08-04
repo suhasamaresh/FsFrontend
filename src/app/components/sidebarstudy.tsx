@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 import AllStudyFunds from "./allstudyfunds";
 import CreateStudyFund from "./createstudyfund";
-import StudyFundDetails from "./studyfunddetails";
 import MyStudyFunds from "./mystudyfunds";
+import StudyFundDetails from "./studyfunddetails";
 
 const sidebarItems = [
   {

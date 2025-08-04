@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { GraphQLClient, gql } from "graphql-request";
-import { formatUnits } from "viem";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { formatUnits } from "viem";
+import { GraphQLClient, gql } from "graphql-request";
 
 const GRAPHQL_ENDPOINT = "https://api.goldsky.com/api/public/project_cmd7nwdt58hqk01yf3ekxeozd/subgraphs/FlashStudy/1.0.0/gn";
 

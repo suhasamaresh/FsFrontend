@@ -1,10 +1,11 @@
 "use client";
 
-import { useAccount, useDisconnect } from "wagmi";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@0xsequence-demos/boilerplate-design-system";
 import { useOpenConnectModal } from "@0xsequence/connect";
 import { useOpenWalletModal } from "@0xsequence/wallet-widget";
-import { Button } from "@0xsequence-demos/boilerplate-design-system";
-import { motion, AnimatePresence } from "framer-motion";
+import { useAccount, useDisconnect } from "wagmi";
+
 
 export default function Navbar() {
   const { address, isConnected, chain } = useAccount();

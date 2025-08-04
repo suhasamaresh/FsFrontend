@@ -3,9 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { useAccount, useReadContract } from "wagmi";
 import { GraphQLClient, gql } from "graphql-request";
-import { formatUnits } from "viem";
+import { erc20Abi, formatUnits } from "viem";
 import { motion } from "framer-motion";
-import { erc20Abi } from "viem";
 
 const GRAPHQL_ENDPOINT = "https://api.goldsky.com/api/public/project_cmd7nwdt58hqk01yf3ekxeozd/subgraphs/FlashStudy/1.0.0/gn";
 const USDC_ADDRESS = "0x4C2AA252BEe766D3399850569713b55178934849" as const;

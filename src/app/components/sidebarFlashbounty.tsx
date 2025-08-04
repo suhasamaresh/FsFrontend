@@ -1,17 +1,19 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import { useAccount, useDisconnect } from "wagmi";
+import React, { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Button } from "@0xsequence-demos/boilerplate-design-system";
 import { useOpenConnectModal } from "@0xsequence/connect";
 import { useOpenWalletModal } from "@0xsequence/wallet-widget";
-import { Button } from "@0xsequence-demos/boilerplate-design-system";
-import { motion, AnimatePresence } from "framer-motion";
-import PostBountyPage from "./postbounty";
+import { useAccount, useDisconnect } from "wagmi";
+
 import AllBountiesPage from "./allbounties";
 import BountyDetailsPage from "./bountydetails";
 import ClaimBountyPage from "./claimbounty";
 import MyBountiesPage from "./mybounties";
+import PostBountyPage from "./postbounty";
 import SubmitProofPage from "./submitproof";
 import UserProfileDashboard from "./profile1";
+
 
 const sidebarItems = [
     { label: "Post Bounty", key: "post-bounty", icon: "📝" },

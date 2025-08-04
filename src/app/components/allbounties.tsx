@@ -1,11 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { GraphQLClient, gql } from "graphql-request";
-import { formatUnits } from "viem";
 import { motion, AnimatePresence } from "framer-motion";
-import { useAccount, useWriteContract, useWaitForTransactionReceipt, useReadContract } from "wagmi";
-import { erc20Abi } from "viem";
+import { erc20Abi, formatUnits } from "viem";
+import { useAccount, useReadContract, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
+import { GraphQLClient, gql } from "graphql-request";
 import FlashBountyAbi from "../../../FlashBounty.json";
 
 const GRAPHQL_ENDPOINT = "https://api.goldsky.com/api/public/project_cmd7nwdt58hqk01yf3ekxeozd/subgraphs/FlashBounty/1.0.0/gn";

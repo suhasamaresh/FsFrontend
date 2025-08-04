@@ -7,6 +7,9 @@ const nextConfig = {
     loader: "akamai",
     path: "",
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;

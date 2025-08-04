@@ -1,15 +1,17 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import { useAccount, useDisconnect } from "wagmi";
+import React, { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Button } from "@0xsequence-demos/boilerplate-design-system";
 import { useOpenConnectModal } from "@0xsequence/connect";
 import { useOpenWalletModal } from "@0xsequence/wallet-widget";
-import { Button } from "@0xsequence-demos/boilerplate-design-system";
-import { motion, AnimatePresence } from "framer-motion";
+import { useAccount, useDisconnect } from "wagmi";
+
 import CreateExpenseGroupPage from "./createexpense";
-import GroupsPage from "./allgroups";
 import GroupDetailsPage from "./groupdetails";
+import GroupsPage from "./allgroups";
 import SettlePage from "./settle";
 import UserProfileDashboard from "./profile";
+
 
 const sidebarItems = [
   { label: "Create Group", key: "create-group", icon: "👥" },

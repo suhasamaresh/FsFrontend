@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useAccount, useWriteContract, useWaitForTransactionReceipt, useReadContract } from "wagmi";
-import { parseEther, formatEther, erc20Abi, formatUnits, parseUnits } from "viem";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { erc20Abi, formatEther, formatUnits, parseEther, parseUnits } from "viem";
+import { useAccount, useReadContract, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
+
 import FlashBountyAbi from "../../../FlashBounty.json";
+
 
 const CONTRACT_ADDRESS = "0x0d6484Ae57198Fe38d8EFcD45338cFfda58C2D64" as const;
 const USDC_ADDRESS = "0x4C2AA252BEe766D3399850569713b55178934849" as const;

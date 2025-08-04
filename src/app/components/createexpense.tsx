@@ -1,10 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ethers } from "ethers";
-import { useAccount, useWalletClient, useSendTransaction } from "wagmi";
-import { motion, AnimatePresence } from "framer-motion";
+import { useAccount, useSendTransaction, useWalletClient } from "wagmi";
+
 import FlashSplitAbi from "../../../FlashSplit.json";
+
+
 
 type ExpenseCategory = 0 | 1 | 2 | 3 | 4 | 5;
 type SplitType = 0 | 1 | 2 | 3;
@@ -217,6 +220,19 @@ export default function CreateExpenseGroupPage() {
     { id: 4, title: "Review & Create", desc: "Confirm and deploy" }
   ];
 
+  /**
+   * Renders the content for each step of the expense creation flow.
+   *
+   * The steps include:
+   * 1. Group details (name and members)
+   * 2. Currency selection and amount (currently only XTZ is supported; more currencies will be supported in the future as the smart contract creator can add currencies)
+   * 3. Expense category and split type (equal, percentage, exact, or custom shares)
+   * 4. Summary and breakdown of the group expense
+   *
+   * The UI adapts based on the current step, providing relevant input fields and controls.
+   *
+   * @returns {JSX.Element | null} The rendered step content for the current step, or null if the step is invalid.
+   */
   const renderStepContent = () => {
     switch (currentStep) {
       case 1:

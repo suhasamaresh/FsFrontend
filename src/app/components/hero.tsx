@@ -1,7 +1,9 @@
 "use client";
-import { motion } from "framer-motion";
+
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { FaUsers, FaReceipt, FaCoins } from "react-icons/fa";
+
 
 // --- GRID LINES ONLY with RANDOM SHOOTING STAR BEAM ---
 function GridLinesWithShootingStar() {
@@ -20,7 +22,9 @@ function GridLinesWithShootingStar() {
   }, []);
 
   // Beam random row logic and timing to ensure beam appears atleast once in 2.4s
-  const [beamRow, setBeamRow] = useState<number>(Math.floor(Math.random() * (numLines - 1)));
+  const [beamRow, setBeamRow] = useState<number>(
+    Math.floor(Math.random() * (numLines - 1))
+  );
   const [beamKey, setBeamKey] = useState(0); // To restart animation on each beam change
 
   useEffect(() => {
@@ -149,34 +153,34 @@ export default function Hero() {
           className="text-7xl md:text-8xl lg:text-[7rem] font-bold mb-6 leading-tight text-white"
           variants={containerVariants}
         >
-          <span className="font-bold">Flash</span>
-          <span className="font-bold ml-1">Split</span>
+          <span className="font-bold ml-1">FlashSuit</span>
         </motion.h1>
 
         <motion.h2
           className="text-7xl md:text-3xl lg:text-4xl font-light mb-8 leading-relaxed text-emerald-600"
           variants={containerVariants}
         >
-          Effortless Group Expenses
+          The Ultimate On-Chain Social Finance Platform
         </motion.h2>
 
-        <motion.div
-          className="mb-10 max-w-lg"
-          variants={containerVariants}
-        >
+        <motion.div className="mb-10 max-w-lg" variants={containerVariants}>
           <motion.p
             className="text-xl md:text-2xl font-light mb-4 leading-relaxed text-emerald-400"
             variants={containerVariants}
           >
-            <span className="font-semibold text-white">Split bills, share payments,</span> and reward your friends or community —{" "}
-            <span className="font-medium text-emerald-400">securely on-chain</span>.
+            <span className="font-semibold text-white">
+              Split bills, manage tasks, crowdfund, and create together
+            </span>
+            —all securely on-chain through modular tools.
           </motion.p>
           <motion.p
             className="text-lg md:text-xl text-emerald-400"
             variants={containerVariants}
           >
-            <span className="font-semibold text-emerald-300">Create groups</span>, track expenses transparently, and boost your productivity.<br />
-            <span className="text-emerald-400">Connect your wallet to get started.</span>
+            <span className="font-semibold text-emerald-300">
+              Explore groups, track activities, and boost productivity
+            </span>{" "}
+            with the power of Web3 and decentralized collaboration.
           </motion.p>
         </motion.div>
 

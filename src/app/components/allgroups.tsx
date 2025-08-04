@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { GraphQLClient, gql } from "graphql-request";
+import { AnimatePresence, motion } from "framer-motion";
 import { ethers } from "ethers";
-import { motion, AnimatePresence } from "framer-motion";
+import { GraphQLClient, gql } from "graphql-request";
+
 
 const GRAPHQL_ENDPOINT = "https://api.goldsky.com/api/public/project_cmd7nwdt58hqk01yf3ekxeozd/subgraphs/FS/1.0.0/gn"; 
 
