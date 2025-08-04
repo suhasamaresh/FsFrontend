@@ -8,7 +8,6 @@ import { GraphQLClient, gql } from "graphql-request";
 
 import FlashBountyAbi from "../../../FlashBounty.json";
 
-
 const CONTRACT_ADDRESS = "0x0d6484Ae57198Fe38d8EFcD45338cFfda58C2D64" as const;
 const GRAPHQL_ENDPOINT =
   "https://api.goldsky.com/api/public/project_cmd7nwdt58hqk01yf3ekxeozd/subgraphs/FlashBounty/1.0.0/gn";
@@ -296,56 +295,84 @@ export default function MyBountiesPage() {
 
   if (!isConnected) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center p-6">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center p-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center"
         >
-          <div className="w-20 h-20 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="text-emerald-400 text-4xl">🔗</span>
+          <div className="w-24 h-24 bg-gradient-to-br from-purple-600/30 to-pink-600/30 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-purple-500/20">
+            <span className="text-purple-400 text-4xl">🔗</span>
           </div>
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
             Connect Your Wallet
           </h2>
           <p className="text-gray-400 text-lg">
-            Please connect your wallet to view your bounties
+            Please connect your wallet to view your bounty portfolio
           </p>
         </motion.div>
       </div>
     );
   }
 
-  // Calculate metrics correctly
+  // Calculate comprehensive metrics
+  const now = Date.now() / 1000;
+  
+  // Posted bounties metrics
+  const totalPostedBounties = postedBounties.length;
   const activePostedBounties = postedBounties.filter(bounty => {
     const status = getBountyStatus(bounty);
-    return status !== "completed";
+    return status !== "completed" && status !== "expired";
   });
+  const completedPostedBounties = postedBounties.filter(bounty => {
+    const status = getBountyStatus(bounty);
+    return status === "completed";
+  });
+  
+  // For the "Posted" tab, show ALL posted bounties, not just active ones
+  const displayPostedBounties = postedBounties;
 
-  const activeBountyClaims = claimedBounties.filter(claim => {
-    // Only count claims that haven't been completed yet
-    const completion = allCompletedBounties.find(c => c.bountyId === claim.bountyId && c.worker.toLowerCase() === address?.toLowerCase());
+  // Claimed bounties metrics
+  const totalClaimedBounties = claimedBounties.length;
+  const activeClaims = claimedBounties.filter(claim => {
+    const completion = allCompletedBounties.find(c => 
+      c.bountyId === claim.bountyId && 
+      c.worker.toLowerCase() === address?.toLowerCase()
+    );
     return !completion;
   });
 
-  const completedTasksCount = completedBounties.length;
-
-  const totalEarned = completedBounties.reduce((sum, bounty) => {
+  // Completed work metrics
+  const totalCompletedWork = completedBounties.length;
+  const totalEarnings = completedBounties.reduce((sum, bounty) => {
     const tipValue = parseFloat(safeFormatEther(bounty.tipPaid, "0"));
     return sum + tipValue;
   }, 0);
 
-  const totalStaked = activeBountyClaims.reduce((sum, bounty) => {
+  // Stake metrics
+  const totalStakedAmount = activeClaims.reduce((sum, bounty) => {
     const stakeValue = parseFloat(safeFormatEther(bounty.stakeAmount, "0"));
     return sum + stakeValue;
   }, 0);
 
-  const completionRate = claimedBounties.length > 0 
-    ? Math.round((completedBounties.length / claimedBounties.length) * 100)
+  // Success rate
+  const completionRate = totalClaimedBounties > 0 
+    ? Math.round((totalCompletedWork / totalClaimedBounties) * 100)
     : 0;
 
+  // Average earnings per completed task
+  const avgEarningsPerTask = totalCompletedWork > 0 
+    ? totalEarnings / totalCompletedWork 
+    : 0;
+
+  // Pending submissions
+  const pendingSubmissions = submittedBounties.filter(sub => {
+    const completion = allCompletedBounties.find(c => c.bountyId === sub.bountyId);
+    return !completion;
+  }).length;
+
   return (
-    <div className="min-h-screen bg-black p-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -353,125 +380,216 @@ export default function MyBountiesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-8"
         >
-          <h1 className="text-4xl font-bold text-white mb-2">
-            My <span className="text-emerald-600">Bounties</span>
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent mb-4">
+            My Bounty Portfolio
           </h1>
-          <p className="text-gray-400 text-lg">
-            Track your posted bounties, claimed tasks, and completed work
+          <p className="text-gray-400 text-xl max-w-2xl mx-auto">
+            Your comprehensive dashboard for managing bounties, tracking progress, and monitoring earnings
           </p>
         </motion.div>
 
-        {/* Stats Cards */}
+        {/* Enhanced Stats Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
         >
-          <div className="bg-gradient-to-br from-emerald-600/20 to-emerald-800/20 rounded-xl p-6 border border-emerald-600/30 hover:border-emerald-600/50 transition-all">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-3xl font-bold text-emerald-400 mb-1">
-                  {activePostedBounties.length}
-                </div>
-                <div className="text-gray-400 text-sm">Posted Bounties</div>
-                <div className="text-emerald-400 text-xs mt-1">📝 Tasks created</div>
+          {/* Posted Bounties */}
+          <div className="bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-2xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all backdrop-blur-sm">
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-14 h-14 bg-purple-600/30 rounded-xl flex items-center justify-center">
+                <span className="text-purple-400 text-2xl">📝</span>
               </div>
-              <div className="w-12 h-12 bg-emerald-600/20 rounded-full flex items-center justify-center">
-                <span className="text-emerald-400 text-xl">📝</span>
+              <div className="text-right">
+                <div className="text-3xl font-bold text-purple-400">{totalPostedBounties}</div>
+                <div className="text-purple-300 text-sm">Posted</div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Active</span>
+                <span className="text-purple-300 font-medium">{activePostedBounties.length}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Completed</span>
+                <span className="text-green-400 font-medium">{completedPostedBounties.length}</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-xl p-6 border border-blue-600/30 hover:border-blue-600/50 transition-all">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-3xl font-bold text-blue-400 mb-1">
-                  {activeBountyClaims.length}
-                </div>
-                <div className="text-gray-400 text-sm">Claimed Bounties</div>
-                <div className="text-blue-400 text-xs mt-1">🎯 Tasks in progress</div>
+          {/* Claimed Tasks */}
+          <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-2xl p-6 border border-blue-500/30 hover:border-blue-400/50 transition-all backdrop-blur-sm">
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-14 h-14 bg-blue-600/30 rounded-xl flex items-center justify-center">
+                <span className="text-blue-400 text-2xl">🎯</span>
               </div>
-              <div className="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center">
-                <span className="text-blue-400 text-xl">🎯</span>
+              <div className="text-right">
+                <div className="text-3xl font-bold text-blue-400">{totalClaimedBounties}</div>
+                <div className="text-blue-300 text-sm">Claimed</div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">In Progress</span>
+                <span className="text-blue-300 font-medium">{activeClaims.length}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Success Rate</span>
+                <span className="text-green-400 font-medium">{completionRate}%</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-xl p-6 border border-purple-600/30 hover:border-purple-600/50 transition-all">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-3xl font-bold text-purple-400 mb-1">
-                  {completedTasksCount}
-                </div>
-                <div className="text-gray-400 text-sm">Completed Tasks</div>
-                <div className="text-purple-400 text-xs mt-1">✅ Tasks finished</div>
+          {/* Earnings & Rewards */}
+          <div className="bg-gradient-to-br from-green-600/20 to-emerald-800/20 rounded-2xl p-6 border border-green-500/30 hover:border-green-400/50 transition-all backdrop-blur-sm">
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-14 h-14 bg-green-600/30 rounded-xl flex items-center justify-center">
+                <span className="text-green-400 text-2xl">💰</span>
               </div>
-              <div className="w-12 h-12 bg-purple-600/20 rounded-full flex items-center justify-center">
-                <span className="text-purple-400 text-xl">✅</span>
+              <div className="text-right">
+                <div className="text-2xl font-bold text-green-400">
+                  {totalEarnings < 0.001 && totalEarnings > 0
+                    ? totalEarnings.toFixed(6)
+                    : totalEarnings.toFixed(2)}
+                </div>
+                <div className="text-green-300 text-sm">USDC Earned</div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Avg/Task</span>
+                <span className="text-green-300 font-medium">
+                  {avgEarningsPerTask < 0.001 && avgEarningsPerTask > 0
+                    ? avgEarningsPerTask.toFixed(6)
+                    : avgEarningsPerTask.toFixed(2)} USDC
+                </span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Tasks Done</span>
+                <span className="text-green-400 font-medium">{totalCompletedWork}</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-yellow-600/20 to-yellow-800/20 rounded-xl p-6 border border-yellow-600/30 hover:border-yellow-600/50 transition-all">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-3xl font-bold text-yellow-400 mb-1">
-                  {totalEarned < 0.001 && totalEarned > 0
-                    ? totalEarned.toFixed(6)
-                    : totalEarned.toFixed(2)}{" "}
-                  USDC
-                </div>
-                <div className="text-gray-400 text-sm">Total Earned</div>
-                <div className="text-yellow-400 text-xs mt-1">💰 Tips received</div>
+          {/* Stakes & Commitments */}
+          <div className="bg-gradient-to-br from-yellow-600/20 to-orange-800/20 rounded-2xl p-6 border border-yellow-500/30 hover:border-yellow-400/50 transition-all backdrop-blur-sm">
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-14 h-14 bg-yellow-600/30 rounded-xl flex items-center justify-center">
+                <span className="text-yellow-400 text-2xl">🔒</span>
               </div>
-              <div className="w-12 h-12 bg-yellow-600/20 rounded-full flex items-center justify-center">
-                <span className="text-yellow-400 text-xl">💰</span>
+              <div className="text-right">
+                <div className="text-2xl font-bold text-yellow-400">
+                  {totalStakedAmount < 0.001 && totalStakedAmount > 0
+                    ? totalStakedAmount.toFixed(6)
+                    : totalStakedAmount.toFixed(2)}
+                </div>
+                <div className="text-yellow-300 text-sm">USDC Staked</div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Active Stakes</span>
+                <span className="text-yellow-300 font-medium">{activeClaims.length}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Pending Review</span>
+                <span className="text-orange-400 font-medium">{pendingSubmissions}</span>
               </div>
             </div>
           </div>
         </motion.div>
 
-        {/* Tabs */}
+        {/* Activity Overview */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="bg-gradient-to-r from-purple-600/10 via-blue-600/10 to-green-600/10 rounded-2xl p-6 border border-gray-700/50 mb-8 backdrop-blur-sm"
+        >
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">📊 Activity Overview</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-purple-400 text-2xl">⚡</span>
+              </div>
+              <div className="text-2xl font-bold text-white mb-1">{activePostedBounties.length + activeClaims.length}</div>
+              <div className="text-gray-400 text-sm">Active Tasks</div>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-blue-400 text-2xl">📈</span>
+              </div>
+              <div className="text-2xl font-bold text-white mb-1">{completionRate}%</div>
+              <div className="text-gray-400 text-sm">Success Rate</div>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-green-400 text-2xl">🎖️</span>
+              </div>
+              <div className="text-2xl font-bold text-white mb-1">{totalCompletedWork}</div>
+              <div className="text-gray-400 text-sm">Completed</div>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-yellow-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-yellow-400 text-2xl">⏳</span>
+              </div>
+              <div className="text-2xl font-bold text-white mb-1">{pendingSubmissions}</div>
+              <div className="text-gray-400 text-sm">Pending</div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Enhanced Tabs */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.3 }}
           className="mb-8"
         >
-          <div className="bg-black/50 rounded-xl p-2 border border-emerald-600/20 inline-flex gap-1">
+          <div className="bg-gradient-to-r from-gray-800/80 to-gray-900/80 rounded-2xl p-3 border border-gray-700/50 inline-flex gap-2 backdrop-blur-sm">
             {[
               {
                 key: "posted",
-                label: "Posted Bounties",
+                label: "My Bounties",
                 icon: "📝",
-                count: activePostedBounties.length,
+                count: totalPostedBounties, // Show total posted bounties count
+                color: "purple"
               },
               {
                 key: "claimed",
-                label: "Claimed Tasks",
+                label: "Working On",
                 icon: "🎯",
-                count: activeBountyClaims.length,
+                count: activeClaims.length,
+                color: "blue"
               },
               {
                 key: "completed",
-                label: "Completed Work",
+                label: "Completed",
                 icon: "✅",
-                count: completedTasksCount,
+                count: totalCompletedWork,
+                color: "green"
               },
             ].map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key as typeof activeTab)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                className={`flex items-center space-x-3 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                   activeTab === tab.key
-                    ? "bg-emerald-600 text-white shadow-lg"
-                    : "text-gray-400 hover:text-white hover:bg-emerald-600/20"
+                    ? `bg-gradient-to-r from-${tab.color}-600 to-${tab.color}-700 text-white shadow-lg transform scale-105`
+                    : "text-gray-400 hover:text-white hover:bg-gray-700/50"
                 }`}
               >
-                <span>{tab.icon}</span>
-                <span className="hidden sm:inline">{tab.label}</span>
-                <span className="bg-black/30 text-xs px-2 py-1 rounded-full">
+                <span className="text-lg">{tab.icon}</span>
+                <span className="hidden sm:inline font-semibold">{tab.label}</span>
+                <span className={`px-2 py-1 rounded-full text-xs font-bold ${
+                  activeTab === tab.key 
+                    ? "bg-white/20 text-white" 
+                    : "bg-gray-600/50 text-gray-300"
+                }`}>
                   {tab.count}
                 </span>
               </button>
@@ -484,11 +602,11 @@ export default function MyBountiesPage() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex items-center justify-center py-12"
+            className="flex items-center justify-center py-16"
           >
-            <div className="flex items-center gap-3 text-emerald-400">
-              <div className="w-6 h-6 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin"></div>
-              <span className="text-lg">Loading your bounties...</span>
+            <div className="flex items-center gap-4 text-purple-400">
+              <div className="w-8 h-8 border-3 border-purple-400 border-t-transparent rounded-full animate-spin"></div>
+              <span className="text-xl font-medium">Loading your portfolio...</span>
             </div>
           </motion.div>
         )}
@@ -498,10 +616,10 @@ export default function MyBountiesPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-red-500/20 border border-red-500/30 rounded-xl p-6 text-center mb-8"
+            className="bg-gradient-to-r from-red-500/20 to-red-600/20 border border-red-500/30 rounded-2xl p-8 text-center mb-8 backdrop-blur-sm"
           >
-            <div className="text-red-400 text-lg font-semibold mb-2">⚠️ Error Loading Bounties</div>
-            <p className="text-red-300">{error}</p>
+            <div className="text-red-400 text-2xl font-semibold mb-3">⚠️ Error Loading Portfolio</div>
+            <p className="text-red-300 text-lg">{error}</p>
           </motion.div>
         )}
 
@@ -510,10 +628,10 @@ export default function MyBountiesPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-red-500/20 border border-red-500/30 rounded-xl p-6 text-center mb-8"
+            className="bg-gradient-to-r from-red-500/20 to-red-600/20 border border-red-500/30 rounded-2xl p-8 text-center mb-8 backdrop-blur-sm"
           >
-            <div className="text-red-400 text-lg font-semibold mb-2">⚠️ Transaction Error</div>
-            <p className="text-red-300">{writeError.message}</p>
+            <div className="text-red-400 text-2xl font-semibold mb-3">⚠️ Transaction Error</div>
+            <p className="text-red-300 text-lg">{writeError.message}</p>
           </motion.div>
         )}
 
@@ -524,40 +642,33 @@ export default function MyBountiesPage() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3 }}
           >
             {/* Posted Bounties Tab */}
             {activeTab === "posted" && (
-              <div className="space-y-4">
-                {activePostedBounties.length === 0 && !loading ? (
+              <div className="space-y-6">
+                {displayPostedBounties.length === 0 && !loading ? (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-center py-12"
+                    className="text-center py-16"
                   >
-                    <div className="w-20 h-20 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-emerald-400 text-3xl">📝</span>
+                    <div className="w-24 h-24 bg-gradient-to-br from-purple-600/30 to-purple-800/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <span className="text-purple-400 text-4xl">📝</span>
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      No Active Posted Bounties
+                    <h3 className="text-2xl font-semibold text-white mb-3">
+                      No Posted Bounties
                     </h3>
-                    <p className="text-gray-400">
-                      You don't have any active bounties posted
+                    <p className="text-gray-400 text-lg">
+                      Start creating bounties to build your portfolio
                     </p>
                   </motion.div>
                 ) : (
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {activePostedBounties.map((bounty, index) => {
+                    {displayPostedBounties.map((bounty, index) => {
                       const status = getBountyStatus(bounty);
                       const timeRemaining = getTimeRemaining(bounty.deadline);
                       const submission = getBountySubmission(bounty.bountyId);
-
-                      console.log(`Bounty ${bounty.bountyId}:`, {
-                        tipAmount: bounty.tipAmount,
-                        stakeAmount: bounty.stakeAmount,
-                        formattedTip: safeFormatEther(bounty.tipAmount),
-                        formattedStake: safeFormatEther(bounty.stakeAmount)
-                      }); // Debug log
 
                       return (
                         <motion.div
@@ -565,24 +676,24 @@ export default function MyBountiesPage() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.1 }}
-                          whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                          className="group bg-gradient-to-br from-black to-gray-900 rounded-xl border-2 border-emerald-600/30 hover:border-emerald-600/60 shadow-lg hover:shadow-emerald-600/20 transition-all duration-300 overflow-hidden"
+                          whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                          className="group bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-2xl border-2 border-purple-500/30 hover:border-purple-400/60 shadow-xl hover:shadow-purple-500/20 transition-all duration-300 overflow-hidden backdrop-blur-sm"
                         >
                           {/* Card Header */}
-                          <div className="p-6 border-b border-emerald-600/20">
+                          <div className="p-6 border-b border-purple-500/20">
                             <div className="flex items-start justify-between mb-4">
-                              <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 bg-emerald-600/20 rounded-full flex items-center justify-center text-xl">
+                              <div className="flex items-center gap-4">
+                                <div className="w-14 h-14 bg-gradient-to-br from-purple-600/30 to-purple-800/30 rounded-xl flex items-center justify-center text-2xl backdrop-blur-sm">
                                   {categoryIcons[
                                     bounty.category as keyof typeof categoryIcons
                                   ] || "📦"}
                                 </div>
                                 <div>
-                                  <div className="text-emerald-400 font-semibold">
+                                  <div className="text-purple-400 font-bold text-lg">
                                     Bounty #{bounty.bountyId}
                                   </div>
-                                  <div className="flex items-center gap-2 mt-1">
-                                    <span className="px-2 py-1 bg-emerald-600/20 text-emerald-400 text-xs font-medium rounded-full">
+                                  <div className="flex items-center gap-2 mt-2">
+                                    <span className="px-3 py-1 bg-gradient-to-r from-purple-600/20 to-purple-700/20 text-purple-300 text-xs font-medium rounded-full border border-purple-500/30">
                                       {categoryNames[
                                         bounty.category as keyof typeof categoryNames
                                       ] || "Other"}
@@ -592,19 +703,19 @@ export default function MyBountiesPage() {
                               </div>
                               <div className="text-right">
                                 <div
-                                  className={`px-2 py-1 rounded text-xs mb-2 ${
+                                  className={`px-3 py-2 rounded-lg text-xs font-semibold mb-3 ${
                                     status === "expired"
-                                      ? "bg-red-900/30 text-red-400"
+                                      ? "bg-gradient-to-r from-red-600/30 to-red-700/30 text-red-300 border border-red-500/30"
                                       : status === "submitted"
-                                      ? "bg-yellow-900/30 text-yellow-400"
+                                      ? "bg-gradient-to-r from-yellow-600/30 to-yellow-700/30 text-yellow-300 border border-yellow-500/30"
                                       : status === "claimed"
-                                      ? "bg-blue-900/30 text-blue-400"
-                                      : "bg-green-900/30 text-green-400"
+                                      ? "bg-gradient-to-r from-blue-600/30 to-blue-700/30 text-blue-300 border border-blue-500/30"
+                                      : "bg-gradient-to-r from-green-600/30 to-green-700/30 text-green-300 border border-green-500/30"
                                   }`}
                                 >
-                                  {status}
+                                  {status.toUpperCase()}
                                 </div>
-                                <span className="text-xs font-mono bg-emerald-600/10 text-emerald-400 px-2 py-1 rounded">
+                                <span className="text-xs font-mono bg-purple-600/10 text-purple-300 px-3 py-1 rounded-lg border border-purple-500/30">
                                   {new Date(Number(bounty.timestamp_) * 1000).toLocaleDateString('en-US', {
                                     month: 'short',
                                     day: 'numeric'
@@ -616,29 +727,29 @@ export default function MyBountiesPage() {
 
                           {/* Card Body */}
                           <div className="p-6">
-                            <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                            <p className="text-gray-300 text-sm mb-6 line-clamp-2 leading-relaxed">
                               {bounty.description}
                             </p>
 
-                            <div className="grid grid-cols-2 gap-4 mb-4">
-                              <div className="bg-emerald-600/10 rounded-lg p-3 border border-emerald-600/20">
-                                <div className="text-xs text-gray-400 mb-1">Tip Amount</div>
-                                <div className="text-emerald-400 font-semibold">
+                            <div className="grid grid-cols-2 gap-4 mb-6">
+                              <div className="bg-gradient-to-br from-green-600/10 to-green-700/10 rounded-xl p-4 border border-green-600/20">
+                                <div className="text-xs text-gray-400 mb-2">Tip Amount</div>
+                                <div className="text-green-400 font-bold text-lg">
                                   {safeFormatEther(bounty.tipAmount)} USDC
                                 </div>
                               </div>
-                              <div className="bg-yellow-600/10 rounded-lg p-3 border border-yellow-600/20">
-                                <div className="text-xs text-gray-400 mb-1">Required Stake</div>
-                                <div className="text-yellow-400 font-semibold">
+                              <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-700/10 rounded-xl p-4 border border-yellow-600/20">
+                                <div className="text-xs text-gray-400 mb-2">Required Stake</div>
+                                <div className="text-yellow-400 font-bold text-lg">
                                   {safeFormatEther(bounty.stakeAmount)} USDC
                                 </div>
                               </div>
                             </div>
 
-                            <div className="bg-black/30 rounded-lg p-3 border border-gray-600/20 mb-4">
-                              <div className="flex items-center justify-between text-xs">
-                                <span className="text-gray-400">Time remaining</span>
-                                <span className={`font-medium ${
+                            <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-xl p-4 border border-gray-700/30 mb-6">
+                              <div className="flex items-center justify-between text-sm">
+                                <span className="text-gray-400 font-medium">Time remaining</span>
+                                <span className={`font-bold ${
                                   timeRemaining === "Expired" ? "text-red-400" : "text-blue-400"
                                 }`}>
                                   {timeRemaining}
@@ -648,13 +759,13 @@ export default function MyBountiesPage() {
 
                             {/* Proof Submission Section */}
                             {submission && (
-                              <div className="bg-yellow-600/10 rounded-lg p-4 border border-yellow-600/20 mb-4">
-                                <div className="flex items-center justify-between mb-3">
-                                  <div className="flex items-center gap-2">
-                                    <span className="text-yellow-400 text-sm">📄</span>
-                                    <span className="text-yellow-400 font-semibold text-sm">Proof Submitted</span>
+                              <div className="bg-gradient-to-br from-yellow-600/10 to-orange-600/10 rounded-xl p-6 border border-yellow-600/20 mb-6">
+                                <div className="flex items-center justify-between mb-4">
+                                  <div className="flex items-center gap-3">
+                                    <span className="text-yellow-400 text-xl">📄</span>
+                                    <span className="text-yellow-400 font-bold text-lg">Proof Submitted</span>
                                   </div>
-                                  <span className="text-xs text-gray-400">
+                                  <span className="text-xs text-gray-400 bg-gray-800/50 px-3 py-1 rounded-lg">
                                     {new Date(Number(submission.timestamp_) * 1000).toLocaleDateString('en-US', {
                                       month: 'short',
                                       day: 'numeric',
@@ -663,22 +774,22 @@ export default function MyBountiesPage() {
                                     })}
                                   </span>
                                 </div>
-                                <div className="mb-3">
-                                  <div className="text-xs text-gray-400 mb-1">Worker</div>
-                                  <div className="text-yellow-400 text-sm font-mono">
-                                    {submission.worker.slice(0, 6)}...{submission.worker.slice(-4)}
+                                <div className="mb-4">
+                                  <div className="text-xs text-gray-400 mb-2">Worker</div>
+                                  <div className="text-yellow-400 text-sm font-mono bg-yellow-600/10 px-3 py-2 rounded-lg border border-yellow-600/20">
+                                    {submission.worker.slice(0, 8)}...{submission.worker.slice(-6)}
                                   </div>
                                 </div>
-                                <div className="mb-4">
-                                  <div className="text-xs text-gray-400 mb-2">Proof Link</div>
+                                <div className="mb-6">
+                                  <div className="text-xs text-gray-400 mb-3">Proof Link</div>
                                   <a
                                     href={submission.proofHash.startsWith('http') ? submission.proofHash : `https://${submission.proofHash}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 bg-yellow-600/20 hover:bg-yellow-600/30 text-yellow-400 hover:text-yellow-300 px-3 py-2 rounded-lg text-sm font-medium transition-all border border-yellow-600/30 hover:border-yellow-600/50"
+                                    className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 hover:from-yellow-600/30 hover:to-orange-600/30 text-yellow-300 hover:text-yellow-200 px-4 py-3 rounded-xl text-sm font-medium transition-all border border-yellow-600/30 hover:border-yellow-500/50 shadow-lg hover:shadow-yellow-500/20"
                                   >
-                                    <span>🔗</span>
-                                    <span>View Proof</span>
+                                    <span className="text-lg">🔗</span>
+                                    <span className="font-semibold">View Submission</span>
                                     <span className="text-xs">↗</span>
                                   </a>
                                 </div>
@@ -686,16 +797,16 @@ export default function MyBountiesPage() {
                                   <button
                                     onClick={() => handleCompleteBounty(bounty.bountyId)}
                                     disabled={isPending || isConfirming || completingBounty === bounty.bountyId}
-                                    className="w-full bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 hover:text-emerald-300 px-4 py-2 rounded-lg text-sm font-medium transition-all border border-emerald-600/30 hover:border-emerald-600/50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full bg-gradient-to-r from-green-600/20 to-emerald-600/20 hover:from-green-600/30 hover:to-emerald-600/30 text-green-300 hover:text-green-200 px-6 py-3 rounded-xl text-sm font-bold transition-all border border-green-600/30 hover:border-green-500/50 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-green-500/20"
                                   >
                                     {(isPending || isConfirming) && completingBounty === bounty.bountyId ? (
-                                      <div className="flex items-center justify-center gap-2">
-                                        <div className="w-4 h-4 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin"></div>
-                                        <span>Completing...</span>
+                                      <div className="flex items-center justify-center gap-3">
+                                        <div className="w-5 h-5 border-2 border-green-400 border-t-transparent rounded-full animate-spin"></div>
+                                        <span>Processing...</span>
                                       </div>
                                     ) : (
-                                      <div className="flex items-center justify-center gap-2">
-                                        <span>✅</span>
+                                      <div className="flex items-center justify-center gap-3">
+                                        <span className="text-lg">✅</span>
                                         <span>Complete Bounty</span>
                                       </div>
                                     )}
@@ -706,7 +817,7 @@ export default function MyBountiesPage() {
                           </div>
 
                           {/* Hover Overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/0 via-emerald-600/5 to-emerald-600/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-600/5 to-purple-600/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                         </motion.div>
                       );
                     })}
@@ -717,52 +828,57 @@ export default function MyBountiesPage() {
 
             {/* Claimed Bounties Tab */}
             {activeTab === "claimed" && (
-              <div className="space-y-4">
-                {activeBountyClaims.length === 0 && !loading ? (
+              <div className="space-y-6">
+                {activeClaims.length === 0 && !loading ? (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-center py-12"
+                    className="text-center py-16"
                   >
-                    <div className="w-20 h-20 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-blue-400 text-3xl">🎯</span>
+                    <div className="w-24 h-24 bg-gradient-to-br from-blue-600/30 to-blue-800/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <span className="text-blue-400 text-4xl">🎯</span>
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-2">
+                    <h3 className="text-2xl font-semibold text-white mb-3">
                       No Active Claimed Bounties
                     </h3>
-                    <p className="text-gray-400">
-                      You don't have any bounties in progress
+                    <p className="text-gray-400 text-lg">
+                      Start claiming bounties to grow your earnings
                     </p>
                   </motion.div>
                 ) : (
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {activeBountyClaims.map((bounty, index) => (
+                    {activeClaims.map((bounty, index) => (
                       <motion.div
                         key={bounty.bountyId}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                        className="group bg-gradient-to-br from-black to-gray-900 rounded-xl border-2 border-blue-600/30 hover:border-blue-600/60 shadow-lg hover:shadow-blue-600/20 transition-all duration-300 overflow-hidden"
+                        whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                        className="group bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-2xl border-2 border-blue-500/30 hover:border-blue-400/60 shadow-xl hover:shadow-blue-500/20 transition-all duration-300 overflow-hidden backdrop-blur-sm"
                       >
                         {/* Card Header */}
-                        <div className="p-6 border-b border-blue-600/20">
+                        <div className="p-6 border-b border-blue-500/20">
                           <div className="flex items-start justify-between mb-4">
-                            <div>
-                              <div className="text-blue-400 font-semibold">
-                                Bounty #{bounty.bountyId}
+                            <div className="flex items-center gap-4">
+                              <div className="w-14 h-14 bg-gradient-to-br from-blue-600/30 to-blue-800/30 rounded-xl flex items-center justify-center text-2xl">
+                                <span className="text-blue-400">🎯</span>
                               </div>
-                              <div className="flex items-center gap-2 mt-1">
-                                <span className="px-2 py-1 bg-blue-600/20 text-blue-400 text-xs font-medium rounded-full">
-                                  Claimed Task
-                                </span>
+                              <div>
+                                <div className="text-blue-400 font-bold text-lg">
+                                  Bounty #{bounty.bountyId}
+                                </div>
+                                <div className="flex items-center gap-2 mt-2">
+                                  <span className="px-3 py-1 bg-gradient-to-r from-blue-600/20 to-blue-700/20 text-blue-300 text-xs font-medium rounded-full border border-blue-500/30">
+                                    Working On
+                                  </span>
+                                </div>
                               </div>
                             </div>
                             <div className="text-right">
-                              <div className="px-2 py-1 rounded text-xs bg-yellow-900/30 text-yellow-400 mb-2">
-                                In Progress
+                              <div className="px-3 py-2 rounded-lg text-xs font-semibold mb-3 bg-gradient-to-r from-yellow-600/30 to-yellow-700/30 text-yellow-300 border border-yellow-500/30">
+                                IN PROGRESS
                               </div>
-                              <span className="text-xs font-mono bg-blue-600/10 text-blue-400 px-2 py-1 rounded">
+                              <span className="text-xs font-mono bg-blue-600/10 text-blue-300 px-3 py-1 rounded-lg border border-blue-500/30">
                                 {new Date(Number(bounty.timestamp_) * 1000).toLocaleDateString('en-US', {
                                   month: 'short',
                                   day: 'numeric'
@@ -774,16 +890,20 @@ export default function MyBountiesPage() {
 
                         {/* Card Body */}
                         <div className="p-6">
-                          <div className="bg-yellow-600/10 rounded-lg p-3 border border-yellow-600/20 mb-4">
-                            <div className="text-xs text-gray-400 mb-1">Staked Amount</div>
-                            <div className="text-yellow-400 font-semibold">
+                          <div className="bg-gradient-to-br from-yellow-600/10 to-orange-600/10 rounded-xl p-4 border border-yellow-600/20 mb-6">
+                            <div className="text-xs text-gray-400 mb-2">Your Staked Amount</div>
+                            <div className="text-yellow-400 font-bold text-xl">
                               {safeFormatEther(bounty.stakeAmount)} USDC
                             </div>
+                            <div className="text-xs text-yellow-300 mt-2">🔒 Locked until completion</div>
                           </div>
 
-                          <div className="flex items-center justify-between">
-                            <button className="bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30 px-4 py-2 rounded-lg text-sm font-medium transition-all border border-emerald-600/30 hover:border-emerald-600/50">
-                              Submit Proof
+                          <div className="flex items-center justify-center">
+                            <button className="bg-gradient-to-r from-green-600/20 to-emerald-600/20 hover:from-green-600/30 hover:to-emerald-600/30 text-green-300 hover:text-green-200 px-6 py-3 rounded-xl text-sm font-bold transition-all border border-green-600/30 hover:border-green-500/50 shadow-lg hover:shadow-green-500/20">
+                              <div className="flex items-center gap-3">
+                                <span className="text-lg">📤</span>
+                                <span>Submit Proof</span>
+                              </div>
                             </button>
                           </div>
                         </div>
@@ -799,21 +919,21 @@ export default function MyBountiesPage() {
 
             {/* Completed Bounties Tab */}
             {activeTab === "completed" && (
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {completedBounties.length === 0 && !loading ? (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-center py-12"
+                    className="text-center py-16"
                   >
-                    <div className="w-20 h-20 bg-purple-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-purple-400 text-3xl">✅</span>
+                    <div className="w-24 h-24 bg-gradient-to-br from-green-600/30 to-green-800/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <span className="text-green-400 text-4xl">✅</span>
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      No Completed Work
+                    <h3 className="text-2xl font-semibold text-white mb-3">
+                      No Completed Work Yet
                     </h3>
-                    <p className="text-gray-400">
-                      You haven't completed any bounties yet
+                    <p className="text-gray-400 text-lg">
+                      Complete bounties to build your success record
                     </p>
                   </motion.div>
                 ) : (
@@ -824,27 +944,32 @@ export default function MyBountiesPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                        className="group bg-gradient-to-br from-black to-gray-900 rounded-xl border-2 border-purple-600/30 hover:border-purple-600/60 shadow-lg hover:shadow-purple-600/20 transition-all duration-300 overflow-hidden"
+                        whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                        className="group bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-2xl border-2 border-green-500/30 hover:border-green-400/60 shadow-xl hover:shadow-green-500/20 transition-all duration-300 overflow-hidden backdrop-blur-sm"
                       >
                         {/* Card Header */}
-                        <div className="p-6 border-b border-purple-600/20">
+                        <div className="p-6 border-b border-green-500/20">
                           <div className="flex items-start justify-between mb-4">
-                            <div>
-                              <div className="text-purple-400 font-semibold">
-                                Bounty #{bounty.bountyId}
+                            <div className="flex items-center gap-4">
+                              <div className="w-14 h-14 bg-gradient-to-br from-green-600/30 to-green-800/30 rounded-xl flex items-center justify-center text-2xl">
+                                <span className="text-green-400">✅</span>
                               </div>
-                              <div className="flex items-center gap-2 mt-1">
-                                <span className="px-2 py-1 bg-purple-600/20 text-purple-400 text-xs font-medium rounded-full">
-                                  Completed Task
-                                </span>
+                              <div>
+                                <div className="text-green-400 font-bold text-lg">
+                                  Bounty #{bounty.bountyId}
+                                </div>
+                                <div className="flex items-center gap-2 mt-2">
+                                  <span className="px-3 py-1 bg-gradient-to-r from-green-600/20 to-green-700/20 text-green-300 text-xs font-medium rounded-full border border-green-500/30">
+                                    Completed Task
+                                  </span>
+                                </div>
                               </div>
                             </div>
                             <div className="text-right">
-                              <div className="px-2 py-1 rounded text-xs bg-emerald-900/30 text-emerald-400 mb-2">
-                                Completed
+                              <div className="px-3 py-2 rounded-lg text-xs font-semibold mb-3 bg-gradient-to-r from-green-600/30 to-green-700/30 text-green-300 border border-green-500/30">
+                                COMPLETED
                               </div>
-                              <span className="text-xs font-mono bg-purple-600/10 text-purple-400 px-2 py-1 rounded">
+                              <span className="text-xs font-mono bg-green-600/10 text-green-300 px-3 py-1 rounded-lg border border-green-500/30">
                                 {new Date(Number(bounty.timestamp_) * 1000).toLocaleDateString('en-US', {
                                   month: 'short',
                                   day: 'numeric'
@@ -857,23 +982,25 @@ export default function MyBountiesPage() {
                         {/* Card Body */}
                         <div className="p-6">
                           <div className="grid grid-cols-2 gap-4">
-                            <div className="bg-blue-600/10 rounded-lg p-3 border border-blue-600/20">
-                              <div className="text-xs text-gray-400 mb-1">Stake Refund</div>
-                              <div className="text-blue-400 font-semibold">
+                            <div className="bg-gradient-to-br from-blue-600/10 to-blue-700/10 rounded-xl p-4 border border-blue-600/20">
+                              <div className="text-xs text-gray-400 mb-2">Stake Refunded</div>
+                              <div className="text-blue-400 font-bold text-lg">
                                 {safeFormatEther(bounty.stakeRefund)} USDC
                               </div>
+                              <div className="text-xs text-blue-300 mt-1">🔓 Unlocked</div>
                             </div>
-                            <div className="bg-emerald-600/10 rounded-lg p-3 border border-emerald-600/20">
-                              <div className="text-xs text-gray-400 mb-1">Tip Earned</div>
-                              <div className="text-emerald-400 font-semibold">
+                            <div className="bg-gradient-to-br from-green-600/10 to-green-700/10 rounded-xl p-4 border border-green-600/20">
+                              <div className="text-xs text-gray-400 mb-2">Tip Earned</div>
+                              <div className="text-green-400 font-bold text-lg">
                                 {safeFormatEther(bounty.tipPaid)} USDC
                               </div>
+                              <div className="text-xs text-green-300 mt-1">💰 Received</div>
                             </div>
                           </div>
                         </div>
 
                         {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-600/5 to-purple-600/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-600/0 via-green-600/5 to-green-600/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                       </motion.div>
                     ))}
                   </div>
@@ -883,70 +1010,84 @@ export default function MyBountiesPage() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Performance Summary */}
+        {/* Enhanced Performance Summary */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-12"
+          transition={{ delay: 0.6 }}
+          className="mt-16"
         >
-          <div className="bg-gradient-to-r from-emerald-600/10 via-transparent to-emerald-600/10 rounded-xl p-6 border border-emerald-600/20">
-            <h3 className="text-emerald-400 font-medium mb-6 text-center">💡 Performance Summary</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="bg-gradient-to-r from-purple-600/10 via-blue-600/10 to-green-600/10 rounded-2xl p-8 border border-gray-700/50 backdrop-blur-sm">
+            <h3 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-purple-400 to-green-400 bg-clip-text text-transparent">
+              🚀 Performance Analytics
+            </h3>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-emerald-400 text-2xl">📊</span>
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-purple-500/30">
+                  <span className="text-purple-400 text-3xl">📊</span>
                 </div>
-                <div className="text-3xl font-bold text-white mb-1">
+                <div className="text-4xl font-bold text-white mb-2">
                   {completionRate}%
                 </div>
-                <div className="text-gray-400 text-sm">Completion Rate</div>
-                <div className="text-xs text-emerald-400 mt-1">Tasks successfully finished</div>
+                <div className="text-gray-400 text-sm font-medium">Success Rate</div>
+                <div className="text-xs text-purple-400 mt-2">Tasks completed successfully</div>
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-yellow-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-yellow-400 text-2xl">💰</span>
+                <div className="w-20 h-20 bg-gradient-to-br from-green-600/20 to-green-800/20 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-green-500/30">
+                  <span className="text-green-400 text-3xl">💰</span>
                 </div>
-                <div className="text-3xl font-bold text-white mb-1">
-                  {totalEarned < 0.001 && totalEarned > 0
-                    ? totalEarned.toFixed(6)
-                    : totalEarned.toFixed(2)}{" "}
-                  USDC
+                <div className="text-4xl font-bold text-white mb-2">
+                  {totalEarnings < 0.001 && totalEarnings > 0
+                    ? totalEarnings.toFixed(6)
+                    : totalEarnings.toFixed(2)}
                 </div>
-                <div className="text-gray-400 text-sm">Total Earned</div>
-                <div className="text-xs text-yellow-400 mt-1">Cumulative rewards received</div>
+                <div className="text-gray-400 text-sm font-medium">Total USDC</div>
+                <div className="text-xs text-green-400 mt-2">Lifetime earnings</div>
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-blue-400 text-2xl">📈</span>
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-blue-500/30">
+                  <span className="text-blue-400 text-3xl">📈</span>
                 </div>
-                <div className="text-3xl font-bold text-white mb-1">
-                  {completedBounties.length > 0
-                    ? (totalEarned / completedBounties.length).toFixed(2)
-                    : "0.00"}{" "}
-                  USDC
+                <div className="text-4xl font-bold text-white mb-2">
+                  {avgEarningsPerTask < 0.001 && avgEarningsPerTask > 0
+                    ? avgEarningsPerTask.toFixed(6)
+                    : avgEarningsPerTask.toFixed(2)}
                 </div>
-                <div className="text-gray-400 text-sm">Average per Task</div>
-                <div className="text-xs text-blue-400 mt-1">Mean earning per completion</div>
+                <div className="text-gray-400 text-sm font-medium">Avg/Task</div>
+                <div className="text-xs text-blue-400 mt-2">Mean earning per task</div>
+              </div>
+
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-yellow-600/20 to-yellow-800/20 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-yellow-500/30">
+                  <span className="text-yellow-400 text-3xl">⚡</span>
+                </div>
+                <div className="text-4xl font-bold text-white mb-2">
+                  {totalStakedAmount < 0.001 && totalStakedAmount > 0
+                    ? totalStakedAmount.toFixed(6)
+                    : totalStakedAmount.toFixed(2)}
+                </div>
+                <div className="text-gray-400 text-sm font-medium">Active Stakes</div>
+                <div className="text-xs text-yellow-400 mt-2">USDC currently staked</div>
               </div>
             </div>
 
-            {/* Additional Platform Info */}
-            <div className="mt-8 pt-6 border-t border-emerald-600/20">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-300">
+            {/* Platform Features */}
+            <div className="mt-12 pt-8 border-t border-gray-700/50">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-gray-300">
                 <div className="text-center">
-                  <div className="font-medium text-white mb-1">🔒 Secure</div>
-                  <div>Smart contract protection for all transactions</div>
+                  <div className="font-bold text-white mb-2 text-lg">🔒 Secure Escrow</div>
+                  <div className="leading-relaxed">Smart contracts ensure safe transactions and automatic payments</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-medium text-white mb-1">⚡ Fast</div>
-                  <div>Instant payments upon task completion</div>
+                  <div className="font-bold text-white mb-2 text-lg">⚡ Instant Payments</div>
+                  <div className="leading-relaxed">Get paid immediately upon successful task completion</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-medium text-white mb-1">🌍 Global</div>
-                  <div>Connect with workers worldwide</div>
+                  <div className="font-bold text-white mb-2 text-lg">🌍 Global Network</div>
+                  <div className="leading-relaxed">Connect with employers and workers from around the world</div>
                 </div>
               </div>
             </div>
