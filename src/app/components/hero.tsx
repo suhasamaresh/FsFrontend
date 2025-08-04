@@ -153,7 +153,7 @@ export default function Hero() {
           className="text-7xl md:text-8xl lg:text-[7rem] font-bold mb-6 leading-tight text-white"
           variants={containerVariants}
         >
-          <span className="font-bold ml-1">FlashSuit</span>
+          <span className="font-bold ml-1">FlashSuite</span>
         </motion.h1>
 
         <motion.h2

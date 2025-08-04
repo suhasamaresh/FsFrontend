@@ -67,7 +67,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className="flex items-center justify-between px-6 py-4 w-full
+      className="flex items-center justify-between px-6 pl-10 py-4 w-full
             bg-gradient-to-br from-emerald-900 via-black to-black/90
             shadow-lg border-b border-emerald-400/20 backdrop-blur-md"
       initial={{ opacity: 0, y: -20 }}
@@ -75,7 +75,7 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
     >
       <motion.span
-        className="font-black text-3xl bg-gradient-to-r from-emerald-400 via-green-300 to-lime-300 bg-clip-text text-transparent cursor-pointer tracking-tight"
+        className="font-black text-3xl bg-gradient-to-r from-emerald-400 via-green-300 to-lime-300 bg-clip-text text-transparent cursor-pointer tracking-tight ml-4"
         variants={logoVariants}
         initial="initial"
         animate="animate"
