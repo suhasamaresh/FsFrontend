@@ -81,7 +81,7 @@ export default function Navbar() {
         animate="animate"
         whileHover="hover"
       >
-        FlashSplit
+        FlashSuite
       </motion.span>
 
       <div className="flex items-center gap-4">
