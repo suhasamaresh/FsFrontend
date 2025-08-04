@@ -136,4 +136,4 @@ Special thanks to:
 
 ---
 
-**FlashSuite: The Web3 social toolkit for groups that want to build, create, and grow together. We’re just getting started—join us on this journey!**
+**FlashSuite: The Web3 social toolkit for groups that want to build, create, and grow together. **
