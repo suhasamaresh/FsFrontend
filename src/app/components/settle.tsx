@@ -5,7 +5,7 @@ import { ethers } from "ethers";
 import { useAccount, useWalletClient } from "wagmi";
 import { GraphQLClient, gql } from "graphql-request";
 import { motion } from "framer-motion";
-import { abi as FlashSplitAbi } from "../../../FlashSplit.json";
+import FlashSplitAbi from "../../../FlashSplit.json";
 
 const CONTRACT_ADDRESS = "0x710B24E1e66244165728CDcfbe4916b48cE20faB";
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
@@ -117,7 +117,7 @@ export default function SettlePage() {
     async function checkUnsettled() {
       setLoading(true);
       const provider = new ethers.BrowserProvider(walletClient as any);
-      const contract = new ethers.Contract(CONTRACT_ADDRESS, FlashSplitAbi, provider);
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, FlashSplitAbi.abi, provider);
 
       const results: (Group & { balanceWei: string })[] = [];
       for (const group of groups) {
@@ -151,7 +151,7 @@ export default function SettlePage() {
     try {
       const provider = new ethers.BrowserProvider(walletClient as any);
       const signer = await provider.getSigner();
-      const contract = new ethers.Contract(CONTRACT_ADDRESS, FlashSplitAbi, signer);
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, FlashSplitAbi.abi, signer);
       let tx;
       // If native ETH/Xtz
       if (currency.toLowerCase() === ZERO_ADDRESS) {

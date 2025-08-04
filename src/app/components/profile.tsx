@@ -5,7 +5,7 @@ import { ethers } from "ethers";
 import { useAccount, useWalletClient } from "wagmi";
 import { GraphQLClient, gql } from "graphql-request";
 import { motion } from "framer-motion";
-import { abi as FlashSplitAbi } from "../../../FlashSplit.json";
+import FlashSplitAbi from "../../../FlashSplit.json";
 
 const GRAPHQL_ENDPOINT =
   "https://api.goldsky.com/api/public/project_cmd7nwdt58hqk01yf3ekxeozd/subgraphs/FS/1.0.0/gn";
@@ -151,7 +151,7 @@ export default function UserProfileDashboard() {
         let fastCount = 0;
         if (walletClient) {
           const provider = new ethers.BrowserProvider(walletClient);
-          const contract = new ethers.Contract(CONTRACT_ADDRESS, FlashSplitAbi, provider);
+          const contract = new ethers.Contract(CONTRACT_ADDRESS, FlashSplitAbi.abi, provider);
           try {
             const profile = await contract.getUserProfile(address);
             fastCount = Number(profile.fastSettlementCount ?? 0);
@@ -177,7 +177,7 @@ export default function UserProfileDashboard() {
       try {
         if (!walletClient) return;
         const provider = new ethers.BrowserProvider(walletClient);
-        const contract = new ethers.Contract(CONTRACT_ADDRESS, FlashSplitAbi, provider);
+        const contract = new ethers.Contract(CONTRACT_ADDRESS, FlashSplitAbi.abi, provider);
 
         const statuses: Record<number, { isCompleted: boolean; settledCount: number; memberCount: number }> = {};
 
@@ -215,7 +215,7 @@ export default function UserProfileDashboard() {
     try {
       const provider = new ethers.BrowserProvider(walletClient);
       const signer = await provider.getSigner();
-      const contract = new ethers.Contract(CONTRACT_ADDRESS, FlashSplitAbi, signer);
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, FlashSplitAbi.abi, signer);
 
       const tx = await contract.reclaimFunds(groupId);
       const receipt = await tx.wait();

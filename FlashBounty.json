@@ -1,0 +1,2141 @@
+{
+    "abi": [
+        {
+            "type": "constructor",
+            "inputs": [
+                {
+                    "name": "_token",
+                    "type": "address",
+                    "internalType": "contract IERC20"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "autoComplete",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "batchCompleteBounties",
+            "inputs": [
+                {
+                    "name": "bountyIds",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "bounties",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "description",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "poster",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "worker",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "stakeAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "tipAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "deadline",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "status",
+                    "type": "uint8",
+                    "internalType": "enum FlashBounty.BountyStatus"
+                },
+                {
+                    "name": "createdAt",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "claimedAt",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "submittedAt",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "completedAt",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "proofHash",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "category",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "fundsReleased",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "bountyCounter",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "canAutoComplete",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "canCancel",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "canComplete",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "cancelBounty",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "reason",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "categorizedBounties",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "claimBounty",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "completeBounty",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "getBountiesByCategory",
+            "inputs": [
+                {
+                    "name": "category",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getBountiesByStatus",
+            "inputs": [
+                {
+                    "name": "status",
+                    "type": "uint8",
+                    "internalType": "enum FlashBounty.BountyStatus"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getBounty",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "tuple",
+                    "internalType": "struct FlashBounty.Bounty",
+                    "components": [
+                        {
+                            "name": "description",
+                            "type": "string",
+                            "internalType": "string"
+                        },
+                        {
+                            "name": "poster",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "worker",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "stakeAmount",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        },
+                        {
+                            "name": "tipAmount",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        },
+                        {
+                            "name": "deadline",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        },
+                        {
+                            "name": "status",
+                            "type": "uint8",
+                            "internalType": "enum FlashBounty.BountyStatus"
+                        },
+                        {
+                            "name": "createdAt",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        },
+                        {
+                            "name": "claimedAt",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        },
+                        {
+                            "name": "submittedAt",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        },
+                        {
+                            "name": "completedAt",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        },
+                        {
+                            "name": "proofHash",
+                            "type": "string",
+                            "internalType": "string"
+                        },
+                        {
+                            "name": "category",
+                            "type": "string",
+                            "internalType": "string"
+                        },
+                        {
+                            "name": "fundsReleased",
+                            "type": "bool",
+                            "internalType": "bool"
+                        }
+                    ]
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getOpenBountiesCount",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "count",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getTotalValueLocked",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "stakes",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "tips",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getUserClaimedBounties",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getUserCompletedBounties",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getUserPostedBounties",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "handleExpiredBounty",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "postBounty",
+            "inputs": [
+                {
+                    "name": "description",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "category",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "stakeAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "tipAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "durationHours",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "submitBounty",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "proofHash",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "token",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "contract IERC20"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "userClaimedBounties",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "userCompletedBounties",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "userPostedBounties",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "event",
+            "name": "BountyActivity",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "user",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "action",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "BountyCancelled",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "poster",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "tipRefunded",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "reason",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "BountyClaimed",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "worker",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "stakeAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "BountyCompleted",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "poster",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "worker",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "stakeRefund",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "tipPaid",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "BountyDisputed",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "disputer",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "reason",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "BountyPosted",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "poster",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "category",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "stakeAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "tipAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "deadline",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "BountySubmitted",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "worker",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "proofHash",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "FundsReleased",
+            "inputs": [
+                {
+                    "name": "bountyId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "recipient",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "stakeAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "tipAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "releaseType",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "error",
+            "name": "ReentrancyGuardReentrantCall",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "SafeERC20FailedOperation",
+            "inputs": [
+                {
+                    "name": "token",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ]
+        }
+    ],
+    "bytecode": {
+        "object": "0x60a0346100ad57601f6129c238819003918201601f19168301916001600160401b038311848410176100b1578084926020946040528339810103126100ad57516001600160a01b03811681036100ad5760015f556080526040516128fc90816100c6823960805181818161014c0152818161072d015281816111ba015281816114f20152818161178e01528181611a7901528181611ea80152818161200b015281816120ec01526121a90152f35b5f80fd5b634e487b7160e01b5f52604160045260245ffdfe60806040526004361015610011575f80fd5b5f3560e01c806303fa063714611f65578063139005ab14611dcc578063211f54d914611d8357806328aea1bb14611cf3578063332710d414611bce57806344021ad714611a0957806345365b411461198c57806361f1f0eb146119105780636c68943a146118e057806373d86aae1461186a57806376d7116114611622578063859c5b6514611447578063a054c7c8146113a5578063a0d5978714611388578063a635e7e814611312578063a90d580d146110e0578063b26025aa14611011578063b2b5df6814610db5578063bf0689d3146106a6578063cac3bb8414610620578063d189945c146105c9578063d8219b1b14610540578063dc2f874414610427578063e2b8d560146103cf578063ee8c4bbf1461017f5763fc0c546a14610137575f80fd5b3461017b575f36600319011261017b576040517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b5f80fd5b3461017b57602036600319011261017b575f6101a06040516101a081612308565b606081528260208201528260408201528260608201528260808201528260a08201528260c08201528260e08201528261010082015282610120820152826101408201526060610160820152606061018082015201526004355f52600260205260405f206040519061021082612308565b61021981612416565b825260018101546001600160a01b03908116602084015260028201541660408301526003810154606083015260048101546080830152600581015460a083015260068082015460ff16908110156103bb5760ff91600d9160c0850152600781015460e085015260088101546101008501526009810154610120850152600a8101546101408501526102ac600b8201612416565b6101608501526102be600c8201612416565b61018085015201541615156101a08201526040518091602082526101a06103ac6102f683516101c060208701526101e08601906124b8565b60018060a01b03602085015116604086015260018060a01b03604085015116606086015260608401516080860152608084015160a086015260a084015160c086015261034a60c085015160e08701906124dd565b60e084015161010086015261010084015161012086015261012084015161014086015261014084015161016086015261039761016085015191601f199283888303016101808901526124b8565b906101808501519086830301848701526124b8565b91015115156101c08301520390f35b634e487b7160e01b5f52602160045260245ffd5b3461017b57604036600319011261017b576103e861225f565b6001600160a01b03165f9081526003602052604090208054602435919082101561017b576020916104189161228b565b90549060031b1c604051908152f35b3461017b57602036600319011261017b576004355f52600260205260405f2061044f81612416565b600160a01b600190038060018401541690600284015416926003810154916004820154906005830154600684015460ff166007850154600886015490600987015492600a88015494600b89016104a490612416565b976104b1600c8b01612416565b99600d015460ff169a6040519d8e809e6101c080835282016104d2916124b8565b9a60208201526040015260608d015260808c015260a08b015260c08a016104f8916124dd565b60e0890152610100880152610120870152610140860152848103610160860152610521916124b8565b838103610180850152610533916124b8565b9015156101a08301520390f35b3461017b575f36600319011261017b57600180545f90815b81811061056a57602083604051908152f35b805f52600290602082815260069260ff8460405f20015416938410156103bb5786931591826105b1575b50506105a1575b01610558565b926105ab9061260d565b9261059b565b909150825f5252600560405f20015442108680610594565b3461017b57604036600319011261017b576105e261225f565b6001600160a01b03165f9081526005602052604090208054602435919082101561017b576020916106129161228b565b90546040519160031b1c8152f35b3461017b5760208060031936011261017b576001600160a01b0361064261225f565b165f52600360205260405f20906040519081602084549182815201935f5260205f20915f905b82821061068f5761068b8561067f81890382612324565b604051918291826122cd565b0390f35b835486529485019460019384019390910190610668565b3461017b5760a036600319011261017b576004356001600160401b03811161017b576106d69036906004016122a0565b6024356001600160401b03811161017b576106f59036906004016122a0565b6106fd61277d565b8215610d795760443515610d3b5760643515610cff57608435151580610cf2575b15610cb95761075160643530337f000000000000000000000000000000000000000000000000000000000000000061281c565b6001549261075e8461260d565b600155608435610e106084350204610e1014608435151715610ca55761078a610e10608435024261252f565b926040519261079884612308565b6107a3368489612345565b84523360208501525f6040850152604435606085015260643560808501528460a08501525f60c08501524260e08501525f6101008501525f6101208501525f6101408501526040518060208101106001600160401b03602083011117610bb057602081016040525f815261016085015261081e368284612345565b6101808501525f6101a0850152855f52600260205260405f209684518051906001600160401b038211610bb05761085f826108598c546123de565b8c61272e565b602090601f8311600114610c3d5761088e92915f9183610bc4575b50508160011b915f199060031b1c19161790565b88555b6001880160018060a01b039081602088015116906bffffffffffffffffffffffff60a01b918282541617905560028a019160408801511690825416179055606085015160038901556080850151600489015560a085015160058901556006880160c086015160068110156103bb5760ff8019835416911617905560e0850151600789015561010085015160088901556101208501516009890155610140850151600a8901556101608501518051906001600160401b038211610bb0576109678261095e600b8d01546123de565b600b8d0161272e565b602090601f8311600114610bcf5761099592915f9183610bc45750508160011b915f199060031b1c19161790565b600b8901555b610180850151948551986001600160401b038a11610bb0578989976109d260209c6109c9600c8601546123de565b600c860161272e565b8b90601f8311600114610b0957600d610a8d94610a32857f6e502df9a123cdc0a12ac8c244d5c2e5292a50975460d027dbd053262588886f9c9b9996610a9a9b99966101a0965f92610afe5750508160011b915f199060031b1c19161790565b600c8201555b01910151151560ff80198354169116179055335f5260038b52610a5e8860405f2061253c565b610a7b88604051858782378d81878101600681520301902061253c565b6040519560c0875260c08701916126d5565b918483038a8601526126d5565b936044356040830152606435606083015260808201524260a08201528033940390a36040516040815260066040820152651c1bdcdd195960d21b60608201524283820152815f805160206128a783398151915260803393a360015f55604051908152f35b015190505f8061087a565b600c8493929a999897969594015f528c5f20905f5b601f1984168110610b965750610a9a979695936001846101a0947f6e502df9a123cdc0a12ac8c244d5c2e5292a50975460d027dbd053262588886f9d9e600d95610a8d9a98601f19811610610b7e575b505050811b01600c820155610a38565b01515f1960f88460031b161c191690555f8080610b6e565b818c015183559a8e019a8d9a506001909201918e01610b1e565b634e487b7160e01b5f52604160045260245ffd5b015190508b8061087a565b9190600b8b015f5260205f20905f935b601f1984168510610c22576001945083601f19811610610c0a575b505050811b01600b89015561099b565b01515f1960f88460031b161c191690558a8080610bfa565b81810151835560209485019460019093019290910190610bdf565b91908a5f5260205f20905f935b601f1984168510610c8a576001945083601f19811610610c72575b505050811b018855610891565b01515f1960f88460031b161c191690558a8080610c65565b81810151835560209485019460019093019290910190610c4a565b634e487b7160e01b5f52601160045260245ffd5b60405162461bcd60e51b81526020600482015260116024820152704475726174696f6e2031682d317765656b60781b6044820152606490fd5b5060a8608435111561071e565b60405162461bcd60e51b8152602060048201526014602482015273546970206d75737420626520706f73697469766560601b6044820152606490fd5b60405162461bcd60e51b81526020600482015260166024820152755374616b65206d75737420626520706f73697469766560501b6044820152606490fd5b60405162461bcd60e51b815260206004820152601460248201527311195cd8dc9a5c1d1a5bdb881c995c5d5a5c995960621b6044820152606490fd5b3461017b57610dc3366123ab565b825f939293526020926002845260405f2090610dec60018060a01b0360028401541633146126f5565b6006828101805460ff811694928510156103bb576001809503610fd757610e1860058401544210612632565b8515610fa15760ff19166002179055426009820155600b016001600160401b038411610bb057838593610e5582610e4f85546123de565b8561272e565b5f90601f8311600114610f10575091610ea9827f210a6f6c43a61313a076c6fb865d77cb000f09abd7f3141b5d4f7859904963a49593610ebe955f91610f05575b508160011b915f199060031b1c19161790565b90555b604051946040865260408601916126d5565b9242868201528033940390a3604051916040835260096040840152681cdd589b5a5d1d195960ba1b606084015242908301525f805160206128a783398151915260803393a3005b90508401358b610e96565b91601f198116845f52895f20935f905b8b838310610f8357505050917f210a6f6c43a61313a076c6fb865d77cb000f09abd7f3141b5d4f7859904963a4959391610ebe959310610f6a575b5050600186811b019055610eac565b8301355f19600389901b60f8161c191690558880610f5b565b8886013587558b995095810195948501948a94509190910190610f20565b60405162461bcd60e51b815260048101899052600e60248201526d141c9bdbd9881c995c5d5a5c995960921b6044820152606490fd5b60405162461bcd60e51b8152600481018990526012602482015271109bdd5b9d1e481b9bdd0818db185a5b595960721b6044820152606490fd5b3461017b575f36600319011261017b57600180545f908190815b818110611042576040848482519182526020820152f35b8085915f5260028060205260405f2060ff9182600d830154161561106a575b5050500161102b565b9091935060069384830154169384101590816103bb578885149081156110d3575b506110bd575b6103bb5760058793036110a6575b8080611061565b9360046110b6929501549061252f565b928661109f565b956110cd9060038301549061252f565b95611091565b9150505f9084148961108b565b3461017b5760208060031936011261017b576004356110fd61277d565b805f526002825260405f2060018060a01b036111208160028401541633146126f5565b60068201805460ff811660068110156103bb57600261113f91146125ae565b600d84019182549061115460ff8316156124ea565b60098601546202a3008101809111610ca55742106112d5579060019291600360ff1980941617905542600a87015516179055335f526005845261119a8360405f2061253c565b600382019060018254936111de6111b7600483019687549061252f565b337f000000000000000000000000000000000000000000000000000000000000000061279e565b015416905491549060405190847f56355901118389903ab0610d1aed268483b0574c99be665949a679352f271e5733938061122c42888a846040919493926060820195825260208201520152565b0390a46040519182528382015260806040820152815f8051602061288783398151915261127860808401604090600e81526d185d5d1bcb58dbdb5c1b195d195960921b60208201520190565b924260608201528033940390a35f805160206128a7833981519152604051604081526112c360408201604090600e81526d185d5d1bcb58dbdb5c1b195d195960921b60208201520190565b9342908201528033940390a360015f55005b60405162461bcd60e51b815260048101899052601560248201527423b930b1b2903832b934b7b2103737ba1037bb32b960591b6044820152606490fd5b3461017b5760208060031936011261017b576001600160a01b0361133461225f565b165f52600560205260405f20906040519081602084549182815201935f5260205f20915f905b8282106113715761068b8561067f81890382612324565b83548652948501946001938401939091019061135a565b3461017b575f36600319011261017b576020600154604051908152f35b3461017b57604036600319011261017b576113be612275565b6004355f52600260205260405f209060018060a01b0380600284015416911614908161142b575b8161141b575b816113fe575b6020826040519015158152f35b6009915001546202a3008101809111610ca55742101560206113f1565b600d81015460ff161591506113eb565b905060ff60068201541660068110156103bb57600214906113e5565b3461017b57611455366123ab565b61145d61277d565b825f52600260205260405f2061148060018060a01b036001830154163314612575565b600681019081549160ff831660068110156103bb576115dd576004826115309260018996600d7fbf7f1a787fde833e978d6cfa967b0316eb2aa90ff171d0d1a7b7f2e30b638af99701928354906114da60ff8316156124ea565b600560ff1980941617905516179055016115168154337f000000000000000000000000000000000000000000000000000000000000000061279e565b5494604051948686526060602087015260608601916126d5565b924260408201528033940390a3604051905f8252602082015260806040820152815f8051602061288783398151915261158360808401604090600981526818d85b98d95b1b195960ba1b60208201520190565b924260608201528033940390a360405190604082525f805160206128a78339815191526115ca60408401604090600981526818d85b98d95b1b195960ba1b60208201520190565b924260208201528033940390a360015f55005b60405162461bcd60e51b815260206004820152601c60248201527f43616e6e6f742063616e63656c20636c61696d656420626f756e7479000000006044820152606490fd5b3461017b57602036600319011261017b576004356001600160401b0380821161017b573660238301121561017b5781600401351161017b57600590366024826004013560051b8301011161017b575f5b8160040135811061167f57005b61169b33611695838560040135602487016126c5565b3561266f565b6116a8575b600101611672565b6116ba818360040135602485016126c5565b35906116c461277d565b815f52600260205260405f20916116e860018060a01b036001850154163314612575565b600680840154938160ff861610156103bb575f8051602061288783398151915283918661171c600260ff60019a16146125ae565b87600d830191825461173160ff8216156124ea565b6003978860ff19809416179086015542600a860155161790556002810193878060a01b038554165f528960205261176b8460405f2061253c565b8101936117b26117836004875494019384549061252f565b898060a01b038354167f000000000000000000000000000000000000000000000000000000000000000061279e565b878060a01b039054169354905484604051857f56355901118389903ab0610d1aed268483b0574c99be665949a679352f271e5733928061180542888a846040919493926060820195825260208201520152565b0390a46118286040519283926080918452602084015280604084015282016125f1565b4260608301520390a360405190604082525f805160206128a7833981519152611853604084016125f1565b924260208201528033940390a3815f5590506116a0565b3461017b5760208060031936011261017b576001600160a01b0361188c61225f565b165f52600460205260405f20906040519081602084549182815201935f5260205f20915f905b8282106118c95761068b8561067f81890382612324565b8354865294850194600193840193909101906118b2565b3461017b57604036600319011261017b5760206119066118fe612275565b60043561266f565b6040519015158152f35b3461017b57604036600319011261017b576004356001600160401b03811161017b573660238201121561017b57611951903690602481600401359101612345565b61196d602060243592816040519382858094519384920161238a565b81016006815203019020805482101561017b576020916106129161228b565b3461017b57604036600319011261017b576119a5612275565b6004355f52600260205260405f209060018060a01b0380600184015416911614806119ef575b602091816119df575b506040519015158152f35b60ff9150600d01541615826119d4565b5060ff6006820154169060068210156103bb5790156119cb565b3461017b5760208060031936011261017b57600435611a2661277d565b805f526002825260405f20600681019060ff82541660068110156103bb57611b9257611a5760058201544210612632565b60018101546001600160a01b03163314611b4d576003810191611a9d835430337f000000000000000000000000000000000000000000000000000000000000000061281c565b600160ff1982541617905560028101336bffffffffffffffffffffffff60a01b825416179055600842910155335f5260048352611add8260405f2061253c565b546040519081524283820152817f2eefa727cced3362efe12827696bbd9df4926abce3c569ddaf6b9634ae1af14760403393a36040519160408352600760408401526618db185a5b595960ca1b606084015242908301525f805160206128a783398151915260803393a360015f55005b60405162461bcd60e51b815260048101859052601760248201527f43616e6e6f7420636c61696d206f776e20626f756e74790000000000000000006044820152606490fd5b60405162461bcd60e51b8152600481018590526014602482015273426f756e7479206e6f7420617661696c61626c6560601b6044820152606490fd5b3461017b5760208060031936011261017b57600660043581811015928361017b575f925f9260019580600154955b868110611cb4575050611c0e8661261b565b95611c1c6040519788612324565b808752611c2b601f199161261b565b013660208801375f925f5b868110611c4b576040518061068b8a826122cd565b8083915f526002875260ff8360405f20015416916103bb57828210156103bb57848a9214611c7a575b01611c36565b9490508751811015611ca057611c9a8186888c9460051b8c01015261260d565b94611c74565b634e487b7160e01b5f52603260045260245ffd5b805f526002865260ff8560405f20015416916103bb57848210156103bb5783899214611ce3575b018190611bfc565b96611ced9061260d565b96611cdb565b3461017b5760208060031936011261017b576004356001600160401b03811161017b57611d2660209136906004016122a0565b919082604051938492833781016006815203019020906040519081602084549182815201935f5260205f20915f905b828210611d6c5761068b8561067f81890382612324565b835486529485019460019384019390910190611d55565b3461017b57604036600319011261017b57611d9c61225f565b6001600160a01b03165f9081526004602052604090208054602435919082101561017b576020916106129161228b565b3461017b57602036600319011261017b57600435611de861277d565b805f52600260205260405f2060018060a01b0390611e0d826001830154163314612575565b600681019081549060ff82169260068410156103bb5760015f8051602061288783398151915293611e4160028997146125ae565b600d840192835490611e5660ff8316156124ea565b600360ff1980941617905542600a860155161790556002810193808554165f526005602052611e888460405f2061253c565b6003820194611ecc611ea26004885495019485549061252f565b838354167f000000000000000000000000000000000000000000000000000000000000000061279e565b54169354905484604051857f56355901118389903ab0610d1aed268483b0574c99be665949a679352f271e57339280611f1842888a846040919493926060820195825260208201520152565b0390a460405191825260208201526080604082015280611f3a608082016125f1565b4260608301520390a360405190604082525f805160206128a78339815191526115ca604084016125f1565b3461017b5760208060031936011261017b57600435611f8261277d565b805f526002825260405f20600581015442111561222c57600d8101805490611fad60ff8316156124ea565b600160ff19809316179055600682019081549060ff821660068110156103bb57806120ab575060059150825416179055815f8051602061288783398151915260c06001840160018060a01b039061202f6004838354169701968754907f000000000000000000000000000000000000000000000000000000000000000061279e565b54169354604051905f825287820152608060408201526011608082015270195e1c1a5c99590b5d5b98db185a5b5959607a1b60a0820152426060820152a35b60405191604083526007604084015266195e1c1a5c995960ca1b606084015242908301525f805160206128a783398151915260803393a360015f55005b60018103612151575060059150825416179055815f8051602061288783398151915260c06001840160018060a01b03906121106004838354169701968754907f000000000000000000000000000000000000000000000000000000000000000061279e565b54169354604051905f82528782015260806040820152600f60808201526e195e1c1a5c99590b58db185a5b5959608a1b60a0820152426060820152a361206e565b600214612162575b5050505061206e565b60039116179055815f8051602061288783398151915260c060038401938454906002612194600483019384549061252f565b910180546001600160a01b03926121cd9184167f000000000000000000000000000000000000000000000000000000000000000061279e565b818154165f52600589526121e48660405f2061253c565b54169454905460405191825287820152608060408201526011608082015270195e1c1a5c99590b5cdd589b5a5d1d1959607a1b60a0820152426060820152a382808080612159565b60405162461bcd60e51b815260048101849052600b60248201526a139bdd08195e1c1a5c995960aa1b6044820152606490fd5b600435906001600160a01b038216820361017b57565b602435906001600160a01b038216820361017b57565b8054821015611ca0575f5260205f2001905f90565b9181601f8401121561017b578235916001600160401b03831161017b576020838186019501011161017b57565b60209060206040818301928281528551809452019301915f5b8281106122f4575050505090565b8351855293810193928101926001016122e6565b6101c081019081106001600160401b03821117610bb057604052565b90601f801991011681019081106001600160401b03821117610bb057604052565b9291926001600160401b038211610bb0576040519161236e601f8201601f191660200184612324565b82948184528183011161017b578281602093845f960137010152565b5f5b83811061239b5750505f910152565b818101518382015260200161238c565b90604060031983011261017b5760043591602435906001600160401b03821161017b576123da916004016122a0565b9091565b90600182811c9216801561240c575b60208310146123f857565b634e487b7160e01b5f52602260045260245ffd5b91607f16916123ed565b9060405191825f8254612428816123de565b908184526020946001916001811690815f146124965750600114612458575b50505061245692500383612324565b565b5f90815285812095935091905b81831061247e57505061245693508201015f8080612447565b85548884018501529485019487945091830191612465565b9250505061245694925060ff191682840152151560051b8201015f8080612447565b906020916124d18151809281855285808601910161238a565b601f01601f1916010190565b9060068210156103bb5752565b156124f157565b60405162461bcd60e51b8152602060048201526016602482015275119d5b991cc8185b1c9958591e481c995b19585cd95960521b6044820152606490fd5b91908201809211610ca557565b805468010000000000000000811015610bb05761255e9160018201815561228b565b819291549060031b91821b915f19901b1916179055565b1561257c57565b60405162461bcd60e51b815260206004820152600a6024820152692737ba103837b9ba32b960b11b6044820152606490fd5b156125b557565b60405162461bcd60e51b8152602060048201526014602482015273109bdd5b9d1e481b9bdd081cdd589b5a5d1d195960621b6044820152606490fd5b600981526818dbdb5c1b195d195960ba1b602082015260400190565b5f198114610ca55760010190565b6001600160401b038111610bb05760051b60200190565b1561263957565b60405162461bcd60e51b815260206004820152600e60248201526d109bdd5b9d1e48195e1c1a5c995960921b6044820152606490fd5b5f52600260205260405f209060018060a01b038060018401541691161490816126a9575b8161269c575090565b60ff9150600d0154161590565b905060ff60068201541660068110156103bb5760021490612693565b9190811015611ca05760051b0190565b908060209392818452848401375f828201840152601f01601f1916010190565b156126fc57565b60405162461bcd60e51b815260206004820152600a6024820152692737ba103bb7b935b2b960b11b6044820152606490fd5b601f821161273b57505050565b5f5260205f20906020601f840160051c83019310612773575b601f0160051c01905b818110612768575050565b5f815560010161275d565b9091508190612754565b60025f541461278c5760025f55565b604051633ee5aeb560e01b8152600490fd5b60405163a9059cbb60e01b5f9081526001600160a01b039384166004526024949094529260209060448180855af160015f51148116156127fd575b83604052156127e757505050565b635274afe760e01b835216600482015260249150fd5b600181151661281357813b15153d1516166127d9565b833d5f823e3d90fd5b6040516323b872dd60e01b5f9081526001600160a01b03938416600452938316602452604494909452909160209060648180855af160015f5114811615612870575b836040525f606052156127e757505050565b600181151661281357813b15153d15161661285e56fea47c8c39c4e94321fad322f103657729ed0634c0ff9a47d537ba3963e92407b3e5c4685a066af67a451daacd9b355bbbc45c1bf423b81592c3e289bcdf55a47ba2646970667358221220e4ee1aff7cd6bcac2c237efd86a08dbcd8a2eabb3fd7d8badd4a610f14b381b364736f6c63430008180033",
+        "sourceMap": "409:14544:25:-:0;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;1857:1:22;-1:-1:-1;1857:1:22;3165:14:25;;409:14544;;;;;;;;3165:14;409:14544;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;409:14544:25;;;;;;-1:-1:-1;409:14544:25;;;;;-1:-1:-1;409:14544:25",
+        "linkReferences": {}
+    },
+    "deployedBytecode": {
+        "object": "0x60806040526004361015610011575f80fd5b5f3560e01c806303fa063714611f65578063139005ab14611dcc578063211f54d914611d8357806328aea1bb14611cf3578063332710d414611bce57806344021ad714611a0957806345365b411461198c57806361f1f0eb146119105780636c68943a146118e057806373d86aae1461186a57806376d7116114611622578063859c5b6514611447578063a054c7c8146113a5578063a0d5978714611388578063a635e7e814611312578063a90d580d146110e0578063b26025aa14611011578063b2b5df6814610db5578063bf0689d3146106a6578063cac3bb8414610620578063d189945c146105c9578063d8219b1b14610540578063dc2f874414610427578063e2b8d560146103cf578063ee8c4bbf1461017f5763fc0c546a14610137575f80fd5b3461017b575f36600319011261017b576040517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b5f80fd5b3461017b57602036600319011261017b575f6101a06040516101a081612308565b606081528260208201528260408201528260608201528260808201528260a08201528260c08201528260e08201528261010082015282610120820152826101408201526060610160820152606061018082015201526004355f52600260205260405f206040519061021082612308565b61021981612416565b825260018101546001600160a01b03908116602084015260028201541660408301526003810154606083015260048101546080830152600581015460a083015260068082015460ff16908110156103bb5760ff91600d9160c0850152600781015460e085015260088101546101008501526009810154610120850152600a8101546101408501526102ac600b8201612416565b6101608501526102be600c8201612416565b61018085015201541615156101a08201526040518091602082526101a06103ac6102f683516101c060208701526101e08601906124b8565b60018060a01b03602085015116604086015260018060a01b03604085015116606086015260608401516080860152608084015160a086015260a084015160c086015261034a60c085015160e08701906124dd565b60e084015161010086015261010084015161012086015261012084015161014086015261014084015161016086015261039761016085015191601f199283888303016101808901526124b8565b906101808501519086830301848701526124b8565b91015115156101c08301520390f35b634e487b7160e01b5f52602160045260245ffd5b3461017b57604036600319011261017b576103e861225f565b6001600160a01b03165f9081526003602052604090208054602435919082101561017b576020916104189161228b565b90549060031b1c604051908152f35b3461017b57602036600319011261017b576004355f52600260205260405f2061044f81612416565b600160a01b600190038060018401541690600284015416926003810154916004820154906005830154600684015460ff166007850154600886015490600987015492600a88015494600b89016104a490612416565b976104b1600c8b01612416565b99600d015460ff169a6040519d8e809e6101c080835282016104d2916124b8565b9a60208201526040015260608d015260808c015260a08b015260c08a016104f8916124dd565b60e0890152610100880152610120870152610140860152848103610160860152610521916124b8565b838103610180850152610533916124b8565b9015156101a08301520390f35b3461017b575f36600319011261017b57600180545f90815b81811061056a57602083604051908152f35b805f52600290602082815260069260ff8460405f20015416938410156103bb5786931591826105b1575b50506105a1575b01610558565b926105ab9061260d565b9261059b565b909150825f5252600560405f20015442108680610594565b3461017b57604036600319011261017b576105e261225f565b6001600160a01b03165f9081526005602052604090208054602435919082101561017b576020916106129161228b565b90546040519160031b1c8152f35b3461017b5760208060031936011261017b576001600160a01b0361064261225f565b165f52600360205260405f20906040519081602084549182815201935f5260205f20915f905b82821061068f5761068b8561067f81890382612324565b604051918291826122cd565b0390f35b835486529485019460019384019390910190610668565b3461017b5760a036600319011261017b576004356001600160401b03811161017b576106d69036906004016122a0565b6024356001600160401b03811161017b576106f59036906004016122a0565b6106fd61277d565b8215610d795760443515610d3b5760643515610cff57608435151580610cf2575b15610cb95761075160643530337f000000000000000000000000000000000000000000000000000000000000000061281c565b6001549261075e8461260d565b600155608435610e106084350204610e1014608435151715610ca55761078a610e10608435024261252f565b926040519261079884612308565b6107a3368489612345565b84523360208501525f6040850152604435606085015260643560808501528460a08501525f60c08501524260e08501525f6101008501525f6101208501525f6101408501526040518060208101106001600160401b03602083011117610bb057602081016040525f815261016085015261081e368284612345565b6101808501525f6101a0850152855f52600260205260405f209684518051906001600160401b038211610bb05761085f826108598c546123de565b8c61272e565b602090601f8311600114610c3d5761088e92915f9183610bc4575b50508160011b915f199060031b1c19161790565b88555b6001880160018060a01b039081602088015116906bffffffffffffffffffffffff60a01b918282541617905560028a019160408801511690825416179055606085015160038901556080850151600489015560a085015160058901556006880160c086015160068110156103bb5760ff8019835416911617905560e0850151600789015561010085015160088901556101208501516009890155610140850151600a8901556101608501518051906001600160401b038211610bb0576109678261095e600b8d01546123de565b600b8d0161272e565b602090601f8311600114610bcf5761099592915f9183610bc45750508160011b915f199060031b1c19161790565b600b8901555b610180850151948551986001600160401b038a11610bb0578989976109d260209c6109c9600c8601546123de565b600c860161272e565b8b90601f8311600114610b0957600d610a8d94610a32857f6e502df9a123cdc0a12ac8c244d5c2e5292a50975460d027dbd053262588886f9c9b9996610a9a9b99966101a0965f92610afe5750508160011b915f199060031b1c19161790565b600c8201555b01910151151560ff80198354169116179055335f5260038b52610a5e8860405f2061253c565b610a7b88604051858782378d81878101600681520301902061253c565b6040519560c0875260c08701916126d5565b918483038a8601526126d5565b936044356040830152606435606083015260808201524260a08201528033940390a36040516040815260066040820152651c1bdcdd195960d21b60608201524283820152815f805160206128a783398151915260803393a360015f55604051908152f35b015190505f8061087a565b600c8493929a999897969594015f528c5f20905f5b601f1984168110610b965750610a9a979695936001846101a0947f6e502df9a123cdc0a12ac8c244d5c2e5292a50975460d027dbd053262588886f9d9e600d95610a8d9a98601f19811610610b7e575b505050811b01600c820155610a38565b01515f1960f88460031b161c191690555f8080610b6e565b818c015183559a8e019a8d9a506001909201918e01610b1e565b634e487b7160e01b5f52604160045260245ffd5b015190508b8061087a565b9190600b8b015f5260205f20905f935b601f1984168510610c22576001945083601f19811610610c0a575b505050811b01600b89015561099b565b01515f1960f88460031b161c191690558a8080610bfa565b81810151835560209485019460019093019290910190610bdf565b91908a5f5260205f20905f935b601f1984168510610c8a576001945083601f19811610610c72575b505050811b018855610891565b01515f1960f88460031b161c191690558a8080610c65565b81810151835560209485019460019093019290910190610c4a565b634e487b7160e01b5f52601160045260245ffd5b60405162461bcd60e51b81526020600482015260116024820152704475726174696f6e2031682d317765656b60781b6044820152606490fd5b5060a8608435111561071e565b60405162461bcd60e51b8152602060048201526014602482015273546970206d75737420626520706f73697469766560601b6044820152606490fd5b60405162461bcd60e51b81526020600482015260166024820152755374616b65206d75737420626520706f73697469766560501b6044820152606490fd5b60405162461bcd60e51b815260206004820152601460248201527311195cd8dc9a5c1d1a5bdb881c995c5d5a5c995960621b6044820152606490fd5b3461017b57610dc3366123ab565b825f939293526020926002845260405f2090610dec60018060a01b0360028401541633146126f5565b6006828101805460ff811694928510156103bb576001809503610fd757610e1860058401544210612632565b8515610fa15760ff19166002179055426009820155600b016001600160401b038411610bb057838593610e5582610e4f85546123de565b8561272e565b5f90601f8311600114610f10575091610ea9827f210a6f6c43a61313a076c6fb865d77cb000f09abd7f3141b5d4f7859904963a49593610ebe955f91610f05575b508160011b915f199060031b1c19161790565b90555b604051946040865260408601916126d5565b9242868201528033940390a3604051916040835260096040840152681cdd589b5a5d1d195960ba1b606084015242908301525f805160206128a783398151915260803393a3005b90508401358b610e96565b91601f198116845f52895f20935f905b8b838310610f8357505050917f210a6f6c43a61313a076c6fb865d77cb000f09abd7f3141b5d4f7859904963a4959391610ebe959310610f6a575b5050600186811b019055610eac565b8301355f19600389901b60f8161c191690558880610f5b565b8886013587558b995095810195948501948a94509190910190610f20565b60405162461bcd60e51b815260048101899052600e60248201526d141c9bdbd9881c995c5d5a5c995960921b6044820152606490fd5b60405162461bcd60e51b8152600481018990526012602482015271109bdd5b9d1e481b9bdd0818db185a5b595960721b6044820152606490fd5b3461017b575f36600319011261017b57600180545f908190815b818110611042576040848482519182526020820152f35b8085915f5260028060205260405f2060ff9182600d830154161561106a575b5050500161102b565b9091935060069384830154169384101590816103bb578885149081156110d3575b506110bd575b6103bb5760058793036110a6575b8080611061565b9360046110b6929501549061252f565b928661109f565b956110cd9060038301549061252f565b95611091565b9150505f9084148961108b565b3461017b5760208060031936011261017b576004356110fd61277d565b805f526002825260405f2060018060a01b036111208160028401541633146126f5565b60068201805460ff811660068110156103bb57600261113f91146125ae565b600d84019182549061115460ff8316156124ea565b60098601546202a3008101809111610ca55742106112d5579060019291600360ff1980941617905542600a87015516179055335f526005845261119a8360405f2061253c565b600382019060018254936111de6111b7600483019687549061252f565b337f000000000000000000000000000000000000000000000000000000000000000061279e565b015416905491549060405190847f56355901118389903ab0610d1aed268483b0574c99be665949a679352f271e5733938061122c42888a846040919493926060820195825260208201520152565b0390a46040519182528382015260806040820152815f8051602061288783398151915261127860808401604090600e81526d185d5d1bcb58dbdb5c1b195d195960921b60208201520190565b924260608201528033940390a35f805160206128a7833981519152604051604081526112c360408201604090600e81526d185d5d1bcb58dbdb5c1b195d195960921b60208201520190565b9342908201528033940390a360015f55005b60405162461bcd60e51b815260048101899052601560248201527423b930b1b2903832b934b7b2103737ba1037bb32b960591b6044820152606490fd5b3461017b5760208060031936011261017b576001600160a01b0361133461225f565b165f52600560205260405f20906040519081602084549182815201935f5260205f20915f905b8282106113715761068b8561067f81890382612324565b83548652948501946001938401939091019061135a565b3461017b575f36600319011261017b576020600154604051908152f35b3461017b57604036600319011261017b576113be612275565b6004355f52600260205260405f209060018060a01b0380600284015416911614908161142b575b8161141b575b816113fe575b6020826040519015158152f35b6009915001546202a3008101809111610ca55742101560206113f1565b600d81015460ff161591506113eb565b905060ff60068201541660068110156103bb57600214906113e5565b3461017b57611455366123ab565b61145d61277d565b825f52600260205260405f2061148060018060a01b036001830154163314612575565b600681019081549160ff831660068110156103bb576115dd576004826115309260018996600d7fbf7f1a787fde833e978d6cfa967b0316eb2aa90ff171d0d1a7b7f2e30b638af99701928354906114da60ff8316156124ea565b600560ff1980941617905516179055016115168154337f000000000000000000000000000000000000000000000000000000000000000061279e565b5494604051948686526060602087015260608601916126d5565b924260408201528033940390a3604051905f8252602082015260806040820152815f8051602061288783398151915261158360808401604090600981526818d85b98d95b1b195960ba1b60208201520190565b924260608201528033940390a360405190604082525f805160206128a78339815191526115ca60408401604090600981526818d85b98d95b1b195960ba1b60208201520190565b924260208201528033940390a360015f55005b60405162461bcd60e51b815260206004820152601c60248201527f43616e6e6f742063616e63656c20636c61696d656420626f756e7479000000006044820152606490fd5b3461017b57602036600319011261017b576004356001600160401b0380821161017b573660238301121561017b5781600401351161017b57600590366024826004013560051b8301011161017b575f5b8160040135811061167f57005b61169b33611695838560040135602487016126c5565b3561266f565b6116a8575b600101611672565b6116ba818360040135602485016126c5565b35906116c461277d565b815f52600260205260405f20916116e860018060a01b036001850154163314612575565b600680840154938160ff861610156103bb575f8051602061288783398151915283918661171c600260ff60019a16146125ae565b87600d830191825461173160ff8216156124ea565b6003978860ff19809416179086015542600a860155161790556002810193878060a01b038554165f528960205261176b8460405f2061253c565b8101936117b26117836004875494019384549061252f565b898060a01b038354167f000000000000000000000000000000000000000000000000000000000000000061279e565b878060a01b039054169354905484604051857f56355901118389903ab0610d1aed268483b0574c99be665949a679352f271e5733928061180542888a846040919493926060820195825260208201520152565b0390a46118286040519283926080918452602084015280604084015282016125f1565b4260608301520390a360405190604082525f805160206128a7833981519152611853604084016125f1565b924260208201528033940390a3815f5590506116a0565b3461017b5760208060031936011261017b576001600160a01b0361188c61225f565b165f52600460205260405f20906040519081602084549182815201935f5260205f20915f905b8282106118c95761068b8561067f81890382612324565b8354865294850194600193840193909101906118b2565b3461017b57604036600319011261017b5760206119066118fe612275565b60043561266f565b6040519015158152f35b3461017b57604036600319011261017b576004356001600160401b03811161017b573660238201121561017b57611951903690602481600401359101612345565b61196d602060243592816040519382858094519384920161238a565b81016006815203019020805482101561017b576020916106129161228b565b3461017b57604036600319011261017b576119a5612275565b6004355f52600260205260405f209060018060a01b0380600184015416911614806119ef575b602091816119df575b506040519015158152f35b60ff9150600d01541615826119d4565b5060ff6006820154169060068210156103bb5790156119cb565b3461017b5760208060031936011261017b57600435611a2661277d565b805f526002825260405f20600681019060ff82541660068110156103bb57611b9257611a5760058201544210612632565b60018101546001600160a01b03163314611b4d576003810191611a9d835430337f000000000000000000000000000000000000000000000000000000000000000061281c565b600160ff1982541617905560028101336bffffffffffffffffffffffff60a01b825416179055600842910155335f5260048352611add8260405f2061253c565b546040519081524283820152817f2eefa727cced3362efe12827696bbd9df4926abce3c569ddaf6b9634ae1af14760403393a36040519160408352600760408401526618db185a5b595960ca1b606084015242908301525f805160206128a783398151915260803393a360015f55005b60405162461bcd60e51b815260048101859052601760248201527f43616e6e6f7420636c61696d206f776e20626f756e74790000000000000000006044820152606490fd5b60405162461bcd60e51b8152600481018590526014602482015273426f756e7479206e6f7420617661696c61626c6560601b6044820152606490fd5b3461017b5760208060031936011261017b57600660043581811015928361017b575f925f9260019580600154955b868110611cb4575050611c0e8661261b565b95611c1c6040519788612324565b808752611c2b601f199161261b565b013660208801375f925f5b868110611c4b576040518061068b8a826122cd565b8083915f526002875260ff8360405f20015416916103bb57828210156103bb57848a9214611c7a575b01611c36565b9490508751811015611ca057611c9a8186888c9460051b8c01015261260d565b94611c74565b634e487b7160e01b5f52603260045260245ffd5b805f526002865260ff8560405f20015416916103bb57848210156103bb5783899214611ce3575b018190611bfc565b96611ced9061260d565b96611cdb565b3461017b5760208060031936011261017b576004356001600160401b03811161017b57611d2660209136906004016122a0565b919082604051938492833781016006815203019020906040519081602084549182815201935f5260205f20915f905b828210611d6c5761068b8561067f81890382612324565b835486529485019460019384019390910190611d55565b3461017b57604036600319011261017b57611d9c61225f565b6001600160a01b03165f9081526004602052604090208054602435919082101561017b576020916106129161228b565b3461017b57602036600319011261017b57600435611de861277d565b805f52600260205260405f2060018060a01b0390611e0d826001830154163314612575565b600681019081549060ff82169260068410156103bb5760015f8051602061288783398151915293611e4160028997146125ae565b600d840192835490611e5660ff8316156124ea565b600360ff1980941617905542600a860155161790556002810193808554165f526005602052611e888460405f2061253c565b6003820194611ecc611ea26004885495019485549061252f565b838354167f000000000000000000000000000000000000000000000000000000000000000061279e565b54169354905484604051857f56355901118389903ab0610d1aed268483b0574c99be665949a679352f271e57339280611f1842888a846040919493926060820195825260208201520152565b0390a460405191825260208201526080604082015280611f3a608082016125f1565b4260608301520390a360405190604082525f805160206128a78339815191526115ca604084016125f1565b3461017b5760208060031936011261017b57600435611f8261277d565b805f526002825260405f20600581015442111561222c57600d8101805490611fad60ff8316156124ea565b600160ff19809316179055600682019081549060ff821660068110156103bb57806120ab575060059150825416179055815f8051602061288783398151915260c06001840160018060a01b039061202f6004838354169701968754907f000000000000000000000000000000000000000000000000000000000000000061279e565b54169354604051905f825287820152608060408201526011608082015270195e1c1a5c99590b5d5b98db185a5b5959607a1b60a0820152426060820152a35b60405191604083526007604084015266195e1c1a5c995960ca1b606084015242908301525f805160206128a783398151915260803393a360015f55005b60018103612151575060059150825416179055815f8051602061288783398151915260c06001840160018060a01b03906121106004838354169701968754907f000000000000000000000000000000000000000000000000000000000000000061279e565b54169354604051905f82528782015260806040820152600f60808201526e195e1c1a5c99590b58db185a5b5959608a1b60a0820152426060820152a361206e565b600214612162575b5050505061206e565b60039116179055815f8051602061288783398151915260c060038401938454906002612194600483019384549061252f565b910180546001600160a01b03926121cd9184167f000000000000000000000000000000000000000000000000000000000000000061279e565b818154165f52600589526121e48660405f2061253c565b54169454905460405191825287820152608060408201526011608082015270195e1c1a5c99590b5cdd589b5a5d1d1959607a1b60a0820152426060820152a382808080612159565b60405162461bcd60e51b815260048101849052600b60248201526a139bdd08195e1c1a5c995960aa1b6044820152606490fd5b600435906001600160a01b038216820361017b57565b602435906001600160a01b038216820361017b57565b8054821015611ca0575f5260205f2001905f90565b9181601f8401121561017b578235916001600160401b03831161017b576020838186019501011161017b57565b60209060206040818301928281528551809452019301915f5b8281106122f4575050505090565b8351855293810193928101926001016122e6565b6101c081019081106001600160401b03821117610bb057604052565b90601f801991011681019081106001600160401b03821117610bb057604052565b9291926001600160401b038211610bb0576040519161236e601f8201601f191660200184612324565b82948184528183011161017b578281602093845f960137010152565b5f5b83811061239b5750505f910152565b818101518382015260200161238c565b90604060031983011261017b5760043591602435906001600160401b03821161017b576123da916004016122a0565b9091565b90600182811c9216801561240c575b60208310146123f857565b634e487b7160e01b5f52602260045260245ffd5b91607f16916123ed565b9060405191825f8254612428816123de565b908184526020946001916001811690815f146124965750600114612458575b50505061245692500383612324565b565b5f90815285812095935091905b81831061247e57505061245693508201015f8080612447565b85548884018501529485019487945091830191612465565b9250505061245694925060ff191682840152151560051b8201015f8080612447565b906020916124d18151809281855285808601910161238a565b601f01601f1916010190565b9060068210156103bb5752565b156124f157565b60405162461bcd60e51b8152602060048201526016602482015275119d5b991cc8185b1c9958591e481c995b19585cd95960521b6044820152606490fd5b91908201809211610ca557565b805468010000000000000000811015610bb05761255e9160018201815561228b565b819291549060031b91821b915f19901b1916179055565b1561257c57565b60405162461bcd60e51b815260206004820152600a6024820152692737ba103837b9ba32b960b11b6044820152606490fd5b156125b557565b60405162461bcd60e51b8152602060048201526014602482015273109bdd5b9d1e481b9bdd081cdd589b5a5d1d195960621b6044820152606490fd5b600981526818dbdb5c1b195d195960ba1b602082015260400190565b5f198114610ca55760010190565b6001600160401b038111610bb05760051b60200190565b1561263957565b60405162461bcd60e51b815260206004820152600e60248201526d109bdd5b9d1e48195e1c1a5c995960921b6044820152606490fd5b5f52600260205260405f209060018060a01b038060018401541691161490816126a9575b8161269c575090565b60ff9150600d0154161590565b905060ff60068201541660068110156103bb5760021490612693565b9190811015611ca05760051b0190565b908060209392818452848401375f828201840152601f01601f1916010190565b156126fc57565b60405162461bcd60e51b815260206004820152600a6024820152692737ba103bb7b935b2b960b11b6044820152606490fd5b601f821161273b57505050565b5f5260205f20906020601f840160051c83019310612773575b601f0160051c01905b818110612768575050565b5f815560010161275d565b9091508190612754565b60025f541461278c5760025f55565b604051633ee5aeb560e01b8152600490fd5b60405163a9059cbb60e01b5f9081526001600160a01b039384166004526024949094529260209060448180855af160015f51148116156127fd575b83604052156127e757505050565b635274afe760e01b835216600482015260249150fd5b600181151661281357813b15153d1516166127d9565b833d5f823e3d90fd5b6040516323b872dd60e01b5f9081526001600160a01b03938416600452938316602452604494909452909160209060648180855af160015f5114811615612870575b836040525f606052156127e757505050565b600181151661281357813b15153d15161661285e56fea47c8c39c4e94321fad322f103657729ed0634c0ff9a47d537ba3963e92407b3e5c4685a066af67a451daacd9b355bbbc45c1bf423b81592c3e289bcdf55a47ba2646970667358221220e4ee1aff7cd6bcac2c237efd86a08dbcd8a2eabb3fd7d8badd4a610f14b381b364736f6c63430008180033",
+        "sourceMap": "409:14544:25:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;1060:29;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;11888:8;409:14544;;;;;;;;;;;:::i;:::-;;;;:::i;:::-;;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;11888:8;409:14544;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;:::i;:::-;-1:-1:-1;;;;;409:14544:25;;;;;1203:55;409:14544;;;;;;;;;;;1203:55;;;;;409:14544;1203:55;;;;:::i;:::-;409:14544;;;1203:55;409:14544;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;;;1155:42;409:14544;;;;;1155:42;;;:::i;:::-;409:14544;;;;;;1155:42;409:14544;1155:42;;409:14544;;1155:42;;;;409:14544;;1155:42;;;;409:14544;1155:42;409:14544;1155:42;;409:14544;1155:42;;;;409:14544;1155:42;;;409:14544;;;1155:42;;;409:14544;1155:42;;;409:14544;1155:42;;;;409:14544;1155:42;;;;409:14544;1155:42;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;409:14544;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;13534:13;409:14544;;;;;13530:17;;;;;;409:14544;;;;;;;;13549:3;409:14544;;;13572:8;409:14544;;;;;13572:18;409:14544;;;;;;13572:18;409:14544;;;;;;;;13572:39;;;:81;;;;13549:3;13568:127;;;;13549:3;409:14544;13515:13;;13568:127;13673:7;;;;:::i;:::-;13568:127;;;13572:81;409:14544;;;;;;;13633:20;409:14544;;;13633:20;409:14544;13615:15;:38;13572:81;;;;409:14544;;;;;;-1:-1:-1;;409:14544:25;;;;;;:::i;:::-;-1:-1:-1;;;;;409:14544:25;;;;;1326:58;409:14544;;;;;;;;;;;1326:58;;;;;409:14544;1326:58;;;;:::i;:::-;409:14544;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;:::i;:::-;;;;12948:18;409:14544;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;:::i;:::-;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;:::i;:::-;2466:103:22;;:::i;:::-;3508:29:25;;409:14544;;;;3580:15;409:14544;;;;3640:13;409:14544;;;;3696:17;;:41;;;409:14544;;;;3867:9;409:14544;;3860:4;3840:10;3817:5;3867:9;:::i;:::-;409:14544;;3899:15;;;;:::i;:::-;409:14544;;;;3978:7;409:14544;;;;3978:7;409:14544;;;3696:17;409:14544;;;;3943:43;3978:7;409:14544;;;3943:15;:43;:::i;:::-;409:14544;;;;;;;:::i;:::-;;;;;;:::i;:::-;;;3840:10;409:14544;4026:478;;409:14544;;;4026:478;;409:14544;;;;4026:478;;409:14544;;;;4026:478;;409:14544;4026:478;409:14544;4026:478;;409:14544;;4026:478;;;409:14544;3943:15;409:14544;4026:478;;409:14544;;4026:478;;;409:14544;;4026:478;;;409:14544;;4026:478;;;409:14544;;;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;;;;4026:478;;;409:14544;;;;;;:::i;:::-;4026:478;;;409:14544;;4026:478;;;409:14544;;;;4005:8;409:14544;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;:::i;:::-;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4026:478;;409:14544;4026:478;;409:14544;;;;;;;;;;;;;;4005:8;409:14544;;4026:478;409:14544;4026:478;;409:14544;;;;;;;;;;4026:478;;409:14544;;;;;;4026:478;;409:14544;;;;;;4026:478;;409:14544;;;;;;;;4026:478;;;409:14544;;;;;;;;;;;;;;;;;;;4026:478;;409:14544;;;;;4026:478;;;409:14544;;;;;4026:478;;;409:14544;;;;;4026:478;;;409:14544;;;;;4026:478;;;409:14544;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;:::i;:::-;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4026:478;;;409:14544;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::i;:::-;;;;;;;;;;;;;;;4630:108;409:14544;;;;;;;;4026:478;409:14544;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4026:478;;409:14544;;;;;;;;;;;;;;3840:10;409:14544;;;;;4515:45;409:14544;;;;4515:45;:::i;:::-;4570:44;409:14544;;;;;;;;;;;;;;;;;;;4570:44;:::i;:::-;409:14544;;;4026:478;409:14544;;4026:478;409:14544;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;3943:15;409:14544;;;;3840:10;;4630:108;;;;409:14544;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;3943:15;409:14544;;;;3840:10;-1:-1:-1;;;;;;;;;;;409:14544:25;3840:10;4753:63;;409:14544;;;;;;;;;;;;;-1:-1:-1;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;;;;;;;;;4026:478;409:14544;4630:108;409:14544;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;409:14544:25;;;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;3696:41;409:14544;3734:3;409:14544;;3717:20;;3696:41;;409:14544;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;5877:8;409:14544;;;;;;5905:50;409:14544;;;;;5877:8;5927:13;;409:14544;;5913:10;:27;5905:50;:::i;:::-;5973:13;;;;409:14544;;;;;;5973:13;409:14544;;;;;5990:20;;5973:37;;409:14544;;6043:60;6069:15;;;409:14544;6051:15;:33;6043:60;:::i;:::-;6121:27;;409:14544;;-1:-1:-1;;409:14544:25;5877:8;409:14544;;;6051:15;6226:18;;;409:14544;6272:16;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;;:::i;:::-;;;:::i;:::-;;;;;;;;;;;;;;6316:65;409:14544;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;6051:15;;409:14544;;;;5913:10;;6316:65;;;;409:14544;;;;;;6226:18;409:14544;;;;-1:-1:-1;;;409:14544:25;;;;6051:15;409:14544;;;;-1:-1:-1;;;;;;;;;;;409:14544:25;5913:10;6396:66;;409:14544;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6316:65;409:14544;;;;;;;;;;;;5990:20;409:14544;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;409:14544:25;;;;;;;;;;-1:-1:-1;409:14544:25;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;14511:13;409:14544;;;;;;;14507:17;;;;;;409:14544;;;;;;;;;;;;;14526:3;409:14544;;;;;14569:8;409:14544;;;;;;;14599:20;;;;;409:14544;;14598:21;14594:341;;14526:3;;;;409:14544;14492:13;;14594:341;14643:13;;;;;;;;;409:14544;;;;;;;;;;14643:37;;;:80;;;;;14594:341;14639:155;;;14594:341;409:14544;;14832:22;14815:39;;;14811:110;;14594:341;;;;;14811:110;14886:16;409:14544;14878:24;14886:16;;;409:14544;14878:24;;:::i;:::-;14811:110;;;;14639:155;14757:18;14747:28;14757:18;;;;409:14544;14747:28;;:::i;:::-;14639:155;;;14643:80;409:14544;;;;14684:39;;;14643:80;;;409:14544;;;;;;;;;;;;;;;2466:103:22;;:::i;:::-;409:14544:25;;;7769:8;409:14544;;;;;;;;;;7797:50;7819:13;7769:8;7819:13;;409:14544;;7805:10;:27;7797:50;:::i;:::-;7865:13;;;409:14544;;;;;7865:13;409:14544;;;;;7769:8;7857:72;7865:39;;7857:72;:::i;:::-;7948:20;;;409:14544;;;;7939:56;409:14544;;;7947:21;7939:56;:::i;:::-;8032:18;;;409:14544;8053:8;409:14544;;;;;;;8013:15;:48;409:14544;;;;;;10967:22;409:14544;;;;;;;;8013:15;8159:18;;;409:14544;;;;;7805:10;409:14544;;8242:21;409:14544;;8242:48;409:14544;;;;8242:48;:::i;:::-;10967:22;8370:18;;409:14544;;;;8391:16;8448:11;8370:37;409:14544;8391:16;;409:14544;;;8370:37;;:::i;:::-;7805:10;8417:5;8448:11;:::i;:::-;8502:13;409:14544;;;;;;;;;7805:10;;8476:107;7805:10;8013:15;;8476:107;8013:15;8476:107;;;409:14544;;;;;;;;;;;;;;;;;;8476:107;;;;409:14544;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;409:14544:25;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;8013:15;;409:14544;;;;7805:10;;8598:108;;;;-1:-1:-1;;;;;;;;;;;409:14544:25;;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;8013:15;;409:14544;;;;7805:10;;8721:71;;;;409:14544;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;:::i;:::-;;;;13233:21;409:14544;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;1116:28;409:14544;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;:::i;:::-;;;;;12324:8;409:14544;;;;;;;;;;;12368:13;12324:8;12368:13;;409:14544;;;;12360:21;:81;;;;409:14544;12360:123;;;409:14544;12360:191;;;409:14544;;;;;;;;;;;12360:191;12522:18;;;;409:14544;12543:8;409:14544;;;;;;;12503:15;:48;;409:14544;12360:191;;:123;12463:20;;;409:14544;;;12462:21;;-1:-1:-1;12360:123:25;;:81;12402:13;;409:14544;12402:13;;;409:14544;;12402:13;409:14544;;;;;12324:8;12402:39;12360:81;;;409:14544;;;;;;;:::i;:::-;2466:103:22;;:::i;:::-;409:14544:25;;;9005:8;409:14544;;;;;9033:50;409:14544;;;;;9055:13;;;409:14544;;9041:10;:27;9033:50;:::i;:::-;9101:13;;;409:14544;;;;;;;9101:13;409:14544;;;;;;;;9187:20;409:14544;9187:20;9055:13;9187:20;;;9427:80;9187:20;;409:14544;;;;9178:56;409:14544;;;9186:21;9178:56;:::i;:::-;9943:15;409:14544;;;;;;;;;;;;9394:16;;409:14544;;9041:10;9363:5;9394:16;:::i;:::-;409:14544;;;;;;;;;;;;;;;;;;:::i;:::-;9491:15;;409:14544;;;;9041:10;;9427:80;;;;409:14544;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;409:14544:25;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;9491:15;;409:14544;;;;9041:10;;9522:86;;;;409:14544;;;;;;-1:-1:-1;;;;;;;;;;;409:14544:25;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;9491:15;;409:14544;;;;9041:10;;9623:66;;;;9055:13;409:14544;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;11606:20;409:14544;;;;11606:20;;;;409:14544;11628:3;11651:37;11677:10;11663:12;409:14544;;;;;;;;11663:12;:::i;:::-;409:14544;11651:37;:::i;:::-;11647:104;;11628:3;409:14544;;11591:13;;11647:104;11723:12;409:14544;;;;;;;;11723:12;:::i;:::-;409:14544;2466:103:22;;;:::i;:::-;409:14544:25;;;6657:8;409:14544;;;;;;6685:50;409:14544;;;;;;6707:13;;409:14544;;11677:10;6693:27;6685:50;:::i;:::-;6753:13;;;;409:14544;;;;;;;;;;-1:-1:-1;;;;;;;;;;;409:14544:25;;;6745:72;6657:8;409:14544;;;;6753:39;6745:72;:::i;:::-;6836:20;;;;409:14544;;;6827:56;409:14544;;;6835:21;6827:56;:::i;:::-;10967:22;409:14544;;;;;;;;6753:13;;;409:14544;6963:15;6942:18;;;409:14544;;;;;6657:8;7047:13;;409:14544;;;;;;;;;;;;;;7025:51;409:14544;;;;7025:51;:::i;:::-;7151:18;;409:14544;7232:11;7151:37;409:14544;;;7172:16;;409:14544;;;7151:37;;:::i;:::-;409:14544;;;;;;;;7198:5;7232:11;:::i;:::-;409:14544;;;;;;;;;;;;;;;11677:10;7260:107;11677:10;6963:15;;7260:107;6963:15;7260:107;;;409:14544;;;;;;;;;;;;;;;;;;7260:107;;;;409:14544;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;6963:15;409:14544;;;;7382:106;;;409:14544;;;;;;-1:-1:-1;;;;;;;;;;;409:14544:25;;;;;:::i;:::-;6963:15;;409:14544;;;;11677:10;;7503:66;;;;409:14544;;;11647:104;;;;409:14544;;;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;;;:::i;:::-;;;;:::i;:::-;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;1390:55;409:14544;;;;;;;;1390:55;;;;;409:14544;1390:55;;;;:::i;409:14544::-;;;;;;-1:-1:-1;;409:14544:25;;;;;;:::i;:::-;;;;;12677:8;409:14544;;;;;;;;;;;12721:13;409:14544;12721:13;;409:14544;;;;12713:21;:76;;;409:14544;;12713:118;;;;409:14544;;;;;;;;;;12713:118;409:14544;12811:20;;;;409:14544;;12810:21;12713:118;;;:76;12755:13;409:14544;12755:13;;;409:14544;;;12755:13;409:14544;;;;;12713:76;12755:34;12713:76;;409:14544;;;;;;;;;;;;;;;2466:103:22;;:::i;:::-;409:14544:25;;;4995:8;409:14544;;;;;5031:13;;;409:14544;;;;;5031:13;409:14544;;;;;;;5100:60;5126:15;;;409:14544;5108:15;:33;5100:60;:::i;:::-;409:14544;5192:13;;409:14544;-1:-1:-1;;;;;409:14544:25;5178:10;:27;409:14544;;5320:18;;;409:14544;5320:18;409:14544;;5313:4;5178:10;5270:5;5320:18;:::i;:::-;409:14544;;;;;;;;;4995:8;5396:13;;5178:10;409:14544;;;;;;;;;5432:16;5108:15;5432:16;;409:14544;5178:10;409:14544;;;;;5476:46;409:14544;;;;5476:46;:::i;:::-;409:14544;;;;;;5108:15;409:14544;;;;5178:10;5538:72;409:14544;5178:10;5538:72;;409:14544;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;5108:15;409:14544;;;;-1:-1:-1;;;;;;;;;;;409:14544:25;5178:10;5625:64;;409:14544;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;13894:13;409:14544;13913:13;;409:14544;;13913:13;409:14544;13889:142;13909:17;;;;;;409:14544;;;;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;;;:::i;:::-;;;;;;;;14177:13;409:14544;14192:17;;;;;;409:14544;;;;;;;:::i;14211:3::-;409:14544;;;;;13951:8;409:14544;;;;;;;14234:18;409:14544;;;;;;;;;;;14234:28;;;;14230:109;;14211:3;409:14544;14177:13;;14230:109;409:14544;;;;;;;;;;14317:7;409:14544;;;;;;;;;;;14317:7;:::i;:::-;14230:109;;;409:14544;;;;;;;;;;;;13928:3;409:14544;;;13951:8;409:14544;;;;;;;13951:18;409:14544;;;;;;;;;;;13951:28;;;;13947:74;;13928:3;409:14544;13894:13;;;;13947:74;13999:7;;;;:::i;:::-;13947:74;;;409:14544;;;;;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;13388:19;409:14544;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;:::i;:::-;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;;;;;;1264:56;;;;;409:14544;1264:56;;;;:::i;409:14544::-;;;;;;-1:-1:-1;;409:14544:25;;;;;;2466:103:22;;:::i;:::-;409:14544:25;;;6657:8;409:14544;;;;;;;;;;6707:13;6685:50;6707:13;409:14544;6707:13;;409:14544;;6693:10;:27;6685:50;:::i;:::-;6753:13;;;409:14544;;;;;;;;6753:13;409:14544;;;;;;-1:-1:-1;;;;;;;;;;;6753:39:25;6745:72;6657:8;6753:39;;;6745:72;:::i;:::-;6836:20;;;409:14544;;;;6827:56;409:14544;;;6835:21;6827:56;:::i;:::-;10967:22;409:14544;;;;;;;;6963:15;6942:18;;;409:14544;;;;;6657:8;7047:13;;409:14544;;;;;;;7025:21;409:14544;;7025:51;409:14544;;;;7025:51;:::i;:::-;10967:22;7151:18;;409:14544;7232:11;7151:37;409:14544;;;7172:16;;409:14544;;;7151:37;;:::i;:::-;409:14544;;;;7198:5;7232:11;:::i;:::-;409:14544;;;;;;;;;6693:10;7260:107;6693:10;6963:15;;7260:107;6963:15;7260:107;;;409:14544;;;;;;;;;;;;;;;;;;7260:107;;;;409:14544;;;;;;;;;;;;;;;;;;;;:::i;:::-;6963:15;409:14544;;;;7382:106;;;409:14544;;;;;;-1:-1:-1;;;;;;;;;;;409:14544:25;;;;;:::i;:::-;;;;;;;;;;;;;;;2466:103:22;;:::i;:::-;409:14544:25;;;9889:8;409:14544;;;;;9943:15;;;409:14544;9925:15;:33;409:14544;;;9993:20;;;409:14544;;;9984:56;409:14544;;;9992:21;9984:56;:::i;:::-;409:14544;;;;;;;;;10093:13;;;409:14544;;;;;;;10093:13;409:14544;;;;;10093:34;;;409:14544;9943:15;409:14544;;;;;;;;10266:13;-1:-1:-1;;;;;;;;;;;409:14544:25;;10266:13;;409:14544;;;;;;10281:16;409:14544;;;;;10281:16;;409:14544;;;10247:5;;10281:16;:::i;:::-;409:14544;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;9925:15;409:14544;;;;10317:97;10089:1242;409:14544;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;9925:15;409:14544;;;;-1:-1:-1;;;;;;;;;;;409:14544:25;11371:10;11346:64;;409:14544;;;;10089:1242;409:14544;10435:37;;409:14544;;;9943:15;409:14544;;;;;;;;10645:13;-1:-1:-1;;;;;;;;;;;409:14544:25;;10645:13;;409:14544;;;;;;10660:16;409:14544;;;;;10660:16;;409:14544;;;10626:5;;10660:16;:::i;:::-;409:14544;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;9925:15;409:14544;;;;10696:95;10089:1242;;10431:900;9889:8;10812:39;10808:523;;10431:900;;;;;10089:1242;;10808:523;10967:22;409:14544;;;;;11025:18;-1:-1:-1;;;;;;;;;;;409:14544:25;10967:22;11025:18;;409:14544;;;11046:16;9889:8;11025:37;409:14544;11046:16;;409:14544;;;11025:37;;:::i;:::-;11095:13;;409:14544;;-1:-1:-1;;;;;409:14544:25;11110:11;;409:14544;;11076:5;11110:11;:::i;:::-;409:14544;;;;;;9943:15;409:14544;;11136:51;409:14544;;;;11136:51;:::i;:::-;409:14544;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;9925:15;409:14544;;;;11206:114;10808:523;;;;;;409:14544;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;:::o;:::-;;;;-1:-1:-1;;;;;409:14544:25;;;;;;:::o;:::-;;;;;;;;-1:-1:-1;409:14544:25;;-1:-1:-1;409:14544:25;;;-1:-1:-1;409:14544:25;:::o;:::-;;;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;:::o;:::-;;;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;:::o;:::-;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;:::i;:::-;;;;;;;;;;;;;;;;;-1:-1:-1;409:14544:25;;;;;;:::o;:::-;;;;;;;;-1:-1:-1;;409:14544:25;;;;:::o;:::-;;;;;;;;;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;;;;;;-1:-1:-1;;;;;409:14544:25;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;409:14544:25;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:::o;:::-;-1:-1:-1;409:14544:25;;;;;;;;-1:-1:-1;;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;-1:-1:-1;;409:14544:25;;;;:::o;:::-;;;;;;;;;:::o;:::-;;;;:::o;:::-;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;:::o;:::-;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;:::o;:::-;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;:::o;:::-;-1:-1:-1;;409:14544:25;;;;;;;:::o;:::-;-1:-1:-1;;;;;409:14544:25;;;;;;;;;:::o;:::-;;;;:::o;:::-;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;11919:281;-1:-1:-1;409:14544:25;12033:8;409:14544;;;-1:-1:-1;409:14544:25;;;;;;;12077:13;;;;409:14544;;;;12069:21;:81;;;;11919:281;12069:123;;;12061:132;11919:281;:::o;12069:123::-;409:14544;12172:20;;;;409:14544;;12171:21;11919:281;:::o;12069:81::-;12111:13;;409:14544;12111:13;;;409:14544;;12111:13;409:14544;;;;;12033:8;12111:39;12069:81;;;409:14544;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;-1:-1:-1;409:14544:25;;;;;;;;-1:-1:-1;;409:14544:25;;;;:::o;:::-;;;;:::o;:::-;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;-1:-1:-1;;;409:14544:25;;;;;;;;;;;;;;;;:::o;:::-;-1:-1:-1;409:14544:25;;-1:-1:-1;409:14544:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;-1:-1:-1;409:14544:25;;;;;;;;;-1:-1:-1;409:14544:25;;;;2575:307:22;1899:1;2702:7;409:14544:25;2702:18:22;2698:86;;1899:1;2702:7;409:14544:25;2575:307:22:o;2698:86::-;409:14544:25;;-1:-1:-1;;;2743:30:22;;;;;1219:204:20;8539:1058;;-1:-1:-1;;;;8539:1058:20;;;-1:-1:-1;;;;;8539:1058:20;;;;;;;;;;;;;;-1:-1:-1;;8539:1058:20;;;1338:4;-1:-1:-1;8539:1058:20;;;;;;;1219:204;8539:1058;;;1305:38;1301:116;;1219:204;;;:::o;1301:116::-;-1:-1:-1;;;1366:40:20;;409:14544:25;8539:1058:20;1366:40;;409:14544:25;8539:1058:20;;-1:-1:-1;1366:40:20;8539:1058;1338:4;8539:1058;;;;;;;;;;;;;;;;;;-1:-1:-1;8539:1058:20;;;;;1662:232;10390:1139;;-1:-1:-1;;;;10390:1139:20;;;-1:-1:-1;;;;;10390:1139:20;;;;;;;;;;;;;;;409:14544:25;;10390:1139:20;;;-1:-1:-1;;1662:232:20;10390:1139;;1809:4;-1:-1:-1;10390:1139:20;;;;;;;1662:232;10390:1139;;;-1:-1:-1;10390:1139:20;;1766:48;1762:126;;1662:232;;;:::o;10390:1139::-;1809:4;10390:1139;;;;;;;;;;;;;;",
+        "linkReferences": {},
+        "immutableReferences": {
+            "36576": [
+                {
+                    "start": 332,
+                    "length": 32
+                },
+                {
+                    "start": 1837,
+                    "length": 32
+                },
+                {
+                    "start": 4538,
+                    "length": 32
+                },
+                {
+                    "start": 5362,
+                    "length": 32
+                },
+                {
+                    "start": 6030,
+                    "length": 32
+                },
+                {
+                    "start": 6777,
+                    "length": 32
+                },
+                {
+                    "start": 7848,
+                    "length": 32
+                },
+                {
+                    "start": 8203,
+                    "length": 32
+                },
+                {
+                    "start": 8428,
+                    "length": 32
+                },
+                {
+                    "start": 8617,
+                    "length": 32
+                }
+            ]
+        }
+    },
+    "methodIdentifiers": {
+        "autoComplete(uint256)": "a90d580d",
+        "batchCompleteBounties(uint256[])": "76d71161",
+        "bounties(uint256)": "dc2f8744",
+        "bountyCounter()": "a0d59787",
+        "canAutoComplete(uint256,address)": "a054c7c8",
+        "canCancel(uint256,address)": "45365b41",
+        "canComplete(uint256,address)": "6c68943a",
+        "cancelBounty(uint256,string)": "859c5b65",
+        "categorizedBounties(string,uint256)": "61f1f0eb",
+        "claimBounty(uint256)": "44021ad7",
+        "completeBounty(uint256)": "139005ab",
+        "getBountiesByCategory(string)": "28aea1bb",
+        "getBountiesByStatus(uint8)": "332710d4",
+        "getBounty(uint256)": "ee8c4bbf",
+        "getOpenBountiesCount()": "d8219b1b",
+        "getTotalValueLocked()": "b26025aa",
+        "getUserClaimedBounties(address)": "73d86aae",
+        "getUserCompletedBounties(address)": "a635e7e8",
+        "getUserPostedBounties(address)": "cac3bb84",
+        "handleExpiredBounty(uint256)": "03fa0637",
+        "postBounty(string,string,uint256,uint256,uint256)": "bf0689d3",
+        "submitBounty(uint256,string)": "b2b5df68",
+        "token()": "fc0c546a",
+        "userClaimedBounties(address,uint256)": "211f54d9",
+        "userCompletedBounties(address,uint256)": "d189945c",
+        "userPostedBounties(address,uint256)": "e2b8d560"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_token\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"SafeERC20FailedOperation\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"action\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"BountyActivity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poster\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tipRefunded\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"reason\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"BountyCancelled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"worker\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"stakeAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"BountyClaimed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poster\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"worker\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"stakeRefund\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tipPaid\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"BountyCompleted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"disputer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"reason\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"BountyDisputed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poster\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"category\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"stakeAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tipAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"BountyPosted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"worker\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"proofHash\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"BountySubmitted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"stakeAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tipAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"releaseType\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"FundsReleased\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"}],\"name\":\"autoComplete\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"bountyIds\",\"type\":\"uint256[]\"}],\"name\":\"batchCompleteBounties\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"bounties\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"poster\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"worker\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"stakeAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tipAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"enum FlashBounty.BountyStatus\",\"name\":\"status\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"claimedAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"submittedAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"completedAt\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"proofHash\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"category\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"fundsReleased\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"bountyCounter\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"canAutoComplete\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"canCancel\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"canComplete\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"reason\",\"type\":\"string\"}],\"name\":\"cancelBounty\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"categorizedBounties\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"}],\"name\":\"claimBounty\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"}],\"name\":\"completeBounty\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"category\",\"type\":\"string\"}],\"name\":\"getBountiesByCategory\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enum FlashBounty.BountyStatus\",\"name\":\"status\",\"type\":\"uint8\"}],\"name\":\"getBountiesByStatus\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"}],\"name\":\"getBounty\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"poster\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"worker\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"stakeAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tipAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"enum FlashBounty.BountyStatus\",\"name\":\"status\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"claimedAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"submittedAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"completedAt\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"proofHash\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"category\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"fundsReleased\",\"type\":\"bool\"}],\"internalType\":\"struct FlashBounty.Bounty\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getOpenBountiesCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"count\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTotalValueLocked\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"stakes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tips\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getUserClaimedBounties\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getUserCompletedBounties\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getUserPostedBounties\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"}],\"name\":\"handleExpiredBounty\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"category\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"stakeAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tipAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"durationHours\",\"type\":\"uint256\"}],\"name\":\"postBounty\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"proofHash\",\"type\":\"string\"}],\"name\":\"submitBounty\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"userClaimedBounties\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"userCompletedBounties\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"userPostedBounties\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}],\"SafeERC20FailedOperation(address)\":[{\"details\":\"An operation with an ERC-20 token failed.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"FlashBounty - Micro-Task Bounties with Stakes and Tips\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"autoComplete(uint256)\":{\"notice\":\"Auto-complete if poster doesn't respond within grace period\"},\"batchCompleteBounties(uint256[])\":{\"notice\":\"Batch complete multiple bounties for gas efficiency\"},\"cancelBounty(uint256,string)\":{\"notice\":\"Cancel unclaimed bounty and refund tip to poster\"},\"claimBounty(uint256)\":{\"notice\":\"Claim bounty by staking required amount\"},\"completeBounty(uint256)\":{\"notice\":\"Approve and complete bounty, paying worker stake + tip\"},\"handleExpiredBounty(uint256)\":{\"notice\":\"Handle expired bounties - refund appropriate parties\"},\"postBounty(string,string,uint256,uint256,uint256)\":{\"notice\":\"Post a new bounty with tip escrow\"},\"submitBounty(uint256,string)\":{\"notice\":\"Submit proof of bounty completion\"}},\"notice\":\"Post bounties for small tasks, workers stake to claim, get refunded plus tips on completion\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/FlashBounty.sol\":\"FlashBounty\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"],\"viaIR\":true},\"sources\":{\"lib/openzeppelin-contracts/contracts/interfaces/IERC1363.sol\":{\"keccak256\":\"0xd5ea07362ab630a6a3dee4285a74cf2377044ca2e4be472755ad64d7c5d4b69d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://da5e832b40fc5c3145d3781e2e5fa60ac2052c9d08af7e300dc8ab80c4343100\",\"dweb:/ipfs/QmTzf7N5ZUdh5raqtzbM11yexiUoLC9z3Ws632MCuycq1d\"]},\"lib/openzeppelin-contracts/contracts/interfaces/IERC165.sol\":{\"keccak256\":\"0x0afcb7e740d1537b252cb2676f600465ce6938398569f09ba1b9ca240dde2dfc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1c299900ac4ec268d4570ecef0d697a3013cd11a6eb74e295ee3fbc945056037\",\"dweb:/ipfs/Qmab9owJoxcA7vJT5XNayCMaUR1qxqj1NDzzisduwaJMcZ\"]},\"lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol\":{\"keccak256\":\"0x1a6221315ce0307746c2c4827c125d821ee796c74a676787762f4778671d4f44\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1bb2332a7ee26dd0b0de9b7fe266749f54820c99ab6a3bcb6f7e6b751d47ee2d\",\"dweb:/ipfs/QmcRWpaBeCYkhy68PR3B4AgD7asuQk7PwkWxrvJbZcikLF\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x74ed01eb66b923d0d0cfe3be84604ac04b76482a55f9dd655e1ef4d367f95bc2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5282825a626cfe924e504274b864a652b0023591fa66f06a067b25b51ba9b303\",\"dweb:/ipfs/QmeCfPykghhMc81VJTrHTC7sF6CRvaA1FXVq2pJhwYp1dV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x1183b415155c1a7bf56d45edad5b17caf0da70935ac420698cbe8afb6750cbb2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://21d9edaeb3e5e8f93eb0fdab41530654e8169b1990b3bbfcf5e4527c52aa03f5\",\"dweb:/ipfs/QmWrqpNW3x5k3pTjvrT8XU1hauHnXTjqaPL2tfzMuWYosj\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0x11a5a79827df29e915a12740caf62fe21ebe27c08c9ae3e09abe9ee3ba3866d3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3cf0c69ab827e3251db9ee6a50647d62c90ba580a4d7bbff21f2bea39e7b2f4a\",\"dweb:/ipfs/QmZiKwtKU1SBX4RGfQtY7PZfiapbbu6SZ9vizGQD9UHjRA\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x8891738ffe910f0cf2da09566928589bf5d63f4524dd734fd9cedbac3274dd5c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://971f954442df5c2ef5b5ebf1eb245d7105d9fbacc7386ee5c796df1d45b21617\",\"dweb:/ipfs/QmadRjHbkicwqwwh61raUEapaVEtaLMcYbQZWs9gUkgj3u\"]},\"src/FlashBounty.sol\":{\"keccak256\":\"0xba6c5488683262b9734cb8350c81738cdf3ce725abb7deaa87ecbaf6681fe336\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://60bde0e8c5ded07fe524ab28c3644b0191e71854212de0f28a69de96d8f61546\",\"dweb:/ipfs/QmWhbQRKNMWuvfudeVwXrwihs8r8kSujyuwXBhZr32wMAQ\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.24+commit.e11b9ed9"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "_token",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "ReentrancyGuardReentrantCall"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        }
+                    ],
+                    "type": "error",
+                    "name": "SafeERC20FailedOperation"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "action",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "BountyActivity",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "poster",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tipRefunded",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "reason",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "BountyCancelled",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "worker",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "stakeAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "BountyClaimed",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "poster",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "worker",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "stakeRefund",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tipPaid",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "BountyCompleted",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "disputer",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "reason",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "BountyDisputed",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "poster",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "description",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "category",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "stakeAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tipAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "deadline",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "BountyPosted",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "worker",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "proofHash",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "BountySubmitted",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "recipient",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "stakeAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tipAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "releaseType",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "FundsReleased",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "autoComplete"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256[]",
+                            "name": "bountyIds",
+                            "type": "uint256[]"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "batchCompleteBounties"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "bounties",
+                    "outputs": [
+                        {
+                            "internalType": "string",
+                            "name": "description",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "poster",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "worker",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "stakeAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tipAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "deadline",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "enum FlashBounty.BountyStatus",
+                            "name": "status",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "createdAt",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "claimedAt",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "submittedAt",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "completedAt",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "proofHash",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "category",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "fundsReleased",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "bountyCounter",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "canAutoComplete",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "canCancel",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "canComplete",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "reason",
+                            "type": "string"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "cancelBounty"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "string",
+                            "name": "",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "categorizedBounties",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "claimBounty"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "completeBounty"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "string",
+                            "name": "category",
+                            "type": "string"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getBountiesByCategory",
+                    "outputs": [
+                        {
+                            "internalType": "uint256[]",
+                            "name": "",
+                            "type": "uint256[]"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "enum FlashBounty.BountyStatus",
+                            "name": "status",
+                            "type": "uint8"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getBountiesByStatus",
+                    "outputs": [
+                        {
+                            "internalType": "uint256[]",
+                            "name": "",
+                            "type": "uint256[]"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getBounty",
+                    "outputs": [
+                        {
+                            "internalType": "struct FlashBounty.Bounty",
+                            "name": "",
+                            "type": "tuple",
+                            "components": [
+                                {
+                                    "internalType": "string",
+                                    "name": "description",
+                                    "type": "string"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "poster",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "worker",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "stakeAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "tipAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "deadline",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "enum FlashBounty.BountyStatus",
+                                    "name": "status",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "createdAt",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "claimedAt",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "submittedAt",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "completedAt",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "string",
+                                    "name": "proofHash",
+                                    "type": "string"
+                                },
+                                {
+                                    "internalType": "string",
+                                    "name": "category",
+                                    "type": "string"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "fundsReleased",
+                                    "type": "bool"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getOpenBountiesCount",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "count",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getTotalValueLocked",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "stakes",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tips",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getUserClaimedBounties",
+                    "outputs": [
+                        {
+                            "internalType": "uint256[]",
+                            "name": "",
+                            "type": "uint256[]"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getUserCompletedBounties",
+                    "outputs": [
+                        {
+                            "internalType": "uint256[]",
+                            "name": "",
+                            "type": "uint256[]"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getUserPostedBounties",
+                    "outputs": [
+                        {
+                            "internalType": "uint256[]",
+                            "name": "",
+                            "type": "uint256[]"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "handleExpiredBounty"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "string",
+                            "name": "description",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "category",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "stakeAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tipAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "durationHours",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "postBounty",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "bountyId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "proofHash",
+                            "type": "string"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "submitBounty"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "token",
+                    "outputs": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "userClaimedBounties",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "userCompletedBounties",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "userPostedBounties",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {},
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {
+                    "autoComplete(uint256)": {
+                        "notice": "Auto-complete if poster doesn't respond within grace period"
+                    },
+                    "batchCompleteBounties(uint256[])": {
+                        "notice": "Batch complete multiple bounties for gas efficiency"
+                    },
+                    "cancelBounty(uint256,string)": {
+                        "notice": "Cancel unclaimed bounty and refund tip to poster"
+                    },
+                    "claimBounty(uint256)": {
+                        "notice": "Claim bounty by staking required amount"
+                    },
+                    "completeBounty(uint256)": {
+                        "notice": "Approve and complete bounty, paying worker stake + tip"
+                    },
+                    "handleExpiredBounty(uint256)": {
+                        "notice": "Handle expired bounties - refund appropriate parties"
+                    },
+                    "postBounty(string,string,uint256,uint256,uint256)": {
+                        "notice": "Post a new bounty with tip escrow"
+                    },
+                    "submitBounty(uint256,string)": {
+                        "notice": "Submit proof of bounty completion"
+                    }
+                },
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+                "forge-std/=lib/forge-std/src/",
+                "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "src/FlashBounty.sol": "FlashBounty"
+            },
+            "evmVersion": "cancun",
+            "libraries": {},
+            "viaIR": true
+        },
+        "sources": {
+            "lib/openzeppelin-contracts/contracts/interfaces/IERC1363.sol": {
+                "keccak256": "0xd5ea07362ab630a6a3dee4285a74cf2377044ca2e4be472755ad64d7c5d4b69d",
+                "urls": [
+                    "bzz-raw://da5e832b40fc5c3145d3781e2e5fa60ac2052c9d08af7e300dc8ab80c4343100",
+                    "dweb:/ipfs/QmTzf7N5ZUdh5raqtzbM11yexiUoLC9z3Ws632MCuycq1d"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/interfaces/IERC165.sol": {
+                "keccak256": "0x0afcb7e740d1537b252cb2676f600465ce6938398569f09ba1b9ca240dde2dfc",
+                "urls": [
+                    "bzz-raw://1c299900ac4ec268d4570ecef0d697a3013cd11a6eb74e295ee3fbc945056037",
+                    "dweb:/ipfs/Qmab9owJoxcA7vJT5XNayCMaUR1qxqj1NDzzisduwaJMcZ"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol": {
+                "keccak256": "0x1a6221315ce0307746c2c4827c125d821ee796c74a676787762f4778671d4f44",
+                "urls": [
+                    "bzz-raw://1bb2332a7ee26dd0b0de9b7fe266749f54820c99ab6a3bcb6f7e6b751d47ee2d",
+                    "dweb:/ipfs/QmcRWpaBeCYkhy68PR3B4AgD7asuQk7PwkWxrvJbZcikLF"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+                "keccak256": "0x74ed01eb66b923d0d0cfe3be84604ac04b76482a55f9dd655e1ef4d367f95bc2",
+                "urls": [
+                    "bzz-raw://5282825a626cfe924e504274b864a652b0023591fa66f06a067b25b51ba9b303",
+                    "dweb:/ipfs/QmeCfPykghhMc81VJTrHTC7sF6CRvaA1FXVq2pJhwYp1dV"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
+                "keccak256": "0x1183b415155c1a7bf56d45edad5b17caf0da70935ac420698cbe8afb6750cbb2",
+                "urls": [
+                    "bzz-raw://21d9edaeb3e5e8f93eb0fdab41530654e8169b1990b3bbfcf5e4527c52aa03f5",
+                    "dweb:/ipfs/QmWrqpNW3x5k3pTjvrT8XU1hauHnXTjqaPL2tfzMuWYosj"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol": {
+                "keccak256": "0x11a5a79827df29e915a12740caf62fe21ebe27c08c9ae3e09abe9ee3ba3866d3",
+                "urls": [
+                    "bzz-raw://3cf0c69ab827e3251db9ee6a50647d62c90ba580a4d7bbff21f2bea39e7b2f4a",
+                    "dweb:/ipfs/QmZiKwtKU1SBX4RGfQtY7PZfiapbbu6SZ9vizGQD9UHjRA"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+                "keccak256": "0x8891738ffe910f0cf2da09566928589bf5d63f4524dd734fd9cedbac3274dd5c",
+                "urls": [
+                    "bzz-raw://971f954442df5c2ef5b5ebf1eb245d7105d9fbacc7386ee5c796df1d45b21617",
+                    "dweb:/ipfs/QmadRjHbkicwqwwh61raUEapaVEtaLMcYbQZWs9gUkgj3u"
+                ],
+                "license": "MIT"
+            },
+            "src/FlashBounty.sol": {
+                "keccak256": "0xba6c5488683262b9734cb8350c81738cdf3ce725abb7deaa87ecbaf6681fe336",
+                "urls": [
+                    "bzz-raw://60bde0e8c5ded07fe524ab28c3644b0191e71854212de0f28a69de96d8f61546",
+                    "dweb:/ipfs/QmWhbQRKNMWuvfudeVwXrwihs8r8kSujyuwXBhZr32wMAQ"
+                ],
+                "license": "MIT"
+            }
+        },
+        "version": 1
+    },
+    "id": 25
+}

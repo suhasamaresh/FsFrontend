@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { useAccount, useWalletClient, useSendTransaction } from "wagmi";
 import { motion, AnimatePresence } from "framer-motion";
-import { abi as FlashSplitAbi } from "../../../FlashSplit.json";
+import FlashSplitAbi from "../../../FlashSplit.json";
 
 type ExpenseCategory = 0 | 1 | 2 | 3 | 4 | 5;
 type SplitType = 0 | 1 | 2 | 3;
@@ -123,7 +123,7 @@ export default function CreateExpenseGroupPage() {
   }
 
   const encodeCreateExpenseGroup = (params: CreateExpenseGroupParams) => {
-    const iface = new ethers.Interface(FlashSplitAbi);
+    const iface = new ethers.Interface(FlashSplitAbi.abi);
     const customSplitsBigInt = params.customSplits.map(s => BigInt(s));
     return iface.encodeFunctionData("createExpenseGroup", [
       {

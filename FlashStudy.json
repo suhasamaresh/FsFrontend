@@ -1,0 +1,2328 @@
+{
+    "abi": [
+        {
+            "type": "constructor",
+            "inputs": [
+                {
+                    "name": "_token",
+                    "type": "address",
+                    "internalType": "contract IERC20"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "canContribute",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "cancelFund",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "claimAccess",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "claimCancelRefund",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "claimRefund",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "contributeFund",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "contributorIndex",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "createStudyFund",
+            "inputs": [
+                {
+                    "name": "_topic",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "_description",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "_contributionAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_targetAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_deadline",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_maxParticipants",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "distributeAccess",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_accessMetadataURI",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "emergencyWithdraw",
+            "inputs": [
+                {
+                    "name": "_amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "expireFund",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "finalizeFund",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "fundContributors",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "contributionAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "contributionTime",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "accessClaimed",
+                    "type": "bool",
+                    "internalType": "bool"
+                },
+                {
+                    "name": "refundClaimed",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "fundCounter",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getAccessInfo",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "hasAccess",
+                    "type": "bool",
+                    "internalType": "bool"
+                },
+                {
+                    "name": "accessClaimed",
+                    "type": "bool",
+                    "internalType": "bool"
+                },
+                {
+                    "name": "accessURI",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getFundContributors",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "users",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                },
+                {
+                    "name": "contributionAmounts",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                },
+                {
+                    "name": "contributionTimes",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                },
+                {
+                    "name": "accessClaimed",
+                    "type": "bool[]",
+                    "internalType": "bool[]"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getFundingProgress",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "percentage",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getFundsByTopic",
+            "inputs": [
+                {
+                    "name": "_topic",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getStudyFund",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "topic",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "organizer",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "contributionAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "targetAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "deadline",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "maxParticipants",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "status",
+                    "type": "uint8",
+                    "internalType": "enum FlashStudy.FundStatus"
+                },
+                {
+                    "name": "participantCount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "totalContributions",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "resourceURI",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "accessMetadataURI",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "accessDistributed",
+                    "type": "bool",
+                    "internalType": "bool"
+                },
+                {
+                    "name": "createdAt",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getUserContributions",
+            "inputs": [
+                {
+                    "name": "_user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "hasContributed",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "owner",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "recordResourcePurchase",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_resourceURI",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "renounceOwnership",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "studyFunds",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "topic",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "organizer",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "contributionAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "targetAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "deadline",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "maxParticipants",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "status",
+                    "type": "uint8",
+                    "internalType": "enum FlashStudy.FundStatus"
+                },
+                {
+                    "name": "participantCount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "totalContributions",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "resourceURI",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "accessMetadataURI",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "accessDistributed",
+                    "type": "bool",
+                    "internalType": "bool"
+                },
+                {
+                    "name": "createdAt",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "token",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "contract IERC20"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "topicFunds",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "transferOwnership",
+            "inputs": [
+                {
+                    "name": "newOwner",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "userContributions",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "userHasContributed",
+            "inputs": [
+                {
+                    "name": "_fundId",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "event",
+            "name": "AccessClaimed",
+            "inputs": [
+                {
+                    "name": "fundId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "contributor",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "accessInfo",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "AccessDistributed",
+            "inputs": [
+                {
+                    "name": "fundId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "accessMetadataURI",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "participantCount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "FundContributed",
+            "inputs": [
+                {
+                    "name": "fundId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "contributor",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "FundExpired",
+            "inputs": [
+                {
+                    "name": "fundId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "refundAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "FundFinalized",
+            "inputs": [
+                {
+                    "name": "fundId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "organizer",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "finalAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "FundTargetReached",
+            "inputs": [
+                {
+                    "name": "fundId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "totalAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "participantCount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "OwnershipTransferred",
+            "inputs": [
+                {
+                    "name": "previousOwner",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "newOwner",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "RefundIssued",
+            "inputs": [
+                {
+                    "name": "fundId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "contributor",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "ResourcePurchased",
+            "inputs": [
+                {
+                    "name": "fundId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "resourceURI",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "purchaseAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "StudyActivity",
+            "inputs": [
+                {
+                    "name": "fundId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "user",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "action",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "StudyFundCreated",
+            "inputs": [
+                {
+                    "name": "fundId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "organizer",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "topic",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "indexed": false,
+                    "internalType": "string"
+                },
+                {
+                    "name": "contributionAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "targetAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "deadline",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "maxParticipants",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "error",
+            "name": "OwnableInvalidOwner",
+            "inputs": [
+                {
+                    "name": "owner",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ]
+        },
+        {
+            "type": "error",
+            "name": "OwnableUnauthorizedAccount",
+            "inputs": [
+                {
+                    "name": "account",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ]
+        },
+        {
+            "type": "error",
+            "name": "ReentrancyGuardReentrantCall",
+            "inputs": []
+        }
+    ],
+    "bytecode": {
+        "object": "0x60a034620000f357601f62002cee38819003918201601f19168301916001600160401b03831184841017620000f757808492602094604052833981010312620000f357516001600160a01b03908181168103620000f35760015f553315620000db5760018054336001600160a01b03198216811790925560405193167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e05f80a3608052612be290816200010c82396080518181816103750152818161072101528181610d1c01528181611a7201528181611e630152611f920152f35b604051631e4fbdf760e01b81525f6004820152602490fd5b5f80fd5b634e487b7160e01b5f52604160045260245ffdfe6080806040526004361015610012575f80fd5b5f3560e01c908163010a5048146124f157508063032ad5b4146124515780630f6ca1a814610b8357806317173fcb146123845780631ef27018146122015780631f53811d14610e2357806335c00fe6146120c3578063362f59fa14611eff5780635312ea8e14611e115780635568d8cf14611b525780635b7baf641461199b5780636164ef401461191f57806362cece7014611752578063715018a6146116f757806376867eae146116da5780638da5cb5b146116b2578063937caf7614611643578063a01c19c314610e6c578063b5b96ae014610e23578063d3ffb92914610c45578063d8fef25e14610bbb578063e36465a314610b83578063e481052414610aea578063ecef00581461065e578063f2fde38b146105d7578063f40912aa146103a4578063fc0c546a14610360578063fe594bce1461027f578063ff4c5f6b146102595763ffdebb6b14610166575f80fd5b34610255576020366003190112610255576004355f52600360205260405f20600160a01b60019003600282015416906003810154600482015491600581015491600682015491600781015460ff16916008820154600983015490600c84015460ff1694600d8501549660405198896101de8189612733565b036101e9908b612680565b6040519a8b6101fb8160018b01612733565b03610206908d612680565b604051968761021881600a8c01612733565b036102239089612680565b60405180600b819b019061023691612733565b03610241908a612680565b6040519d8e9d6102519d8f6127c4565b0390f35b5f80fd5b34610255576020366003190112610255576020610277600435612b07565b604051908152f35b34610255576020366003190112610255576004355f52600360205260405f206040516102b6816102af8185612733565b0382612680565b610251604051926102d5846102ce8160018501612733565b0385612680565b60018060a01b0360028201541690600b600a600383015460048401546005850154600686015460ff6007880154169160088801549360098901549561032b8a610324604051809b819301612733565b0389612680565b6103468a61033f604051809c819301612733565b038a612680565b600d60ff600c8c0154169a01549a6040519e8f9e8f6127c4565b34610255575f366003190112610255576040517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b34610255576103b236612605565b9091805f526020926003845260405f206103d960018060a01b0360028301541633146128ea565b60ff60078201541660058110156105c35760026103f6911461293f565b831561058657600a81016001600160401b038511610572576104228561041c83546126fb565b83612982565b5f601f86116001146104e9577fe717e720eafcde8c9fd4887134e0f438f136d6f333dff2bef5683dd65e5e718d939286926104768488996009955f916104de575b508160011b915f199060031b1c19161790565b90555b01546104926040519384936040855260408501916129d1565b90878301520390a2604051916040835260126040840152711c995cdbdd5c98d957dc1d5c98da185cd95960721b606084015242908301525f80516020612b8d83398151915260803393a3005b90508701358c610463565b601f19861690825f52875f20915f5b8982821061055c575050926009927fe717e720eafcde8c9fd4887134e0f438f136d6f333dff2bef5683dd65e5e718d96959289899a9610610543575b5050600184811b019055610479565b8601355f19600387901b60f8161c191690558980610534565b600184958293958a0135815501940192016104f8565b634e487b7160e01b5f52604160045260245ffd5b60405162461bcd60e51b815260048101869052601560248201527414995cdbdd5c98d948155492481c995c5d5a5c9959605a1b6044820152606490fd5b634e487b7160e01b5f52602160045260245ffd5b34610255576020366003190112610255576105f0612549565b6105f8612b60565b6001600160a01b0390811690811561064657600154826001600160601b0360a01b821617600155167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e05f80a3005b604051631e4fbdf760e01b81525f6004820152602490fd5b34610255576020806003193601126102555760043561067b612b3f565b5f818152600383526040902060028101546001600160a01b039190821615610ab457600781019360ff85541660058110156105c3576106ba90156128ac565b60058201544211610a815760088201805460068401541115610a5057845f526005825260405f20335f52825260ff60405f205416610a155760038301938454604051906323b872dd60e01b8252336004830152306024830152604482015283816064815f867f0000000000000000000000000000000000000000000000000000000000000000165af1908115610a0a575f916109dd575b501561099857855f526004835260405f2085549160405160a081018181106001600160401b0382111761057257604052338152858101938452604081019342855260608201945f865260808301945f86528054600160401b811015610572576107bf91600182018155612638565b929092610985576108039460039451166001600160601b0360a01b8454161783555160018301555160028201550192511515839060ff801983541691151516179055565b51151561ff0082549160081b169061ff001916179055845f526005825260405f20335f52825260405f209560ff199660018882541617905561085b8254875f526006855260405f20335f5285528060405f2055612ad8565b82558454946009850195610870818854612afa565b8755335f526007855261088860405f20918254612afa565b9055546040519081524284820152867ffec2e60c18aa22dbbbb1a1aebd648cb57eee281fe41d99e53a643a08d15b072360403393a360046040519560408752600b60408801526a18dbdb9d1c9a589d5d195960aa1b606088015242858801525f80516020612b8d83398151915296888860803393a35494015484101561090f575b60015f55005b604060809487938360015f9b7fbd97a1747f854f6b5db25bba9fd8019a1c0cf258d413e2460a1eccc12ed12c4b96541617905554825191825285820152a26040519060408252600e60408301526d1d185c99d95d17dc995858da195960921b60608301524290820152a380808080808080610909565b634e487b7160e01b5f525f60045260245ffd5b60405162461bcd60e51b815260048101849052601c60248201527f436f6e747269627574696f6e207472616e73666572206661696c6564000000006044820152606490fd5b6109fd9150843d8611610a03575b6109f58183612680565b810190612927565b88610751565b503d6109eb565b6040513d5f823e3d90fd5b60405162461bcd60e51b8152600481018390526013602482015272105b1c9958591e4818dbdb9d1c9a589d5d1959606a1b6044820152606490fd5b60405162461bcd60e51b8152600481018390526009602482015268119d5b9908199d5b1b60ba1b6044820152606490fd5b6064906040519062461bcd60e51b82526004820152600c60248201526b119d5b9908195e1c1a5c995960a21b6044820152fd5b60405162461bcd60e51b815260048101859052600e60248201526d119d5b99081b9bdd08199bdd5b9960921b6044820152606490fd5b3461025557602036600319011261025557600435805f526003602052600760405f20610b2360018060a01b0360028301541633146128ea565b01805460ff81169060058210156105c357610b40600492156128ac565b60ff19161790556040519060408252600960408301526818d85b98d95b1b195960ba1b60608301524260208301525f80516020612b8d83398151915260803393a3005b34610255576020366003190112610255576001600160a01b03610ba4612549565b165f526007602052602060405f2054604051908152f35b34610255576040366003190112610255576004356001600160401b038111610255573660238201121561025557610bfc9036906024816004013591016126a1565b610c1860206024359281604051938285809451938492016125bf565b81016008815203019020805482101561025557602091610c37916126e6565b90546040519160031b1c8152f35b346102555760208060031936011261025557600435610c62612b3f565b805f526003825260ff600760405f2001541660058110156105c357600403610de957805f526005825260405f20335f528252610ca460ff60405f20541661286c565b805f526006825260405f20335f5282526001610cce60405f2054835f526004855260405f20612638565b50600381016101008154610ce860ff8260081c16156129f1565b61ff001916179055015460405163a9059cbb60e01b81523360048201526024810182905283816044815f6001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000165af18015610a0a57610d55915f91610dcc575b50612a36565b604051908152817f7a482fdeb6bc9a1376f597068a214a7a39472bb2eff1b8cad21ba04f49ddca1b843393a36040519160408352601560408401527418d85b98d95b17dc99599d5b9917d8db185a5b5959605a1b606084015242908301525f80516020612b8d83398151915260803393a360015f55005b610de39150853d8711610a03576109f58183612680565b85610d4f565b60405162461bcd60e51b8152600481018390526012602482015271119d5b99081b9bdd0818d85b98d95b1b195960721b6044820152606490fd5b3461025557604036600319011261025557610e3c612533565b6004355f52600560205260405f209060018060a01b03165f52602052602060ff60405f2054166040519015158152f35b346102555760c0366003190112610255576004356001600160401b03811161025557610e9c90369060040161255f565b6024356001600160401b03811161025557610ebb90369060040161255f565b9290604491606493610ecb612b3f565b801561160e5785156115d35783351561158f57833585351061154b574260843511156115075760a4351515806114fb575b156114be5760025494610f0e86612ad8565b6002556040516101c081018181106001600160401b0382111761057257604052610f393684866126a1565b8152610f463689876126a1565b6020820152336040820152853560608201528135608082015260843560a082015260a43560c08201525f60e08201525f6101008201525f610120820152604051610f8f81612665565b5f8152610140820152604051610fa481612665565b5f81526101608201525f610180820152426101a0820152865f52600360205260405f209080518051906001600160401b03821161057257610fef82610fe986546126fb565b86612982565b602090601f83116001146114565761101e92915f918361136f575b50508160011b915f199060031b1c19161790565b82555b60208101518051906001600160401b038211610572576110518261104860018701546126fb565b60018701612982565b602090601f83116001146113e85761107f92915f918361136f5750508160011b915f199060031b1c19161790565b60018301555b6002820160018060a01b036040830151166001600160601b0360a01b825416179055606081015160038301556080810151600483015560a0810151600583015560c081015160068301556007820160e082015160058110156105c35760ff80198354169116179055610100810151600883015561012081015160098301556101408101518051906001600160401b038211610572576111348261112b600a8701546126fb565b600a8701612982565b602090601f831160011461137a5761116292915f918361136f5750508160011b915f199060031b1c19161790565b600a8301555b6101608101518051906001600160401b0382116105725761119982611190600b8701546126fb565b600b8701612982565b602090601f83116001146112fd57826101a093600d95936111ce935f926112f25750508160011b915f199060031b1c19161790565b600b8501555b6111f46101808201511515600c86019060ff801983541691151516179055565b0151910155604051828482376020818481016008815203019020805494600160401b8610156105725760209861127f7f36b6c4fd4464f20d7462943c39ec2b0f8309d3600694f63a00c7ca58fad02b0f966112598961128c9660018e9c0181556126e6565b81549060031b908b821b915f19901b19161790556040519660c0885260c08801916129d1565b918583038b8701526129d1565b94356040830152356060820152608435608082015260a43560a08201528033940390a360405160408152600760408201526618dc99585d195960ca1b60608201524283820152815f80516020612b8d83398151915260803393a360015f55604051908152f35b015190508e8061100a565b90600b85015f5260205f20915f5b601f1985168110611357575092600d94926001926101a09583601f1981161061133f575b505050811b01600b8501556111d4565b01515f1960f88460031b161c191690558d808061132f565b9192602060018192868501518155019401920161130b565b015190508c8061100a565b9190600a85015f5260205f20905f935b601f19841685106113cd576001945083601f198116106113b5575b505050811b01600a830155611168565b01515f1960f88460031b161c191690558b80806113a5565b8181015183556020948501946001909301929091019061138a565b9190600185015f5260205f20905f935b601f198416851061143b576001945083601f19811610611423575b505050811b016001830155611085565b01515f1960f88460031b161c191690558b8080611413565b818101518355602094850194600190930192909101906113f8565b9190845f5260205f20905f935b601f19841685106114a3576001945083601f1981161061148b575b505050811b018255611021565b01515f1960f88460031b161c191690558b808061147e565b81810151835560209485019460019093019290910190611463565b5050507504d6178207061727469636970616e747320312d3130360541b6040519162461bcd60e51b83526020600484015260166024840152820152fd5b508460a4351115610efc565b5050507f446561646c696e65206d757374206265206675747572650000000000000000006040519162461bcd60e51b83526020600484015260176024840152820152fd5b5050507f546172676574206d757374206265203e3d20636f6e747269627574696f6e00006040519162461bcd60e51b835260206004840152601e6024840152820152fd5b5050507f436f6e747269627574696f6e206d757374206265203e203000000000000000006040519162461bcd60e51b83526020600484015260186024840152820152fd5b5050507311195cd8dc9a5c1d1a5bdb881c995c5d5a5c995960621b6040519162461bcd60e51b83526020600484015260146024840152820152fd5b5050506d151bdc1a58c81c995c5d5a5c995960921b6040519162461bcd60e51b835260206004840152600e6024840152820152fd5b34610255576020366003190112610255576004355f52600360205260405f2060ff6007820154169060058210156105c3576020911590816116a3575b81611690575b506040519015158152f35b9050600660088201549101541182611685565b6005810154421115915061167f565b34610255575f366003190112610255576001546040516001600160a01b039091168152602090f35b34610255575f366003190112610255576020600254604051908152f35b34610255575f3660031901126102555761170f612b60565b600180546001600160a01b031981169091555f906001600160a01b03167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e08280a3005b3461025557602080600319360112610255576004355f526004815260405f209081549161177e83612a7b565b9161178c6040519384612680565b83835261179884612a7b565b83820194601f19939184013687376117af81612a92565b956117b982612a92565b916117c381612a7b565b936117d16040519586612680565b8185526117dd82612a7b565b85870197013688375f5b828110611895575050506040519687966080880190608089525180915260a0880192905f5b818110611875575050509161182c8286948961183a9503868b015261258c565b90878203604089015261258c565b91858303606087015251918281520192915f5b82811061185c57505050500390f35b835115158552869550938101939281019260010161184d565b82516001600160a01b031685528a9950938701939187019160010161180c565b806118a9600192849c9697989a9b9c612638565b50828060a01b039054166118bd828d612ac4565b52816118c98285612638565b5001546118d68287612ac4565b5260026118e38285612638565b5001546118f08289612ac4565b5260ff60036118ff8386612638565b5001541661190d828b612ac4565b901515905201989796949392986117e7565b34610255576040366003190112610255576024356004355f52600460205260405f2080548210156102555760a09161195691612638565b5060ff600180841b03825416916001810154906003600282015491015491604051948552602085015260408401528181161515606084015260081c1615156080820152f35b3461025557602080600319360112610255576004356119b8612b3f565b805f526003825260ff600760405f2001541660058110156105c357600303611b1a57805f526005825260405f20335f5282526119fa60ff60405f20541661286c565b805f526006825260405f20335f5282526001611a2460405f2054835f526004855260405f20612638565b50600381016101008154611a3e60ff8260081c16156129f1565b61ff001916179055015460405163a9059cbb60e01b81523360048201526024810182905283816044815f6001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000165af18015610a0a57611aaa915f91610dcc5750612a36565b604051908152817f7a482fdeb6bc9a1376f597068a214a7a39472bb2eff1b8cad21ba04f49ddca1b843393a36040519160408352600e60408401526d1c99599d5b9917d8db185a5b595960921b606084015242908301525f80516020612b8d83398151915260803393a360015f55005b60405162461bcd60e51b815260048101839052601060248201526f119d5b99081b9bdd08195e1c1a5c995960821b6044820152606490fd5b3461025557611b6036612605565b825f939293526020926003845260405f2090611b8960018060a01b0360028401541633146128ea565b60ff60078301541660058110156105c3576002611ba6911461293f565b611bb3600a8301546126fb565b15611dd457600c82019260ff845416611d8f578015611d4a57600b8301926001600160401b0382116105725783611bef8361041c8997546126fb565b5f601f8411600114611cbf579560089291611c4185807f7e939e481d8231d4c8c84ce7b605803521621935eaea560c61d6b8c02f73e5cd999a5f91611cb457508160011b915f199060031b1c19161790565b90555b600160ff198254161790550154611c686040519384936040855260408501916129d1565b90878301520390a2604051916040835260126040840152711858d8d95cdcd7d91a5cdd1c9a589d5d195960721b606084015242908301525f80516020612b8d83398151915260803393a3005b90508801358d610463565b601f19841690825f52895f20915f5b8b828210611d31575050916008949391867f7e939e481d8231d4c8c84ce7b605803521621935eaea560c61d6b8c02f73e5cd999a9410611d18575b5050600185811b019055611c44565b8701355f19600388901b60f8161c191690558a80611d09565b8884013585558b99506001909401939283019201611cce565b60405162461bcd60e51b815260048101879052601860248201527f416363657373206d6574616461746120726571756972656400000000000000006044820152606490fd5b60405162461bcd60e51b815260048101879052601a60248201527f41636365737320616c72656164792064697374726962757465640000000000006044820152606490fd5b60405162461bcd60e51b815260048101869052601560248201527414995cdbdd5c98d9481b9bdd081c9958dbdc991959605a1b6044820152606490fd5b3461025557602036600319011261025557611e2a612b60565b60015460405163a9059cbb60e01b81526001600160a01b0391821660048083019190915235602482015290602090829060449082905f907f0000000000000000000000000000000000000000000000000000000000000000165af1908115610a0a575f91611ee0575b5015611e9b57005b60405162461bcd60e51b815260206004820152601960248201527f456d657267656e6379207769746864726177206661696c6564000000000000006044820152606490fd5b611ef9915060203d602011610a03576109f58183612680565b81611e93565b346102555760208060031936011261025557600435611f1c612b3f565b805f526003825260405f2060018060a01b0390611f408260028301541633146128ea565b60078101805460ff811660058110156105c35760010361208c5760ff191660021790556009015460405163a9059cbb60e01b815233600482015260248101829052909184908290815f816044810103927f0000000000000000000000000000000000000000000000000000000000000000165af1908115610a0a575f9161206f575b501561203357604051908152817f6dad9b0f4948da27e61067d4cd3c189538fc36103a68c4e63bf645893fd372f7843393a360405191604083526009604084015268199a5b985b1a5e995960ba1b606084015242908301525f80516020612b8d83398151915260803393a360015f55005b60405162461bcd60e51b8152600481018490526014602482015273119d5b99081d1c985b9cd9995c8819985a5b195960621b6044820152606490fd5b6120869150843d8611610a03576109f58183612680565b84611fc2565b60405162461bcd60e51b815260048101879052600f60248201526e119d5b99081b9bdd08199d5b991959608a1b6044820152606490fd5b346102555760208060031936011261025557600435805f526003825260405f2060078101805460ff811660058110156105c35761210090156128ac565b60058301544211156121c6576004600984015493015483101561218c5760ff1916600317905560405190815281907ffef2d88d18eadb22b0dfa87cbd6c4230757b57e15cddc31960f909bbf871455c908490a260405191604083526007604084015266195e1c1a5c995960ca1b606084015242908301525f80516020612b8d83398151915260803393a3005b60405162461bcd60e51b815260048101869052601260248201527115185c99d95d081dd85cc81c995858da195960721b6044820152606490fd5b60405162461bcd60e51b8152600481018690526013602482015272111958591b1a5b99481b9bdd081c185cdcd959606a1b6044820152606490fd5b346102555760208060031936011261025557600435805f526003825260405f206005835260405f20335f52835261223e60ff60405f20541661286c565b60ff600c820154161561234657815f526006835260405f20335f528352600361227560405f2054845f526004865260405f20612638565b5001805460ff81166123085760019060ff1916179055817f706777cb4d0be5278e875baf2198e6d29d07780bab91665f16f72af8b6ee0ca4604051858152806122c53395600b8984019101612733565b0390a36040519160408352600e60408401526d1858d8d95cdcd7d8db185a5b595960921b606084015242908301525f80516020612b8d83398151915260803393a3005b60405162461bcd60e51b81526004810186905260166024820152751058d8d95cdcc8185b1c9958591e4818db185a5b595960521b6044820152606490fd5b60405162461bcd60e51b81526004810184905260166024820152751058d8d95cdcc81b9bdd08191a5cdd1c9a589d5d195960521b6044820152606490fd5b34610255576040366003190112610255576004356123a0612533565b90805f52610251600b6124046020936005855260405f209560018060a01b031695865f5285526123d660ff60405f20541661286c565b805f526003855260405f20956006865260405f20905f52855260405f2054905f526004855260405f20612638565b509261243060ff600381600c8901541696015416956124296040518095819301612733565b0383612680565b604051948594151585521515908401526060604084015260608301906125e0565b3461025557602080600319360112610255576004356001600160401b038111610255576124838291369060040161255f565b919082604051938492833781016008815203019020906040518083838295549384815201905f52835f20925f5b858282106124db575050506124c792500383612680565b61025160405192828493845283019061258c565b85548452600195860195889550930192016124b0565b346102555760403660031901126102555760209061250d612533565b6004355f9081526006845260408082206001600160a01b03909316825291845220548152f35b602435906001600160a01b038216820361025557565b600435906001600160a01b038216820361025557565b9181601f84011215610255578235916001600160401b038311610255576020838186019501011161025557565b9081518082526020808093019301915f5b8281106125ab575050505090565b83518552938101939281019260010161259d565b5f5b8381106125d05750505f910152565b81810151838201526020016125c1565b906020916125f9815180928185528580860191016125bf565b601f01601f1916010190565b9060406003198301126102555760043591602435906001600160401b038211610255576126349160040161255f565b9091565b8054821015612651575f5260205f209060021b01905f90565b634e487b7160e01b5f52603260045260245ffd5b602081019081106001600160401b0382111761057257604052565b90601f801991011681019081106001600160401b0382111761057257604052565b9291926001600160401b03821161057257604051916126ca601f8201601f191660200184612680565b829481845281830111610255578281602093845f960137010152565b8054821015612651575f5260205f2001905f90565b90600182811c92168015612729575b602083101461271557565b634e487b7160e01b5f52602260045260245ffd5b91607f169161270a565b80545f9392612741826126fb565b918282526020936001916001811690815f146127a55750600114612767575b5050505050565b90939495505f92919252835f2092845f945b83861061279157505050500101905f80808080612760565b805485870183015294019385908201612779565b60ff19168685015250505090151560051b010191505f80808080612760565b9a9593919c9e9d9c6127ea6127f8929d9a9b9d989694988d6101c09081815201906125e0565b8c810360208e0152906125e0565b6001600160a01b0390961660408b015260608a0152608089015260a088015260c087015260058310156105c3576101a09661285f956128509460e08901526101008801526101208701528582036101408701526125e0565b908382036101608501526125e0565b9415156101808201520152565b1561287357565b60405162461bcd60e51b81526020600482015260116024820152702737ba10309031b7b73a3934b13aba37b960791b6044820152606490fd5b156128b357565b60405162461bcd60e51b815260206004820152600f60248201526e46756e64206e6f742061637469766560881b6044820152606490fd5b156128f157565b60405162461bcd60e51b815260206004820152600e60248201526d27b7363c9037b933b0b734bd32b960911b6044820152606490fd5b90816020910312610255575180151581036102555790565b1561294657565b60405162461bcd60e51b8152602060048201526014602482015273119d5b99081b9bdd08191a5cdd1c9a589d5d195960621b6044820152606490fd5b601f821161298f57505050565b5f5260205f20906020601f840160051c830193106129c7575b601f0160051c01905b8181106129bc575050565b5f81556001016129b1565b90915081906129a8565b908060209392818452848401375f828201840152601f01601f1916010190565b156129f857565b60405162461bcd60e51b81526020600482015260166024820152751499599d5b9908185b1c9958591e4818db185a5b595960521b6044820152606490fd5b15612a3d57565b60405162461bcd60e51b81526020600482015260166024820152751499599d5b99081d1c985b9cd9995c8819985a5b195960521b6044820152606490fd5b6001600160401b0381116105725760051b60200190565b90612a9c82612a7b565b612aa96040519182612680565b8281528092612aba601f1991612a7b565b0190602036910137565b80518210156126515760209160051b010190565b5f198114612ae65760010190565b634e487b7160e01b5f52601160045260245ffd5b91908201809211612ae657565b5f52600360205260405f206004810154908115612b395760090154606481029080820460641490151715612ae6570490565b50505f90565b60025f5414612b4e5760025f55565b604051633ee5aeb560e01b8152600490fd5b6001546001600160a01b03163303612b7457565b60405163118cdaa760e01b8152336004820152602490fdfe6a1efc3e12b33e5cecd16855ffb4da543369b06dfe8a4d298f65c11b5ace9147a26469706673582212206af9dfc9e71e4faf3db5c059c35b791d0a9b9d3658e7fec011ade7866f0f3ba664736f6c63430008180033",
+        "sourceMap": "384:17240:37:-:0;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;1857:1:31;-1:-1:-1;1857:1:31;3337:10:37;1273:26:20;1269:95;;1857:1:31;384:17240:37;;3337:10;-1:-1:-1;;;;;;384:17240:37;;;;;;;;;;;3052:40:20;-1:-1:-1;;3052:40:20;3359:14:37;;384:17240;;;;;;3359:14;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1269:95:20;384:17240:37;;-1:-1:-1;;;1322:31:20;;-1:-1:-1;1322:31:20;;;384:17240:37;;;1322:31:20;384:17240:37;-1:-1:-1;384:17240:37;;;;;;-1:-1:-1;384:17240:37;;;;;-1:-1:-1;384:17240:37",
+        "linkReferences": {}
+    },
+    "deployedBytecode": {
+        "object": "0x6080806040526004361015610012575f80fd5b5f3560e01c908163010a5048146124f157508063032ad5b4146124515780630f6ca1a814610b8357806317173fcb146123845780631ef27018146122015780631f53811d14610e2357806335c00fe6146120c3578063362f59fa14611eff5780635312ea8e14611e115780635568d8cf14611b525780635b7baf641461199b5780636164ef401461191f57806362cece7014611752578063715018a6146116f757806376867eae146116da5780638da5cb5b146116b2578063937caf7614611643578063a01c19c314610e6c578063b5b96ae014610e23578063d3ffb92914610c45578063d8fef25e14610bbb578063e36465a314610b83578063e481052414610aea578063ecef00581461065e578063f2fde38b146105d7578063f40912aa146103a4578063fc0c546a14610360578063fe594bce1461027f578063ff4c5f6b146102595763ffdebb6b14610166575f80fd5b34610255576020366003190112610255576004355f52600360205260405f20600160a01b60019003600282015416906003810154600482015491600581015491600682015491600781015460ff16916008820154600983015490600c84015460ff1694600d8501549660405198896101de8189612733565b036101e9908b612680565b6040519a8b6101fb8160018b01612733565b03610206908d612680565b604051968761021881600a8c01612733565b036102239089612680565b60405180600b819b019061023691612733565b03610241908a612680565b6040519d8e9d6102519d8f6127c4565b0390f35b5f80fd5b34610255576020366003190112610255576020610277600435612b07565b604051908152f35b34610255576020366003190112610255576004355f52600360205260405f206040516102b6816102af8185612733565b0382612680565b610251604051926102d5846102ce8160018501612733565b0385612680565b60018060a01b0360028201541690600b600a600383015460048401546005850154600686015460ff6007880154169160088801549360098901549561032b8a610324604051809b819301612733565b0389612680565b6103468a61033f604051809c819301612733565b038a612680565b600d60ff600c8c0154169a01549a6040519e8f9e8f6127c4565b34610255575f366003190112610255576040517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b34610255576103b236612605565b9091805f526020926003845260405f206103d960018060a01b0360028301541633146128ea565b60ff60078201541660058110156105c35760026103f6911461293f565b831561058657600a81016001600160401b038511610572576104228561041c83546126fb565b83612982565b5f601f86116001146104e9577fe717e720eafcde8c9fd4887134e0f438f136d6f333dff2bef5683dd65e5e718d939286926104768488996009955f916104de575b508160011b915f199060031b1c19161790565b90555b01546104926040519384936040855260408501916129d1565b90878301520390a2604051916040835260126040840152711c995cdbdd5c98d957dc1d5c98da185cd95960721b606084015242908301525f80516020612b8d83398151915260803393a3005b90508701358c610463565b601f19861690825f52875f20915f5b8982821061055c575050926009927fe717e720eafcde8c9fd4887134e0f438f136d6f333dff2bef5683dd65e5e718d96959289899a9610610543575b5050600184811b019055610479565b8601355f19600387901b60f8161c191690558980610534565b600184958293958a0135815501940192016104f8565b634e487b7160e01b5f52604160045260245ffd5b60405162461bcd60e51b815260048101869052601560248201527414995cdbdd5c98d948155492481c995c5d5a5c9959605a1b6044820152606490fd5b634e487b7160e01b5f52602160045260245ffd5b34610255576020366003190112610255576105f0612549565b6105f8612b60565b6001600160a01b0390811690811561064657600154826001600160601b0360a01b821617600155167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e05f80a3005b604051631e4fbdf760e01b81525f6004820152602490fd5b34610255576020806003193601126102555760043561067b612b3f565b5f818152600383526040902060028101546001600160a01b039190821615610ab457600781019360ff85541660058110156105c3576106ba90156128ac565b60058201544211610a815760088201805460068401541115610a5057845f526005825260405f20335f52825260ff60405f205416610a155760038301938454604051906323b872dd60e01b8252336004830152306024830152604482015283816064815f867f0000000000000000000000000000000000000000000000000000000000000000165af1908115610a0a575f916109dd575b501561099857855f526004835260405f2085549160405160a081018181106001600160401b0382111761057257604052338152858101938452604081019342855260608201945f865260808301945f86528054600160401b811015610572576107bf91600182018155612638565b929092610985576108039460039451166001600160601b0360a01b8454161783555160018301555160028201550192511515839060ff801983541691151516179055565b51151561ff0082549160081b169061ff001916179055845f526005825260405f20335f52825260405f209560ff199660018882541617905561085b8254875f526006855260405f20335f5285528060405f2055612ad8565b82558454946009850195610870818854612afa565b8755335f526007855261088860405f20918254612afa565b9055546040519081524284820152867ffec2e60c18aa22dbbbb1a1aebd648cb57eee281fe41d99e53a643a08d15b072360403393a360046040519560408752600b60408801526a18dbdb9d1c9a589d5d195960aa1b606088015242858801525f80516020612b8d83398151915296888860803393a35494015484101561090f575b60015f55005b604060809487938360015f9b7fbd97a1747f854f6b5db25bba9fd8019a1c0cf258d413e2460a1eccc12ed12c4b96541617905554825191825285820152a26040519060408252600e60408301526d1d185c99d95d17dc995858da195960921b60608301524290820152a380808080808080610909565b634e487b7160e01b5f525f60045260245ffd5b60405162461bcd60e51b815260048101849052601c60248201527f436f6e747269627574696f6e207472616e73666572206661696c6564000000006044820152606490fd5b6109fd9150843d8611610a03575b6109f58183612680565b810190612927565b88610751565b503d6109eb565b6040513d5f823e3d90fd5b60405162461bcd60e51b8152600481018390526013602482015272105b1c9958591e4818dbdb9d1c9a589d5d1959606a1b6044820152606490fd5b60405162461bcd60e51b8152600481018390526009602482015268119d5b9908199d5b1b60ba1b6044820152606490fd5b6064906040519062461bcd60e51b82526004820152600c60248201526b119d5b9908195e1c1a5c995960a21b6044820152fd5b60405162461bcd60e51b815260048101859052600e60248201526d119d5b99081b9bdd08199bdd5b9960921b6044820152606490fd5b3461025557602036600319011261025557600435805f526003602052600760405f20610b2360018060a01b0360028301541633146128ea565b01805460ff81169060058210156105c357610b40600492156128ac565b60ff19161790556040519060408252600960408301526818d85b98d95b1b195960ba1b60608301524260208301525f80516020612b8d83398151915260803393a3005b34610255576020366003190112610255576001600160a01b03610ba4612549565b165f526007602052602060405f2054604051908152f35b34610255576040366003190112610255576004356001600160401b038111610255573660238201121561025557610bfc9036906024816004013591016126a1565b610c1860206024359281604051938285809451938492016125bf565b81016008815203019020805482101561025557602091610c37916126e6565b90546040519160031b1c8152f35b346102555760208060031936011261025557600435610c62612b3f565b805f526003825260ff600760405f2001541660058110156105c357600403610de957805f526005825260405f20335f528252610ca460ff60405f20541661286c565b805f526006825260405f20335f5282526001610cce60405f2054835f526004855260405f20612638565b50600381016101008154610ce860ff8260081c16156129f1565b61ff001916179055015460405163a9059cbb60e01b81523360048201526024810182905283816044815f6001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000165af18015610a0a57610d55915f91610dcc575b50612a36565b604051908152817f7a482fdeb6bc9a1376f597068a214a7a39472bb2eff1b8cad21ba04f49ddca1b843393a36040519160408352601560408401527418d85b98d95b17dc99599d5b9917d8db185a5b5959605a1b606084015242908301525f80516020612b8d83398151915260803393a360015f55005b610de39150853d8711610a03576109f58183612680565b85610d4f565b60405162461bcd60e51b8152600481018390526012602482015271119d5b99081b9bdd0818d85b98d95b1b195960721b6044820152606490fd5b3461025557604036600319011261025557610e3c612533565b6004355f52600560205260405f209060018060a01b03165f52602052602060ff60405f2054166040519015158152f35b346102555760c0366003190112610255576004356001600160401b03811161025557610e9c90369060040161255f565b6024356001600160401b03811161025557610ebb90369060040161255f565b9290604491606493610ecb612b3f565b801561160e5785156115d35783351561158f57833585351061154b574260843511156115075760a4351515806114fb575b156114be5760025494610f0e86612ad8565b6002556040516101c081018181106001600160401b0382111761057257604052610f393684866126a1565b8152610f463689876126a1565b6020820152336040820152853560608201528135608082015260843560a082015260a43560c08201525f60e08201525f6101008201525f610120820152604051610f8f81612665565b5f8152610140820152604051610fa481612665565b5f81526101608201525f610180820152426101a0820152865f52600360205260405f209080518051906001600160401b03821161057257610fef82610fe986546126fb565b86612982565b602090601f83116001146114565761101e92915f918361136f575b50508160011b915f199060031b1c19161790565b82555b60208101518051906001600160401b038211610572576110518261104860018701546126fb565b60018701612982565b602090601f83116001146113e85761107f92915f918361136f5750508160011b915f199060031b1c19161790565b60018301555b6002820160018060a01b036040830151166001600160601b0360a01b825416179055606081015160038301556080810151600483015560a0810151600583015560c081015160068301556007820160e082015160058110156105c35760ff80198354169116179055610100810151600883015561012081015160098301556101408101518051906001600160401b038211610572576111348261112b600a8701546126fb565b600a8701612982565b602090601f831160011461137a5761116292915f918361136f5750508160011b915f199060031b1c19161790565b600a8301555b6101608101518051906001600160401b0382116105725761119982611190600b8701546126fb565b600b8701612982565b602090601f83116001146112fd57826101a093600d95936111ce935f926112f25750508160011b915f199060031b1c19161790565b600b8501555b6111f46101808201511515600c86019060ff801983541691151516179055565b0151910155604051828482376020818481016008815203019020805494600160401b8610156105725760209861127f7f36b6c4fd4464f20d7462943c39ec2b0f8309d3600694f63a00c7ca58fad02b0f966112598961128c9660018e9c0181556126e6565b81549060031b908b821b915f19901b19161790556040519660c0885260c08801916129d1565b918583038b8701526129d1565b94356040830152356060820152608435608082015260a43560a08201528033940390a360405160408152600760408201526618dc99585d195960ca1b60608201524283820152815f80516020612b8d83398151915260803393a360015f55604051908152f35b015190508e8061100a565b90600b85015f5260205f20915f5b601f1985168110611357575092600d94926001926101a09583601f1981161061133f575b505050811b01600b8501556111d4565b01515f1960f88460031b161c191690558d808061132f565b9192602060018192868501518155019401920161130b565b015190508c8061100a565b9190600a85015f5260205f20905f935b601f19841685106113cd576001945083601f198116106113b5575b505050811b01600a830155611168565b01515f1960f88460031b161c191690558b80806113a5565b8181015183556020948501946001909301929091019061138a565b9190600185015f5260205f20905f935b601f198416851061143b576001945083601f19811610611423575b505050811b016001830155611085565b01515f1960f88460031b161c191690558b8080611413565b818101518355602094850194600190930192909101906113f8565b9190845f5260205f20905f935b601f19841685106114a3576001945083601f1981161061148b575b505050811b018255611021565b01515f1960f88460031b161c191690558b808061147e565b81810151835560209485019460019093019290910190611463565b5050507504d6178207061727469636970616e747320312d3130360541b6040519162461bcd60e51b83526020600484015260166024840152820152fd5b508460a4351115610efc565b5050507f446561646c696e65206d757374206265206675747572650000000000000000006040519162461bcd60e51b83526020600484015260176024840152820152fd5b5050507f546172676574206d757374206265203e3d20636f6e747269627574696f6e00006040519162461bcd60e51b835260206004840152601e6024840152820152fd5b5050507f436f6e747269627574696f6e206d757374206265203e203000000000000000006040519162461bcd60e51b83526020600484015260186024840152820152fd5b5050507311195cd8dc9a5c1d1a5bdb881c995c5d5a5c995960621b6040519162461bcd60e51b83526020600484015260146024840152820152fd5b5050506d151bdc1a58c81c995c5d5a5c995960921b6040519162461bcd60e51b835260206004840152600e6024840152820152fd5b34610255576020366003190112610255576004355f52600360205260405f2060ff6007820154169060058210156105c3576020911590816116a3575b81611690575b506040519015158152f35b9050600660088201549101541182611685565b6005810154421115915061167f565b34610255575f366003190112610255576001546040516001600160a01b039091168152602090f35b34610255575f366003190112610255576020600254604051908152f35b34610255575f3660031901126102555761170f612b60565b600180546001600160a01b031981169091555f906001600160a01b03167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e08280a3005b3461025557602080600319360112610255576004355f526004815260405f209081549161177e83612a7b565b9161178c6040519384612680565b83835261179884612a7b565b83820194601f19939184013687376117af81612a92565b956117b982612a92565b916117c381612a7b565b936117d16040519586612680565b8185526117dd82612a7b565b85870197013688375f5b828110611895575050506040519687966080880190608089525180915260a0880192905f5b818110611875575050509161182c8286948961183a9503868b015261258c565b90878203604089015261258c565b91858303606087015251918281520192915f5b82811061185c57505050500390f35b835115158552869550938101939281019260010161184d565b82516001600160a01b031685528a9950938701939187019160010161180c565b806118a9600192849c9697989a9b9c612638565b50828060a01b039054166118bd828d612ac4565b52816118c98285612638565b5001546118d68287612ac4565b5260026118e38285612638565b5001546118f08289612ac4565b5260ff60036118ff8386612638565b5001541661190d828b612ac4565b901515905201989796949392986117e7565b34610255576040366003190112610255576024356004355f52600460205260405f2080548210156102555760a09161195691612638565b5060ff600180841b03825416916001810154906003600282015491015491604051948552602085015260408401528181161515606084015260081c1615156080820152f35b3461025557602080600319360112610255576004356119b8612b3f565b805f526003825260ff600760405f2001541660058110156105c357600303611b1a57805f526005825260405f20335f5282526119fa60ff60405f20541661286c565b805f526006825260405f20335f5282526001611a2460405f2054835f526004855260405f20612638565b50600381016101008154611a3e60ff8260081c16156129f1565b61ff001916179055015460405163a9059cbb60e01b81523360048201526024810182905283816044815f6001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000165af18015610a0a57611aaa915f91610dcc5750612a36565b604051908152817f7a482fdeb6bc9a1376f597068a214a7a39472bb2eff1b8cad21ba04f49ddca1b843393a36040519160408352600e60408401526d1c99599d5b9917d8db185a5b595960921b606084015242908301525f80516020612b8d83398151915260803393a360015f55005b60405162461bcd60e51b815260048101839052601060248201526f119d5b99081b9bdd08195e1c1a5c995960821b6044820152606490fd5b3461025557611b6036612605565b825f939293526020926003845260405f2090611b8960018060a01b0360028401541633146128ea565b60ff60078301541660058110156105c3576002611ba6911461293f565b611bb3600a8301546126fb565b15611dd457600c82019260ff845416611d8f578015611d4a57600b8301926001600160401b0382116105725783611bef8361041c8997546126fb565b5f601f8411600114611cbf579560089291611c4185807f7e939e481d8231d4c8c84ce7b605803521621935eaea560c61d6b8c02f73e5cd999a5f91611cb457508160011b915f199060031b1c19161790565b90555b600160ff198254161790550154611c686040519384936040855260408501916129d1565b90878301520390a2604051916040835260126040840152711858d8d95cdcd7d91a5cdd1c9a589d5d195960721b606084015242908301525f80516020612b8d83398151915260803393a3005b90508801358d610463565b601f19841690825f52895f20915f5b8b828210611d31575050916008949391867f7e939e481d8231d4c8c84ce7b605803521621935eaea560c61d6b8c02f73e5cd999a9410611d18575b5050600185811b019055611c44565b8701355f19600388901b60f8161c191690558a80611d09565b8884013585558b99506001909401939283019201611cce565b60405162461bcd60e51b815260048101879052601860248201527f416363657373206d6574616461746120726571756972656400000000000000006044820152606490fd5b60405162461bcd60e51b815260048101879052601a60248201527f41636365737320616c72656164792064697374726962757465640000000000006044820152606490fd5b60405162461bcd60e51b815260048101869052601560248201527414995cdbdd5c98d9481b9bdd081c9958dbdc991959605a1b6044820152606490fd5b3461025557602036600319011261025557611e2a612b60565b60015460405163a9059cbb60e01b81526001600160a01b0391821660048083019190915235602482015290602090829060449082905f907f0000000000000000000000000000000000000000000000000000000000000000165af1908115610a0a575f91611ee0575b5015611e9b57005b60405162461bcd60e51b815260206004820152601960248201527f456d657267656e6379207769746864726177206661696c6564000000000000006044820152606490fd5b611ef9915060203d602011610a03576109f58183612680565b81611e93565b346102555760208060031936011261025557600435611f1c612b3f565b805f526003825260405f2060018060a01b0390611f408260028301541633146128ea565b60078101805460ff811660058110156105c35760010361208c5760ff191660021790556009015460405163a9059cbb60e01b815233600482015260248101829052909184908290815f816044810103927f0000000000000000000000000000000000000000000000000000000000000000165af1908115610a0a575f9161206f575b501561203357604051908152817f6dad9b0f4948da27e61067d4cd3c189538fc36103a68c4e63bf645893fd372f7843393a360405191604083526009604084015268199a5b985b1a5e995960ba1b606084015242908301525f80516020612b8d83398151915260803393a360015f55005b60405162461bcd60e51b8152600481018490526014602482015273119d5b99081d1c985b9cd9995c8819985a5b195960621b6044820152606490fd5b6120869150843d8611610a03576109f58183612680565b84611fc2565b60405162461bcd60e51b815260048101879052600f60248201526e119d5b99081b9bdd08199d5b991959608a1b6044820152606490fd5b346102555760208060031936011261025557600435805f526003825260405f2060078101805460ff811660058110156105c35761210090156128ac565b60058301544211156121c6576004600984015493015483101561218c5760ff1916600317905560405190815281907ffef2d88d18eadb22b0dfa87cbd6c4230757b57e15cddc31960f909bbf871455c908490a260405191604083526007604084015266195e1c1a5c995960ca1b606084015242908301525f80516020612b8d83398151915260803393a3005b60405162461bcd60e51b815260048101869052601260248201527115185c99d95d081dd85cc81c995858da195960721b6044820152606490fd5b60405162461bcd60e51b8152600481018690526013602482015272111958591b1a5b99481b9bdd081c185cdcd959606a1b6044820152606490fd5b346102555760208060031936011261025557600435805f526003825260405f206005835260405f20335f52835261223e60ff60405f20541661286c565b60ff600c820154161561234657815f526006835260405f20335f528352600361227560405f2054845f526004865260405f20612638565b5001805460ff81166123085760019060ff1916179055817f706777cb4d0be5278e875baf2198e6d29d07780bab91665f16f72af8b6ee0ca4604051858152806122c53395600b8984019101612733565b0390a36040519160408352600e60408401526d1858d8d95cdcd7d8db185a5b595960921b606084015242908301525f80516020612b8d83398151915260803393a3005b60405162461bcd60e51b81526004810186905260166024820152751058d8d95cdcc8185b1c9958591e4818db185a5b595960521b6044820152606490fd5b60405162461bcd60e51b81526004810184905260166024820152751058d8d95cdcc81b9bdd08191a5cdd1c9a589d5d195960521b6044820152606490fd5b34610255576040366003190112610255576004356123a0612533565b90805f52610251600b6124046020936005855260405f209560018060a01b031695865f5285526123d660ff60405f20541661286c565b805f526003855260405f20956006865260405f20905f52855260405f2054905f526004855260405f20612638565b509261243060ff600381600c8901541696015416956124296040518095819301612733565b0383612680565b604051948594151585521515908401526060604084015260608301906125e0565b3461025557602080600319360112610255576004356001600160401b038111610255576124838291369060040161255f565b919082604051938492833781016008815203019020906040518083838295549384815201905f52835f20925f5b858282106124db575050506124c792500383612680565b61025160405192828493845283019061258c565b85548452600195860195889550930192016124b0565b346102555760403660031901126102555760209061250d612533565b6004355f9081526006845260408082206001600160a01b03909316825291845220548152f35b602435906001600160a01b038216820361025557565b600435906001600160a01b038216820361025557565b9181601f84011215610255578235916001600160401b038311610255576020838186019501011161025557565b9081518082526020808093019301915f5b8281106125ab575050505090565b83518552938101939281019260010161259d565b5f5b8381106125d05750505f910152565b81810151838201526020016125c1565b906020916125f9815180928185528580860191016125bf565b601f01601f1916010190565b9060406003198301126102555760043591602435906001600160401b038211610255576126349160040161255f565b9091565b8054821015612651575f5260205f209060021b01905f90565b634e487b7160e01b5f52603260045260245ffd5b602081019081106001600160401b0382111761057257604052565b90601f801991011681019081106001600160401b0382111761057257604052565b9291926001600160401b03821161057257604051916126ca601f8201601f191660200184612680565b829481845281830111610255578281602093845f960137010152565b8054821015612651575f5260205f2001905f90565b90600182811c92168015612729575b602083101461271557565b634e487b7160e01b5f52602260045260245ffd5b91607f169161270a565b80545f9392612741826126fb565b918282526020936001916001811690815f146127a55750600114612767575b5050505050565b90939495505f92919252835f2092845f945b83861061279157505050500101905f80808080612760565b805485870183015294019385908201612779565b60ff19168685015250505090151560051b010191505f80808080612760565b9a9593919c9e9d9c6127ea6127f8929d9a9b9d989694988d6101c09081815201906125e0565b8c810360208e0152906125e0565b6001600160a01b0390961660408b015260608a0152608089015260a088015260c087015260058310156105c3576101a09661285f956128509460e08901526101008801526101208701528582036101408701526125e0565b908382036101608501526125e0565b9415156101808201520152565b1561287357565b60405162461bcd60e51b81526020600482015260116024820152702737ba10309031b7b73a3934b13aba37b960791b6044820152606490fd5b156128b357565b60405162461bcd60e51b815260206004820152600f60248201526e46756e64206e6f742061637469766560881b6044820152606490fd5b156128f157565b60405162461bcd60e51b815260206004820152600e60248201526d27b7363c9037b933b0b734bd32b960911b6044820152606490fd5b90816020910312610255575180151581036102555790565b1561294657565b60405162461bcd60e51b8152602060048201526014602482015273119d5b99081b9bdd08191a5cdd1c9a589d5d195960621b6044820152606490fd5b601f821161298f57505050565b5f5260205f20906020601f840160051c830193106129c7575b601f0160051c01905b8181106129bc575050565b5f81556001016129b1565b90915081906129a8565b908060209392818452848401375f828201840152601f01601f1916010190565b156129f857565b60405162461bcd60e51b81526020600482015260166024820152751499599d5b9908185b1c9958591e4818db185a5b595960521b6044820152606490fd5b15612a3d57565b60405162461bcd60e51b81526020600482015260166024820152751499599d5b99081d1c985b9cd9995c8819985a5b195960521b6044820152606490fd5b6001600160401b0381116105725760051b60200190565b90612a9c82612a7b565b612aa96040519182612680565b8281528092612aba601f1991612a7b565b0190602036910137565b80518210156126515760209160051b010190565b5f198114612ae65760010190565b634e487b7160e01b5f52601160045260245ffd5b91908201809211612ae657565b5f52600360205260405f206004810154908115612b395760090154606481029080820460641490151715612ae6570490565b50505f90565b60025f5414612b4e5760025f55565b604051633ee5aeb560e01b8152600490fd5b6001546001600160a01b03163303612b7457565b60405163118cdaa760e01b8152336004820152602490fdfe6a1efc3e12b33e5cecd16855ffb4da543369b06dfe8a4d298f65c11b5ace9147a26469706673582212206af9dfc9e71e4faf3db5c059c35b791d0a9b9d3658e7fec011ade7866f0f3ba664736f6c63430008180033",
+        "sourceMap": "384:17240:37:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;13914:10;384:17240;;;;;;;;;;;14018:14;;;384:17240;;14046:23;13914:10;14046:23;;384:17240;;14083:17;;384:17240;14114:13;;;;384:17240;14141:20;;;;384:17240;14175:11;;;;384:17240;;;14200:21;;;;384:17240;14235:23;;;384:17240;14338:22;;;;384:17240;;;14374:14;;;;384:17240;;;;;;;;;;:::i;:::-;;;;;;:::i;:::-;;;;;;;;13988:16;;384:17240;:::i;:::-;;;;;;:::i;:::-;;;;;;;14272:16;;;384:17240;:::i;:::-;;;;;;:::i;:::-;;;14302:22;;;;;384:17240;;;;:::i;:::-;;;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;;:::i;:::-;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;1298:47;384:17240;;;;;;;;;;;;;:::i;:::-;;;;:::i;:::-;;;;1298:47;384:17240;1298:47;384:17240;1298:47;384:17240;1298:47;;384:17240;:::i;:::-;;;;:::i;:::-;;;;;;1298:47;;;384:17240;;1298:47;;;;;;384:17240;;1298:47;;384:17240;1298:47;;;384:17240;1298:47;;;384:17240;;1298:47;;;384:17240;;1298:47;;;;384:17240;1298:47;;;;384:17240;;;;;;;1298:47;;;;;384:17240;:::i;:::-;;;;:::i;:::-;;;;;;1298:47;;;;;384:17240;:::i;:::-;;;;:::i;:::-;1298:47;384:17240;1298:47;;;384:17240;;1298:47;;384:17240;;;;;;;;;:::i;:::-;;;;;;-1:-1:-1;;384:17240:37;;;;;;497:29;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;;:::i;:::-;;;;;;;;8113:10;384:17240;;;;;8142:55;384:17240;;;;;8150:14;;;384:17240;;8168:10;8150:28;8142:55;:::i;:::-;384:17240;8215:11;;;384:17240;;;;;;;;8150:14;8207:70;8215:37;;8207:70;:::i;:::-;8295:30;;384:17240;;8370:16;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;:::i;:::-;;;:::i;:::-;;;;;;;;;8425:65;384:17240;;;;;;;;8466:23;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;8466:23;384:17240;;;;;;;;;;;;;;;:::i;:::-;;;;;;8425:65;;;384:17240;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;8562:15;384:17240;;;;-1:-1:-1;;;;;;;;;;;384:17240:37;8168:10;8505:73;;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8466:23;384:17240;8425:65;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;8113:10:37;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;:::i;:::-;1500:62:20;;:::i;:::-;-1:-1:-1;;;;;384:17240:37;;;;2627:22:20;;2623:91;;3004:6;384:17240:37;;-1:-1:-1;;;;;384:17240:37;;;;;3004:6:20;384:17240:37;;3052:40:20;384:17240:37;3052:40:20;;384:17240:37;2623:91:20;384:17240:37;;-1:-1:-1;;;2672:31:20;;384:17240:37;;2672:31:20;;384:17240:37;;;2672:31:20;384:17240:37;;;;;;;;;;;;;;;2466:103:31;;:::i;:::-;384:17240:37;;;;5479:10;384:17240;;;;;5516:14;;;384:17240;-1:-1:-1;;;;;384:17240:37;;;;5516:28;384:17240;;5581:11;;;384:17240;;;;;;;;;;;5573:60;5581:32;;5573:60;:::i;:::-;384:17240;5670:13;;384:17240;5651:15;:32;384:17240;;5718:21;;;384:17240;;5742:20;;;384:17240;-1:-1:-1;384:17240:37;;;;;;;;;;;;5819:10;384:17240;;;;;;;;;;;;5479:10;5960:23;;384:17240;;;;;;;;;5914:70;;5819:10;384:17240;5914:70;;384:17240;5953:4;384:17240;;;;;;;;5914:5;;384:17240;5914:5;384:17240;5914:5;;384:17240;5914:70;;;;;;;384:17240;5914:70;;;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;5819:10;384:17240;;6094:225;;;384:17240;;;;6094:225;;5651:15;;384:17240;;;6094:225;;384:17240;;;;6094:225;;;384:17240;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;:::i;:::-;;;;;;;;5479:10;384:17240;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;;;5516:14;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5718:21;384:17240;;;;;;;;;;;;;;;;;;5819:10;384:17240;;;;;;;;;;;;;;;;;;;6462:23;384:17240;;;;;5742:20;384:17240;;;;;5819:10;384:17240;;;;;;;;;6462:23;:::i;:::-;384:17240;;;;6495:23;;;;384:17240;6495:50;384:17240;;;6495:50;:::i;:::-;384:17240;;5819:10;384:17240;;5581:11;384:17240;;6555:56;384:17240;;;;;;6555:56;:::i;:::-;384:17240;;;;;;;;5651:15;384:17240;;;;5819:10;6635:78;384:17240;5819:10;6635:78;;384:17240;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;5651:15;384:17240;;;;-1:-1:-1;;;;;;;;;;;5819:10:37;;;6094:225;5819:10;6728:66;;384:17240;6879:17;;384:17240;6852:44;;;6848:287;;384:17240;;;;;6848:287;384:17240;6094:225;384:17240;;;;;;;6962:74;384:17240;;;;;;;;;;;;;;;;6962:74;384:17240;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;5651:15;384:17240;;;;7055:69;6848:287;;;;;;;;;384:17240;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;5914:70;;;;;;;;;;;;;;;:::i;:::-;;;;;:::i;:::-;;;;;;;;;;384:17240;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;;11992:10;384:17240;;12094:11;384:17240;;;12021:55;384:17240;;;;;12029:14;;;384:17240;;12047:10;12029:28;12021:55;:::i;:::-;12094:11;384:17240;;;;;;;;;;;;12086:60;384:17240;12094:32;;12086:60;:::i;:::-;384:17240;;;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;12271:15;384:17240;;;;-1:-1:-1;;;;;;;;;;;384:17240:37;12047:10;12223:64;;384:17240;;;;;;;-1:-1:-1;;384:17240:37;;;;-1:-1:-1;;;;;384:17240:37;;:::i;:::-;;;;15916:17;384:17240;;;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;1650:46;384:17240;;;;;;;;1650:46;;;;;384:17240;1650:46;;;;:::i;:::-;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;2466:103:31;;:::i;:::-;384:17240:37;;;12465:10;384:17240;;;12502:11;384:17240;;;12502:11;384:17240;;;;;;;;;12502:35;384:17240;;;;;;;;;;;12602:10;384:17240;;;;12570:65;384:17240;;;;;;12570:65;:::i;:::-;384:17240;;;12679:16;384:17240;;;;;12602:10;384:17240;;;;;12760:41;384:17240;;;;;;;;;;;;;12760:41;:::i;:::-;12820:25;12465:10;12820:25;;384:17240;;;12811:61;384:17240;;;;;12819:26;12811:61;:::i;:::-;-1:-1:-1;;384:17240:37;;;;12956:30;384:17240;;;-1:-1:-1;;;13013:40:37;;12602:10;384:17240;13013:40;;384:17240;;;;;;;12602:10;384:17240;;;-1:-1:-1;;;;;;13013:5:37;384:17240;13013:40;;;;;;13005:75;13013:40;384:17240;13013:40;;;384:17240;13005:75;;:::i;:::-;384:17240;;;;;12602:10;13104:47;12602:10;;13104:47;;384:17240;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;13226:15;384:17240;;;;-1:-1:-1;;;;;;;;;;;384:17240:37;12602:10;13166:76;;384:17240;;;;13013:40;;;;;;;;;;;;;;:::i;:::-;;;;384:17240;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;:::i;:::-;;;;;1414:66;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;:::i;:::-;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;:::i;:::-;;;;;;2466:103:31;;;:::i;:::-;3783:24:37;;384:17240;;3844:30;;384:17240;;;;3917:23;384:17240;;;;;;3987:36;384:17240;;4088:15;384:17240;;4076:27;384:17240;;;;;4149:20;;:47;;;384:17240;;;;4259:13;384:17240;4259:13;;;;:::i;:::-;;384:17240;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;:::i;:::-;;;;;;;;:::i;:::-;;4312:545;;384:17240;4413:10;384:17240;4312:545;;384:17240;;;;4312:545;;384:17240;;;;4312:545;;384:17240;;;;4312:545;;384:17240;;;;4312:545;;384:17240;;;4312:545;;384:17240;;4312:545;;;384:17240;;4312:545;;;384:17240;;;;;;:::i;:::-;;;;4312:545;;;384:17240;;;;;;:::i;:::-;;;;4312:545;;;384:17240;;4312:545;;;384:17240;4088:15;4312:545;;;384:17240;;;;4291:10;384:17240;;;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;:::i;:::-;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4312:545;;384:17240;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;:::i;:::-;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4259:13;384:17240;;;;;;;;4312:545;;384:17240;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;4312:545;;384:17240;4291:10;384:17240;;;;4312:545;;384:17240;;;;;;4312:545;;384:17240;;;;;;4312:545;;384:17240;;;;;;;;;4312:545;;384:17240;;;;;;;;;;;;;;;;;;4312:545;;;384:17240;;;;;4312:545;;;384:17240;;;;;4312:545;;;384:17240;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;:::i;:::-;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4312:545;;;384:17240;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;:::i;:::-;;;;;:::i;:::-;;;;;;;;;;;4312:545;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4312:545;;;384:17240;;;;;;;;;;;;;;;;;;;;;;4312:545;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;4963:229;384:17240;;;;;;;;;;;;:::i;:::-;;;;4291:10;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;4413:10;;4963:229;;;;384:17240;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;4088:15;384:17240;;;;4413:10;-1:-1:-1;;;;;;;;;;;384:17240:37;4413:10;5216:61;;384:17240;;;;;;;;;;;;;-1:-1:-1;384:17240:37;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;;;;;;4312:545;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4291:10;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;384:17240:37;;;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4291:10;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4291:10;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4291:10;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;4149:47;384:17240;;;;4173:23;;4149:47;;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;16128:10;384:17240;;;;;;16164:11;;;384:17240;;;;;;;;;;16164:32;;:84;;;;384:17240;16164:148;;;384:17240;;;;;;;;;;16164:148;16268:21;;16292:20;16268:21;;;384:17240;16292:20;;384:17240;-1:-1:-1;16164:148:37;;;:84;384:17240;16235:13;;384:17240;16216:15;:32;;;-1:-1:-1;16164:84:37;;384:17240;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;546:26;384:17240;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;1500:62:20;;:::i;:::-;3004:6;384:17240:37;;-1:-1:-1;;;;;;384:17240:37;;;;;;;-1:-1:-1;;;;;384:17240:37;3052:40:20;384:17240:37;;3052:40:20;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;-1:-1:-1;;384:17240:37;;;;;;;14907:21;;;:::i;:::-;14958;;;;:::i;:::-;384:17240;;;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;;;15062:10;;;;;;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;384:17240:37;;;;;;;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;-1:-1:-1;384:17240:37;;;;;;;;;;;;15074:3;15104:15;;384:17240;15104:15;;;;;;;;;;:::i;:::-;384:17240;;;;;;;;;15093:31;;;;:::i;:::-;384:17240;15163:15;;;;;:::i;:::-;:34;;384:17240;15138:59;;;;:::i;:::-;384:17240;15234:32;:15;;;;:::i;:::-;:32;;384:17240;15211:55;;;;:::i;:::-;384:17240;;15299:29;:15;;;;:::i;:::-;:29;;384:17240;;15280:48;;;;:::i;:::-;384:17240;;;;;;15047:13;;;;;;;;;384:17240;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;;;;;;;;;;;1351:57;;;;;384:17240;1351:57;;;;:::i;:::-;384:17240;;;;;;;;;;1351:57;384:17240;1351:57;;384:17240;1351:57;;;;;384:17240;1351:57;;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2466:103:31;;:::i;:::-;384:17240:37;;;11055:10;384:17240;;;11092:11;384:17240;;;11092:11;384:17240;;;;;;;;11055:10;11092:33;384:17240;;;;;;;;;;;11188:10;384:17240;;;;11156:65;384:17240;;;;;;11156:65;:::i;:::-;384:17240;;;11265:16;384:17240;;;;;11188:10;384:17240;;;;;11346:41;384:17240;;;;;;;;;;;;;11346:41;:::i;:::-;11406:25;11055:10;11406:25;;384:17240;;;11397:61;384:17240;;;;;11405:26;11397:61;:::i;:::-;-1:-1:-1;;384:17240:37;;;;11542:30;384:17240;;;-1:-1:-1;;;11599:40:37;;11188:10;384:17240;11599:40;;384:17240;;;;;;;11188:10;384:17240;;;-1:-1:-1;;;;;;11599:5:37;384:17240;11599:40;;;;;;11591:75;11599:40;384:17240;11599:40;;;11591:75;;:::i;:::-;384:17240;;;;;11188:10;11690:47;11188:10;;11690:47;;384:17240;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;11805:15;384:17240;;;;-1:-1:-1;;;;;;;;;;;384:17240:37;11188:10;11752:69;;384:17240;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;8809:10;384:17240;;;;;;8838:55;384:17240;;;;;8846:14;;;384:17240;;8864:10;8846:28;8838:55;:::i;:::-;384:17240;8911:11;;;384:17240;;;;;;;;8846:14;8903:70;8911:37;;8903:70;:::i;:::-;384:17240;8998:16;;;384:17240;;:::i;:::-;8992:34;384:17240;;9071:22;;;384:17240;;;;;;;9142:36;;384:17240;;9226:22;;;384:17240;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;:::i;:::-;;;;;;;;;;9379:21;384:17240;;;;;9332:69;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9379:21;384:17240;;;;;;;;;;;;;;;:::i;:::-;;;;;;9332:69;;;384:17240;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;9473:15;384:17240;;;;-1:-1:-1;;;;;;;;;;;384:17240:37;8864:10;9416:73;;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9379:21;384:17240;;;;9332:69;384:17240;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;8809:10:37;384:17240;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;384:17240:37;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;1500:62:20;;:::i;:::-;384:17240:37;;;;-1:-1:-1;;;17553:32:37;;-1:-1:-1;;;;;384:17240:37;;;;17553:32;;;384:17240;;;;;;;;;;;;;;;;;;-1:-1:-1;;17553:5:37;384:17240;17553:32;;;;;;;384:17240;17553:32;;;384:17240;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;17553:32;;;;384:17240;17553:32;384:17240;17553:32;;;;;;;:::i;:::-;;;;384:17240;;;;;;;;;;;;;;;2466:103:31;;:::i;:::-;384:17240:37;;;7337:10;384:17240;;;;;;;;;;7374:14;7366:55;7374:14;;;;384:17240;;7392:10;7374:28;7366:55;:::i;:::-;7439:11;;;384:17240;;;;;;;;;;;;7439:32;384:17240;;-1:-1:-1;;384:17240:37;7374:14;384:17240;;;7578:23;;384:17240;;;-1:-1:-1;;;7689:39:37;;7392:10;384:17240;7689:39;;384:17240;;;;;;;;;;;;;;;;;;;7689:39;:5;;384:17240;7689:39;;;;;;;384:17240;7689:39;;;384:17240;;;;;;;;;;7392:10;7777:47;7392:10;;7777:47;;384:17240;;;;;;7578:23;384:17240;;;;-1:-1:-1;;;384:17240:37;;;;7887:15;384:17240;;;;-1:-1:-1;;;;;;;;;;;384:17240:37;7392:10;7839:64;;384:17240;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;7689:39;;;;;;;;;;;;;;:::i;:::-;;;;384:17240;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;10442:10;384:17240;;;;;10479:11;;;384:17240;;;;;;;;;;;10471:60;10479:32;;10471:60;:::i;:::-;384:17240;10567:13;;384:17240;10549:15;:31;384:17240;;;;10622:23;;;384:17240;10648:17;;384:17240;10622:43;;384:17240;;;-1:-1:-1;;384:17240:37;10442:10;384:17240;;;;;;;;;;10763:45;;384:17240;;10763:45;384:17240;;;;;;10479:11;384:17240;;;;-1:-1:-1;;;384:17240:37;;;;10549:15;384:17240;;;;-1:-1:-1;;;;;;;;;;;384:17240:37;10846:10;10823:62;;384:17240;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;9670:10;384:17240;;;;;9707:14;384:17240;;;;;9731:10;384:17240;;;;9699:65;384:17240;;;;;;9699:65;:::i;:::-;384:17240;9782:22;;;384:17240;;;;;;;;9875:16;384:17240;;;;;9731:10;384:17240;;;;9670:10;9956:41;384:17240;;;;;;;;;;;;;9956:41;:::i;:::-;10016:25;;384:17240;;;;;;;;;;;;;;;;10143:58;384:17240;;;;;9731:10;384:17240;9731:10;384:17240;10178:22;384:17240;;;10178:22;;384:17240;:::i;:::-;10143:58;;;384:17240;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;10269:15;384:17240;;;;-1:-1:-1;;;;;;;;;;;384:17240:37;9731:10;10216:69;;384:17240;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;:::i;:::-;;;;;;17289:22;17133:41;384:17240;;16907:14;384:17240;;;;;;;;;;;;;;;;;;16899:60;384:17240;;;;;;16899:60;:::i;:::-;384:17240;;;16994:10;384:17240;;;;;;17057:16;384:17240;;;;;;;;;;;;;;;;;;;;;;;17133:41;:::i;:::-;17214:22;;384:17240;;16994:10;17214:22;;;;384:17240;;17250:25;;384:17240;;;;;;17289:22;;;;;384:17240;:::i;:::-;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;15509:10;384:17240;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;-1:-1:-1;384:17240:37;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;;;;:::i;:::-;;;;;;;1486:71;384:17240;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;:::o;:::-;;;;-1:-1:-1;;;;;384:17240:37;;;;;;:::o;:::-;;;;;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;-1:-1:-1;384:17240:37;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;-1:-1:-1;;384:17240:37;;;;:::o;:::-;;;-1:-1:-1;;384:17240:37;;;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;-1:-1:-1;384:17240:37;;-1:-1:-1;384:17240:37;;;;;;-1:-1:-1;384:17240:37;:::o;:::-;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;:::o;:::-;;;;;;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;:::o;:::-;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;:::i;:::-;;;;;;;;;;;;;;;;;-1:-1:-1;384:17240:37;;;;;;:::o;:::-;;;;;;;;-1:-1:-1;384:17240:37;;-1:-1:-1;384:17240:37;;;-1:-1:-1;384:17240:37;:::o;:::-;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;-1:-1:-1;384:17240:37;;;;;-1:-1:-1;384:17240:37;;;-1:-1:-1;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;384:17240:37;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;-1:-1:-1;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;;;:::o;:::-;;;;:::o;:::-;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;:::o;:::-;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;:::o;:::-;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;:::o;:::-;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;;;;;:::o;:::-;-1:-1:-1;384:17240:37;;-1:-1:-1;384:17240:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;-1:-1:-1;384:17240:37;;;;;;;;;-1:-1:-1;384:17240:37;;;;;;;;;;;;;;;;;-1:-1:-1;384:17240:37;;;;;;;;-1:-1:-1;;384:17240:37;;;;:::o;:::-;;;;:::o;:::-;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;:::o;:::-;;;-1:-1:-1;;;384:17240:37;;;;;;;;;;;;-1:-1:-1;;;384:17240:37;;;;;;;;-1:-1:-1;;;;;384:17240:37;;;;;;;;;:::o;:::-;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;;;;:::i;:::-;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;-1:-1:-1;;384:17240:37;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;:::o;16380:263::-;-1:-1:-1;384:17240:37;16503:10;384:17240;;;-1:-1:-1;384:17240:37;16536:17;;;384:17240;16536:22;;;16532:36;;16586:23;;384:17240;16612:3;384:17240;;;;;;16612:3;384:17240;;;;;;;;16380:263;:::o;16532:36::-;16560:8;;-1:-1:-1;16560:8:37;:::o;2575:307:31:-;1899:1;2702:7;384:17240:37;2702:18:31;2698:86;;1899:1;2702:7;384:17240:37;2575:307:31:o;2698:86::-;384:17240:37;;-1:-1:-1;;;2743:30:31;;;;;1796:162:20;384:17240:37;;-1:-1:-1;;;;;384:17240:37;735:10:30;1855:23:20;1851:101;;1796:162::o;1851:101::-;384:17240:37;;-1:-1:-1;;;1901:40:20;;735:10:30;1901:40:20;;;384:17240:37;;;1901:40:20",
+        "linkReferences": {},
+        "immutableReferences": {
+            "45138": [
+                {
+                    "start": 885,
+                    "length": 32
+                },
+                {
+                    "start": 1825,
+                    "length": 32
+                },
+                {
+                    "start": 3356,
+                    "length": 32
+                },
+                {
+                    "start": 6770,
+                    "length": 32
+                },
+                {
+                    "start": 7779,
+                    "length": 32
+                },
+                {
+                    "start": 8082,
+                    "length": 32
+                }
+            ]
+        }
+    },
+    "methodIdentifiers": {
+        "canContribute(uint256)": "937caf76",
+        "cancelFund(uint256)": "e4810524",
+        "claimAccess(uint256)": "1ef27018",
+        "claimCancelRefund(uint256)": "d3ffb929",
+        "claimRefund(uint256)": "5b7baf64",
+        "contributeFund(uint256)": "ecef0058",
+        "contributorIndex(uint256,address)": "010a5048",
+        "createStudyFund(string,string,uint256,uint256,uint256,uint256)": "a01c19c3",
+        "distributeAccess(uint256,string)": "5568d8cf",
+        "emergencyWithdraw(uint256)": "5312ea8e",
+        "expireFund(uint256)": "35c00fe6",
+        "finalizeFund(uint256)": "362f59fa",
+        "fundContributors(uint256,uint256)": "6164ef40",
+        "fundCounter()": "76867eae",
+        "getAccessInfo(uint256,address)": "17173fcb",
+        "getFundContributors(uint256)": "62cece70",
+        "getFundingProgress(uint256)": "ff4c5f6b",
+        "getFundsByTopic(string)": "032ad5b4",
+        "getStudyFund(uint256)": "ffdebb6b",
+        "getUserContributions(address)": "e36465a3",
+        "hasContributed(uint256,address)": "b5b96ae0",
+        "owner()": "8da5cb5b",
+        "recordResourcePurchase(uint256,string)": "f40912aa",
+        "renounceOwnership()": "715018a6",
+        "studyFunds(uint256)": "fe594bce",
+        "token()": "fc0c546a",
+        "topicFunds(string,uint256)": "d8fef25e",
+        "transferOwnership(address)": "f2fde38b",
+        "userContributions(address)": "0f6ca1a8",
+        "userHasContributed(uint256,address)": "1f53811d"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_token\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"OwnableInvalidOwner\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"OwnableUnauthorizedAccount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"fundId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contributor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"accessInfo\",\"type\":\"string\"}],\"name\":\"AccessClaimed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"fundId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"accessMetadataURI\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"participantCount\",\"type\":\"uint256\"}],\"name\":\"AccessDistributed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"fundId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contributor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"FundContributed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"fundId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"refundAmount\",\"type\":\"uint256\"}],\"name\":\"FundExpired\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"fundId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"organizer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"finalAmount\",\"type\":\"uint256\"}],\"name\":\"FundFinalized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"fundId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"participantCount\",\"type\":\"uint256\"}],\"name\":\"FundTargetReached\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"fundId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contributor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"RefundIssued\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"fundId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"resourceURI\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"purchaseAmount\",\"type\":\"uint256\"}],\"name\":\"ResourcePurchased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"fundId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"action\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"StudyActivity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"fundId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"organizer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"topic\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contributionAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"targetAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxParticipants\",\"type\":\"uint256\"}],\"name\":\"StudyFundCreated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"canContribute\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"cancelFund\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"claimAccess\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"claimCancelRefund\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"claimRefund\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"contributeFund\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"contributorIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_topic\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_description\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_contributionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_targetAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxParticipants\",\"type\":\"uint256\"}],\"name\":\"createStudyFund\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_accessMetadataURI\",\"type\":\"string\"}],\"name\":\"distributeAccess\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"emergencyWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"expireFund\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"finalizeFund\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"fundContributors\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"contributionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"contributionTime\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"accessClaimed\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"refundClaimed\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fundCounter\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getAccessInfo\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"hasAccess\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"accessClaimed\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"accessURI\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"getFundContributors\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"users\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"contributionAmounts\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"contributionTimes\",\"type\":\"uint256[]\"},{\"internalType\":\"bool[]\",\"name\":\"accessClaimed\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"getFundingProgress\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"percentage\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_topic\",\"type\":\"string\"}],\"name\":\"getFundsByTopic\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"}],\"name\":\"getStudyFund\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"topic\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"organizer\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"contributionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"targetAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxParticipants\",\"type\":\"uint256\"},{\"internalType\":\"enum FlashStudy.FundStatus\",\"name\":\"status\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"participantCount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalContributions\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"resourceURI\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"accessMetadataURI\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"accessDistributed\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getUserContributions\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"hasContributed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_resourceURI\",\"type\":\"string\"}],\"name\":\"recordResourcePurchase\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"studyFunds\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"topic\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"organizer\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"contributionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"targetAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxParticipants\",\"type\":\"uint256\"},{\"internalType\":\"enum FlashStudy.FundStatus\",\"name\":\"status\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"participantCount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalContributions\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"resourceURI\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"accessMetadataURI\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"accessDistributed\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"topicFunds\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userContributions\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fundId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"userHasContributed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"On-chain shared learning fund for group education\",\"errors\":{\"OwnableInvalidOwner(address)\":[{\"details\":\"The owner is not a valid owner account. (eg. `address(0)`)\"}],\"OwnableUnauthorizedAccount(address)\":[{\"details\":\"The caller account is not authorized to perform an operation.\"}],\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{\"canContribute(uint256)\":{\"details\":\"Check if fund can accept contributions\"},\"cancelFund(uint256)\":{\"details\":\"Cancel fund (organizer only, before funding)\"},\"claimAccess(uint256)\":{\"details\":\"Claim access to purchased resource (contributor only)\"},\"claimCancelRefund(uint256)\":{\"details\":\"Claim refund for cancelled fund\"},\"claimRefund(uint256)\":{\"details\":\"Claim refund for expired fund\"},\"contributeFund(uint256)\":{\"details\":\"Contribute to a study fund\"},\"createStudyFund(string,string,uint256,uint256,uint256,uint256)\":{\"details\":\"Create a new study fund\"},\"distributeAccess(uint256,string)\":{\"details\":\"Distribute access information to contributors (organizer only)\"},\"emergencyWithdraw(uint256)\":{\"details\":\"Emergency withdraw for stuck funds (owner only)\"},\"expireFund(uint256)\":{\"details\":\"Expire fund and enable refunds\"},\"finalizeFund(uint256)\":{\"details\":\"Finalize fund and release funds to organizer (organizer only)\"},\"getAccessInfo(uint256,address)\":{\"details\":\"Get access information for contributor\"},\"getFundContributors(uint256)\":{\"details\":\"Get all contributors for a fund\"},\"getFundingProgress(uint256)\":{\"details\":\"Check funding progress\"},\"getFundsByTopic(string)\":{\"details\":\"Get funds by topic\"},\"getStudyFund(uint256)\":{\"details\":\"Get study fund details\"},\"getUserContributions(address)\":{\"details\":\"Get user's total contributions\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"recordResourcePurchase(uint256,string)\":{\"details\":\"Record resource purchase (organizer only)\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"userHasContributed(uint256,address)\":{\"details\":\"Check if user has contributed to fund\"}},\"title\":\"FlashStudy\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Pool funds to buy educational resources and share access\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/FlashStudy.sol\":\"FlashStudy\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"],\"viaIR\":true},\"sources\":{\"lib/openzeppelin-contracts/contracts/access/Ownable.sol\":{\"keccak256\":\"0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6\",\"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x74ed01eb66b923d0d0cfe3be84604ac04b76482a55f9dd655e1ef4d367f95bc2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5282825a626cfe924e504274b864a652b0023591fa66f06a067b25b51ba9b303\",\"dweb:/ipfs/QmeCfPykghhMc81VJTrHTC7sF6CRvaA1FXVq2pJhwYp1dV\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0x11a5a79827df29e915a12740caf62fe21ebe27c08c9ae3e09abe9ee3ba3866d3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3cf0c69ab827e3251db9ee6a50647d62c90ba580a4d7bbff21f2bea39e7b2f4a\",\"dweb:/ipfs/QmZiKwtKU1SBX4RGfQtY7PZfiapbbu6SZ9vizGQD9UHjRA\"]},\"src/FlashStudy.sol\":{\"keccak256\":\"0xca1ce5d21dd7154d2eba666b9b0c0781d7014699d7b29a72be6e86e85ae31697\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be74309f77df4001c123c80f85534f91251cd258c8df34ff9471afa99be91291\",\"dweb:/ipfs/QmdbhGaciTyWbqBeCcDGMVhHqo2VTHVAY6knGQaMgaZWRK\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.24+commit.e11b9ed9"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "_token",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "owner",
+                            "type": "address"
+                        }
+                    ],
+                    "type": "error",
+                    "name": "OwnableInvalidOwner"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        }
+                    ],
+                    "type": "error",
+                    "name": "OwnableUnauthorizedAccount"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "ReentrancyGuardReentrantCall"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fundId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "contributor",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "accessInfo",
+                            "type": "string",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "AccessClaimed",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fundId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "accessMetadataURI",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "participantCount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "AccessDistributed",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fundId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "contributor",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "FundContributed",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fundId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "refundAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "FundExpired",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fundId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "organizer",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "finalAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "FundFinalized",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fundId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "totalAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "participantCount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "FundTargetReached",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "previousOwner",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "newOwner",
+                            "type": "address",
+                            "indexed": true
+                        }
+                    ],
+                    "type": "event",
+                    "name": "OwnershipTransferred",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fundId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "contributor",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "RefundIssued",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fundId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "resourceURI",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "purchaseAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "ResourcePurchased",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fundId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "action",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "StudyActivity",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "fundId",
+                            "type": "uint256",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "organizer",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "topic",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "description",
+                            "type": "string",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "contributionAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "targetAmount",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "deadline",
+                            "type": "uint256",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "maxParticipants",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "StudyFundCreated",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "canContribute",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "cancelFund"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "claimAccess"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "claimCancelRefund"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "claimRefund"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "contributeFund"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "contributorIndex",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "string",
+                            "name": "_topic",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "_description",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_contributionAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_targetAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_deadline",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_maxParticipants",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "createStudyFund",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "_accessMetadataURI",
+                            "type": "string"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "distributeAccess"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "emergencyWithdraw"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "expireFund"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "finalizeFund"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "fundContributors",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "contributionAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "contributionTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "accessClaimed",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "refundClaimed",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "fundCounter",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getAccessInfo",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "hasAccess",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "accessClaimed",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "accessURI",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getFundContributors",
+                    "outputs": [
+                        {
+                            "internalType": "address[]",
+                            "name": "users",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "contributionAmounts",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "contributionTimes",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "internalType": "bool[]",
+                            "name": "accessClaimed",
+                            "type": "bool[]"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getFundingProgress",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "percentage",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "string",
+                            "name": "_topic",
+                            "type": "string"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getFundsByTopic",
+                    "outputs": [
+                        {
+                            "internalType": "uint256[]",
+                            "name": "",
+                            "type": "uint256[]"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getStudyFund",
+                    "outputs": [
+                        {
+                            "internalType": "string",
+                            "name": "topic",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "description",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "organizer",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "contributionAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "targetAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "deadline",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "maxParticipants",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "enum FlashStudy.FundStatus",
+                            "name": "status",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "participantCount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "totalContributions",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "resourceURI",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "accessMetadataURI",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "accessDistributed",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "createdAt",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getUserContributions",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "hasContributed",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "owner",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "_resourceURI",
+                            "type": "string"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "recordResourcePurchase"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "renounceOwnership"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "studyFunds",
+                    "outputs": [
+                        {
+                            "internalType": "string",
+                            "name": "topic",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "description",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "organizer",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "contributionAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "targetAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "deadline",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "maxParticipants",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "enum FlashStudy.FundStatus",
+                            "name": "status",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "participantCount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "totalContributions",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "resourceURI",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "accessMetadataURI",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "accessDistributed",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "createdAt",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "token",
+                    "outputs": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "string",
+                            "name": "",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "topicFunds",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "newOwner",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "transferOwnership"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "userContributions",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_fundId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "userHasContributed",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ]
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {
+                    "canContribute(uint256)": {
+                        "details": "Check if fund can accept contributions"
+                    },
+                    "cancelFund(uint256)": {
+                        "details": "Cancel fund (organizer only, before funding)"
+                    },
+                    "claimAccess(uint256)": {
+                        "details": "Claim access to purchased resource (contributor only)"
+                    },
+                    "claimCancelRefund(uint256)": {
+                        "details": "Claim refund for cancelled fund"
+                    },
+                    "claimRefund(uint256)": {
+                        "details": "Claim refund for expired fund"
+                    },
+                    "contributeFund(uint256)": {
+                        "details": "Contribute to a study fund"
+                    },
+                    "createStudyFund(string,string,uint256,uint256,uint256,uint256)": {
+                        "details": "Create a new study fund"
+                    },
+                    "distributeAccess(uint256,string)": {
+                        "details": "Distribute access information to contributors (organizer only)"
+                    },
+                    "emergencyWithdraw(uint256)": {
+                        "details": "Emergency withdraw for stuck funds (owner only)"
+                    },
+                    "expireFund(uint256)": {
+                        "details": "Expire fund and enable refunds"
+                    },
+                    "finalizeFund(uint256)": {
+                        "details": "Finalize fund and release funds to organizer (organizer only)"
+                    },
+                    "getAccessInfo(uint256,address)": {
+                        "details": "Get access information for contributor"
+                    },
+                    "getFundContributors(uint256)": {
+                        "details": "Get all contributors for a fund"
+                    },
+                    "getFundingProgress(uint256)": {
+                        "details": "Check funding progress"
+                    },
+                    "getFundsByTopic(string)": {
+                        "details": "Get funds by topic"
+                    },
+                    "getStudyFund(uint256)": {
+                        "details": "Get study fund details"
+                    },
+                    "getUserContributions(address)": {
+                        "details": "Get user's total contributions"
+                    },
+                    "owner()": {
+                        "details": "Returns the address of the current owner."
+                    },
+                    "recordResourcePurchase(uint256,string)": {
+                        "details": "Record resource purchase (organizer only)"
+                    },
+                    "renounceOwnership()": {
+                        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+                    },
+                    "transferOwnership(address)": {
+                        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+                    },
+                    "userHasContributed(uint256,address)": {
+                        "details": "Check if user has contributed to fund"
+                    }
+                },
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {},
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+                "forge-std/=lib/forge-std/src/",
+                "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "src/FlashStudy.sol": "FlashStudy"
+            },
+            "evmVersion": "cancun",
+            "libraries": {},
+            "viaIR": true
+        },
+        "sources": {
+            "lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
+                "keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+                "urls": [
+                    "bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+                    "dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+                "keccak256": "0x74ed01eb66b923d0d0cfe3be84604ac04b76482a55f9dd655e1ef4d367f95bc2",
+                "urls": [
+                    "bzz-raw://5282825a626cfe924e504274b864a652b0023591fa66f06a067b25b51ba9b303",
+                    "dweb:/ipfs/QmeCfPykghhMc81VJTrHTC7sF6CRvaA1FXVq2pJhwYp1dV"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+                "keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+                "urls": [
+                    "bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+                    "dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol": {
+                "keccak256": "0x11a5a79827df29e915a12740caf62fe21ebe27c08c9ae3e09abe9ee3ba3866d3",
+                "urls": [
+                    "bzz-raw://3cf0c69ab827e3251db9ee6a50647d62c90ba580a4d7bbff21f2bea39e7b2f4a",
+                    "dweb:/ipfs/QmZiKwtKU1SBX4RGfQtY7PZfiapbbu6SZ9vizGQD9UHjRA"
+                ],
+                "license": "MIT"
+            },
+            "src/FlashStudy.sol": {
+                "keccak256": "0xca1ce5d21dd7154d2eba666b9b0c0781d7014699d7b29a72be6e86e85ae31697",
+                "urls": [
+                    "bzz-raw://be74309f77df4001c123c80f85534f91251cd258c8df34ff9471afa99be91291",
+                    "dweb:/ipfs/QmdbhGaciTyWbqBeCcDGMVhHqo2VTHVAY6knGQaMgaZWRK"
+                ],
+                "license": "MIT"
+            }
+        },
+        "version": 1
+    },
+    "id": 37
+}

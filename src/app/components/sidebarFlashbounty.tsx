@@ -5,20 +5,21 @@ import { useOpenConnectModal } from "@0xsequence/connect";
 import { useOpenWalletModal } from "@0xsequence/wallet-widget";
 import { Button } from "@0xsequence-demos/boilerplate-design-system";
 import { motion, AnimatePresence } from "framer-motion";
-import CreateExpenseGroupPage from "./createexpense";
-import GroupsPage from "./allgroups";
-import GroupDetailsPage from "./groupdetails";
-import SettlePage from "./settle";
-import UserProfileDashboard from "./profile";
+import PostBountyPage from "./postbounty";
+import AllBountiesPage from "./allbounties";
+import BountyDetailsPage from "./bountydetails";
+import ClaimBountyPage from "./claimbounty";
+import MyBountiesPage from "./mybounties";
+import SubmitProofPage from "./submitproof";
+import UserProfileDashboard from "./profile1";
 
 const sidebarItems = [
-  { label: "Create Group", key: "create-group", icon: "👥" },
-  { label: "All Groups", key: "groups", icon: "📊" },
-  { label: "Group Details", key: "group", icon: "🔍" },
-  { label: "Settle Expense", key: "settle-expense", icon: "💎" },
-  { label: "User Profile", key: "user-profile", icon: "👤" },
-  { label: "Tokens", key: "tokens", icon: "🎯" },
-  { label: "Achievements", key: "achievements", icon: "🏆" },
+    { label: "Post Bounty", key: "post-bounty", icon: "📝" },
+    { label: "All Bounties", key: "all-bounties", icon: "📋" },
+    { label: "My Bounties", key: "my-bounties", icon: "📊" },
+    { label: "Submit Proof", key: "submit-proof", icon: "✅" },
+    { label: "User Profile", key: "user-profile", icon: "👤" },
+    { label: "Analytics", key: "analytics", icon: "📈" },
 ];
 
 type SidebarProps = {
@@ -29,39 +30,43 @@ type SidebarProps = {
 };
 
 // Sample components for each section
-const CreateGroupComponent = () => (
+const PostBountyComponent = () => (
   <div className="p-8">
-    <h2 className="text-2xl font-bold text-white mb-6">Create Group</h2>
+    <h2 className="text-2xl font-bold text-white mb-6">Post Bounty</h2>
     <div className="bg-black border border-emerald-600/30 rounded-xl p-6">
       <div className="space-y-4">
         <div>
-          <label className="block text-emerald-600 text-sm font-medium mb-2">Group Name</label>
-          <input type="text" className="w-full p-3 bg-black border border-emerald-600/50 rounded-lg text-white focus:border-emerald-600 focus:outline-none" placeholder="Enter group name" />
+          <label className="block text-emerald-600 text-sm font-medium mb-2">Bounty Title</label>
+          <input type="text" className="w-full p-3 bg-black border border-emerald-600/50 rounded-lg text-white focus:border-emerald-600 focus:outline-none" placeholder="Enter bounty title" />
         </div>
         <div>
           <label className="block text-emerald-600 text-sm font-medium mb-2">Description</label>
-          <textarea className="w-full p-3 bg-black border border-emerald-600/50 rounded-lg text-white focus:border-emerald-600 focus:outline-none" rows={3} placeholder="Group description"></textarea>
+          <textarea className="w-full p-3 bg-black border border-emerald-600/50 rounded-lg text-white focus:border-emerald-600 focus:outline-none" rows={3} placeholder="Describe the task"></textarea>
+        </div>
+        <div>
+          <label className="block text-emerald-600 text-sm font-medium mb-2">Reward Amount</label>
+          <input type="number" className="w-full p-3 bg-black border border-emerald-600/50 rounded-lg text-white focus:border-emerald-600 focus:outline-none" placeholder="Enter reward amount" />
         </div>
         <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg transition-colors">
-          Create Group
+          Post Bounty
         </button>
       </div>
     </div>
   </div>
 );
 
-const AllGroupsComponent = () => (
+const AllBountiesComponent = () => (
   <div className="p-8">
-    <h2 className="text-2xl font-bold text-white mb-6">All Groups</h2>
+    <h2 className="text-2xl font-bold text-white mb-6">All Bounties</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {[1, 2, 3, 4].map((group) => (
-        <div key={group} className="bg-black border border-emerald-600/30 rounded-xl p-6 hover:border-emerald-600/50 transition-colors">
-          <h3 className="text-lg font-bold text-white mb-2">Group {group}</h3>
-          <p className="text-gray-400 mb-4">Members: {Math.floor(Math.random() * 10) + 2}</p>
+      {[1, 2, 3, 4, 5, 6].map((bounty) => (
+        <div key={bounty} className="bg-black border border-emerald-600/30 rounded-xl p-6 hover:border-emerald-600/50 transition-colors">
+          <h3 className="text-lg font-bold text-white mb-2">Task #{bounty}</h3>
+          <p className="text-gray-400 mb-4">Complete this micro-task for rewards</p>
           <div className="flex justify-between items-center">
-            <span className="text-emerald-600 font-medium">${Math.floor(Math.random() * 500) + 100} total</span>
+            <span className="text-emerald-600 font-medium">${Math.floor(Math.random() * 100) + 10} reward</span>
             <button className="bg-emerald-600/20 text-emerald-600 px-3 py-1 rounded-lg text-sm hover:bg-emerald-600/30">
-              View
+              Claim
             </button>
           </div>
         </div>
@@ -70,35 +75,39 @@ const AllGroupsComponent = () => (
   </div>
 );
 
-const GroupDetailsComponent = () => (
+const BountyDetailsComponent = () => (
   <div className="p-8">
-    <h2 className="text-2xl font-bold text-white mb-6">Group Details</h2>
+    <h2 className="text-2xl font-bold text-white mb-6">Bounty Details</h2>
     <div className="bg-black border border-emerald-600/30 rounded-xl p-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
-          <h3 className="text-lg font-bold text-white mb-4">Group Info</h3>
+          <h3 className="text-lg font-bold text-white mb-4">Task Information</h3>
           <div className="space-y-3">
             <div className="flex justify-between">
-              <span className="text-gray-400">Name:</span>
-              <span className="text-white">Weekend Trip</span>
+              <span className="text-gray-400">Title:</span>
+              <span className="text-white">Social Media Post</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-400">Members:</span>
-              <span className="text-white">5</span>
+              <span className="text-gray-400">Category:</span>
+              <span className="text-white">Marketing</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-400">Total Expenses:</span>
-              <span className="text-emerald-600">$450.00</span>
+              <span className="text-gray-400">Reward:</span>
+              <span className="text-emerald-600">$25.00</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-400">Status:</span>
+              <span className="text-yellow-500">Available</span>
             </div>
           </div>
         </div>
         <div>
-          <h3 className="text-lg font-bold text-white mb-4">Recent Expenses</h3>
+          <h3 className="text-lg font-bold text-white mb-4">Requirements</h3>
           <div className="space-y-2">
-            {['Hotel', 'Food', 'Gas'].map((expense, i) => (
-              <div key={i} className="flex justify-between p-2 bg-emerald-600/10 rounded-lg">
-                <span className="text-white">{expense}</span>
-                <span className="text-emerald-600">${Math.floor(Math.random() * 100) + 50}</span>
+            {['Create engaging content', 'Include hashtags', 'Share on platform'].map((req, i) => (
+              <div key={i} className="flex items-center p-2 bg-emerald-600/10 rounded-lg">
+                <span className="text-emerald-600 mr-2">✓</span>
+                <span className="text-white">{req}</span>
               </div>
             ))}
           </div>
@@ -108,39 +117,74 @@ const GroupDetailsComponent = () => (
   </div>
 );
 
-const SettleExpenseComponent = () => (
+const ClaimBountyComponent = () => (
   <div className="p-8">
-    <h2 className="text-2xl font-bold text-white mb-6">Settle Expense</h2>
+    <h2 className="text-2xl font-bold text-white mb-6">Claim Bounty</h2>
     <div className="bg-black border border-emerald-600/30 rounded-xl p-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div>
-          <h3 className="text-lg font-bold text-white mb-4">Who Owes What</h3>
-          <div className="space-y-3">
-            {['Alice', 'Bob', 'Charlie'].map((person, i) => (
-              <div key={i} className="flex justify-between items-center p-3 bg-emerald-600/10 rounded-lg">
-                <span className="text-white">{person}</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-emerald-600">${Math.floor(Math.random() * 50) + 10}</span>
-                  <button className="bg-emerald-600 text-white px-3 py-1 rounded text-sm">Settle</button>
-                </div>
+      <div className="text-center py-8">
+        <div className="text-6xl mb-4">🎯</div>
+        <h3 className="text-xl font-bold text-white mb-2">Ready to Claim?</h3>
+        <p className="text-gray-400 mb-6">Start working on this bounty to earn rewards</p>
+        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg transition-colors">
+          Start Task
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+const MyBountiesComponent = () => (
+  <div className="p-8">
+    <h2 className="text-2xl font-bold text-white mb-6">My Bounties</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-black border border-emerald-600/30 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-white mb-4">Active Tasks</h3>
+        <div className="space-y-3">
+          {['Content Creation', 'Data Entry', 'Survey'].map((task, i) => (
+            <div key={i} className="flex justify-between items-center p-3 bg-emerald-600/10 rounded-lg">
+              <span className="text-white">{task}</span>
+              <span className="text-yellow-500 text-sm">In Progress</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="bg-black border border-emerald-600/30 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-white mb-4">Completed</h3>
+        <div className="space-y-2">
+          {[1, 2, 3].map((task) => (
+            <div key={task} className="p-2 border border-emerald-600/20 rounded-lg">
+              <div className="flex justify-between">
+                <span className="text-white text-sm">Task #{task}</span>
+                <span className="text-emerald-600 text-sm">$15.00</span>
               </div>
-            ))}
-          </div>
+              <span className="text-gray-400 text-xs">Completed 2 days ago</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const SubmitProofComponent = () => (
+  <div className="p-8">
+    <h2 className="text-2xl font-bold text-white mb-6">Submit Proof</h2>
+    <div className="bg-black border border-emerald-600/30 rounded-xl p-6">
+      <div className="space-y-4">
+        <div>
+          <label className="block text-emerald-600 text-sm font-medium mb-2">Task Completion Proof</label>
+          <textarea className="w-full p-3 bg-black border border-emerald-600/50 rounded-lg text-white focus:border-emerald-600 focus:outline-none" rows={4} placeholder="Describe how you completed the task"></textarea>
         </div>
         <div>
-          <h3 className="text-lg font-bold text-white mb-4">Payment History</h3>
-          <div className="space-y-2 max-h-64 overflow-y-auto">
-            {[1, 2, 3, 4, 5].map((payment) => (
-              <div key={payment} className="p-2 border border-emerald-600/20 rounded-lg">
-                <div className="flex justify-between">
-                  <span className="text-white text-sm">Payment #{payment}</span>
-                  <span className="text-emerald-600 text-sm">$25.00</span>
-                </div>
-                <span className="text-gray-400 text-xs">2 days ago</span>
-              </div>
-            ))}
+          <label className="block text-emerald-600 text-sm font-medium mb-2">Upload Files</label>
+          <div className="border-2 border-dashed border-emerald-600/50 rounded-lg p-6 text-center">
+            <div className="text-emerald-600 text-2xl mb-2">📁</div>
+            <p className="text-gray-400">Drop files here or click to upload</p>
           </div>
         </div>
+        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg transition-colors">
+          Submit Proof
+        </button>
       </div>
     </div>
   </div>
@@ -156,83 +200,115 @@ const UserProfileComponent = () => (
         </div>
         <div>
           <h3 className="text-xl font-bold text-white">John Doe</h3>
-          <p className="text-gray-400">Premium Member</p>
+          <p className="text-gray-400">Bounty Hunter</p>
           <p className="text-emerald-600">Member since 2024</p>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-emerald-600/10 p-4 rounded-lg text-center">
-          <div className="text-2xl font-bold text-emerald-600">12</div>
-          <div className="text-gray-400">Groups Joined</div>
+          <div className="text-2xl font-bold text-emerald-600">24</div>
+          <div className="text-gray-400">Tasks Completed</div>
         </div>
         <div className="bg-emerald-600/10 p-4 rounded-lg text-center">
-          <div className="text-2xl font-bold text-emerald-600">$1,250</div>
-          <div className="text-gray-400">Total Expenses</div>
+          <div className="text-2xl font-bold text-emerald-600">$450</div>
+          <div className="text-gray-400">Total Earned</div>
         </div>
         <div className="bg-emerald-600/10 p-4 rounded-lg text-center">
-          <div className="text-2xl font-bold text-emerald-600">8</div>
-          <div className="text-gray-400">Settlements</div>
+          <div className="text-2xl font-bold text-emerald-600">95%</div>
+          <div className="text-gray-400">Success Rate</div>
         </div>
       </div>
     </div>
   </div>
 );
 
-const TokensComponent = () => (
+const CategoriesComponent = () => (
   <div className="p-8">
-    <h2 className="text-2xl font-bold text-white mb-6">Tokens</h2>
-    <div className="bg-black border border-emerald-600/30 rounded-xl p-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <h3 className="text-lg font-bold text-white mb-4">Token Balance</h3>
-          <div className="bg-emerald-600/10 p-4 rounded-lg">
-            <div className="text-3xl font-bold text-emerald-600 mb-2">1,500 FST</div>
-            <div className="text-gray-400">FlashSplit Tokens</div>
-          </div>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold text-white mb-4">Recent Transactions</h3>
-          <div className="space-y-2">
-            {['Earned', 'Spent', 'Transferred'].map((type, i) => (
-              <div key={i} className="flex justify-between p-2 border border-emerald-600/20 rounded-lg">
-                <span className="text-white">{type}</span>
-                <span className={`${type === 'Spent' ? 'text-red-400' : 'text-emerald-600'}`}>
-                  {type === 'Spent' ? '-' : '+'}50 FST
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-const AchievementsComponent = () => (
-  <div className="p-8">
-    <h2 className="text-2xl font-bold text-white mb-6">Achievements</h2>
+    <h2 className="text-2xl font-bold text-white mb-6">Categories</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {[
-        { name: 'First Group', desc: 'Created your first group', earned: true },
-        { name: 'Big Spender', desc: 'Spent over $1000', earned: true },
-        { name: 'Socialite', desc: 'Join 10 groups', earned: false },
-        { name: 'Quick Settler', desc: 'Settle 5 expenses', earned: true },
-        { name: 'Token Master', desc: 'Earn 2000 tokens', earned: false },
-        { name: 'Group Leader', desc: 'Lead 3 groups', earned: false },
-      ].map((achievement, i) => (
-        <div key={i} className={`p-6 rounded-xl border ${achievement.earned ? 'bg-emerald-600/10 border-emerald-600/30' : 'bg-gray-800/20 border-gray-600/30'}`}>
+        { name: 'Social Media', icon: '📱', count: 12 },
+        { name: 'Data Entry', icon: '📊', count: 8 },
+        { name: 'Content Writing', icon: '✍️', count: 15 },
+        { name: 'Design', icon: '🎨', count: 6 },
+        { name: 'Research', icon: '🔍', count: 9 },
+        { name: 'Translation', icon: '🌐', count: 4 },
+      ].map((category, i) => (
+        <div key={i} className="bg-black border border-emerald-600/30 rounded-xl p-6 hover:border-emerald-600/50 transition-colors cursor-pointer">
           <div className="text-center">
-            <div className={`text-4xl mb-3 ${achievement.earned ? '' : 'grayscale opacity-50'}`}>🏆</div>
-            <h3 className={`font-bold mb-2 ${achievement.earned ? 'text-emerald-600' : 'text-gray-400'}`}>
-              {achievement.name}
-            </h3>
-            <p className="text-gray-400 text-sm">{achievement.desc}</p>
-            {achievement.earned && (
-              <span className="text-xs text-emerald-600 mt-2 block">✓ Earned</span>
-            )}
+            <div className="text-4xl mb-3">{category.icon}</div>
+            <h3 className="text-lg font-bold text-white mb-2">{category.name}</h3>
+            <p className="text-emerald-600">{category.count} bounties</p>
           </div>
         </div>
       ))}
+    </div>
+  </div>
+);
+
+const LeaderboardComponent = () => (
+  <div className="p-8">
+    <h2 className="text-2xl font-bold text-white mb-6">Leaderboard</h2>
+    <div className="bg-black border border-emerald-600/30 rounded-xl p-6">
+      <div className="space-y-4">
+        {[
+          { name: 'Alice Johnson', earnings: 1250, rank: 1 },
+          { name: 'Bob Smith', earnings: 980, rank: 2 },
+          { name: 'Carol Davis', earnings: 875, rank: 3 },
+          { name: 'David Wilson', earnings: 720, rank: 4 },
+          { name: 'Eve Brown', earnings: 650, rank: 5 },
+        ].map((user, i) => (
+          <div key={i} className="flex items-center justify-between p-4 bg-emerald-600/10 rounded-lg">
+            <div className="flex items-center gap-4">
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${
+                user.rank === 1 ? 'bg-yellow-500 text-black' :
+                user.rank === 2 ? 'bg-gray-400 text-black' :
+                user.rank === 3 ? 'bg-amber-600 text-black' : 'bg-emerald-600 text-black'
+              }`}>
+                {user.rank}
+              </div>
+              <span className="text-white font-medium">{user.name}</span>
+            </div>
+            <span className="text-emerald-600 font-bold">${user.earnings}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+const AnalyticsComponent = () => (
+  <div className="p-8">
+    <h2 className="text-2xl font-bold text-white mb-6">Analytics</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-black border border-emerald-600/30 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-white mb-4">Performance Overview</h3>
+        <div className="space-y-4">
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">Tasks This Month</span>
+            <span className="text-emerald-600 font-bold">12</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">Earnings This Month</span>
+            <span className="text-emerald-600 font-bold">$240</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">Average Rating</span>
+            <span className="text-emerald-600 font-bold">4.8/5</span>
+          </div>
+        </div>
+      </div>
+      <div className="bg-black border border-emerald-600/30 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-white mb-4">Recent Activity</h3>
+        <div className="space-y-2">
+          {['Completed social media task', 'Earned $25', 'New bounty available', 'Rating received'].map((activity, i) => (
+            <div key={i} className="p-2 border border-emerald-600/20 rounded-lg">
+              <span className="text-white text-sm">{activity}</span>
+              <p className="text-gray-400 text-xs">{i + 1} hours ago</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 );
@@ -311,14 +387,14 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection, isCo
         <div className="flex items-center justify-between p-4 border-b border-emerald-600/30 bg-black">
           <div className={`flex items-center space-x-3 ${isCollapsed ? "justify-center w-full" : ""}`}>
             <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center shadow-lg flex-shrink-0">
-              <span className="text-sm font-bold text-black">F</span>
+              <span className="text-sm font-bold text-black">FB</span>
             </div>
             {!isCollapsed && (
               <div className="min-w-0 flex-1">
                 <h1 className="font-bold text-lg text-white tracking-tight truncate">
-                  FlashSplit
+                  FlashBounty
                 </h1>
-                <p className="text-xs text-emerald-600/70 truncate">Expense Manager</p>
+                <p className="text-xs text-emerald-600/70 truncate">Micro-Task Platform</p>
               </div>
             )}
           </div>
@@ -379,8 +455,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection, isCo
                       bg-emerald-600 hover:bg-emerald-700
                       text-white shadow-lg border border-emerald-600 hover:border-emerald-500 
                       transition-all duration-300 hover:scale-105"
-                    onClick={() => 
-                      (true)}
+                    onClick={() => setOpenConnectModal(true)}
                   >
                     Connect Wallet
                   </Button>
@@ -533,21 +608,21 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection, isCo
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0">
-                  <span className="text-xs font-bold text-black">U</span>
+                  <span className="text-xs font-bold text-black">BH</span>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-white truncate">John Doe</p>
-                  <p className="text-xs text-emerald-600/70 truncate">Premium User</p>
+                  <p className="text-sm font-medium text-white truncate">Bounty Hunter</p>
+                  <p className="text-xs text-emerald-600/70 truncate">Active Member</p>
                 </div>
               </div>
               <div className="text-xs text-emerald-600/60 text-center">
-                © FlashSplit 2025
+                © FlashBounty 2025
               </div>
             </div>
           ) : (
             <div className="flex justify-center">
               <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center">
-                <span className="text-xs font-bold text-black">U</span>
+                <span className="text-xs font-bold text-black">BH</span>
               </div>
             </div>
           )}
@@ -558,27 +633,33 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection, isCo
 };
 
 export default function Dashboard() {
-  const [activeSection, setActiveSection] = useState('create-group');
+  const [activeSection, setActiveSection] = useState('all-bounties');
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const renderContent = () => {
     switch (activeSection) {
-      case 'create-group':
-        return <CreateExpenseGroupPage />;
-      case 'groups':
-        return <GroupsPage />;
-      case 'group':
-        return <GroupDetailsPage />;
-      case 'settle-expense':
-        return <SettlePage />;
+      case 'post-bounty':
+        return <PostBountyPage />;
+      case 'all-bounties':
+        return <AllBountiesPage />;
+      case 'bounty-details':
+        return <BountyDetailsPage />;
+      case 'claim-bounty':
+        return <ClaimBountyPage />;
+      case 'my-bounties':
+        return <MyBountiesPage />;
+      case 'submit-proof':
+        return <SubmitProofPage />;
       case 'user-profile':
-        return <UserProfileDashboard/>;
-      case 'tokens':
-        return <TokensComponent />;
-      case 'achievements':
-        return <AchievementsComponent />;
+        return <UserProfileDashboard />;
+      case 'categories':
+        return <CategoriesComponent />;
+      case 'leaderboard':
+        return <LeaderboardComponent />;
+      case 'analytics':
+        return <AnalyticsComponent />;
       default:
-        return <CreateGroupComponent />;
+        return <AllBountiesComponent />;
     }
   };
 
