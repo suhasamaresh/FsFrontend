@@ -14,9 +14,9 @@ const appleRedirectURI =
 const walletConnectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_ID;
 const appName =
   process.env.NEXT_PUBLIC_APP_NAME || "Web SDK Embedded Wallet (NextJs)";
-const chainIds = chainIdsFromString(process.env.NEXT_PUBLIC_CHAINS!);
+const chainIds = chainIdsFromString(process.env.NEXT_PUBLIC_CHAINS || "etherlink-testnet");
 const defaultChainId = chainIdFromString(
-  process.env.NEXT_PUBLIC_DEFAULT_CHAIN!,
+  process.env.NEXT_PUBLIC_DEFAULT_CHAIN || "etherlink-testnet",
 );
 
 if (defaultChainId && !chainIds.includes(defaultChainId)) {
