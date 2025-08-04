@@ -22,12 +22,14 @@ Each service is standalone and composable, deployed as a modular smart contract 
 ## Smart Contracts
 
 - **FlashSplit:**  
-    Group bill splitting and shared vaults—a true Web3 version of Splitwise, letting groups keep all IOUs on-chain using stable USDC, with no yield farming or DeFi integrations.  
-    - 📦 [FlashSplit Contract Repository](https://github.com/suhasamaresh/FlashSplit)
+        Group bill splitting and shared vaults—a true Web3 version of Splitwise, letting groups keep all IOUs on-chain.  
+        **Currently, FlashSplit only works with XTZ (Tezos), and support for more currencies will be added soon.**  
+        - 📦 [FlashSplit Contract Repository](https://github.com/suhasamaresh/FlashSplit)
 
 - **Other Modules:**  
-    Micro-task bounty board, study/resource pooling, Pomodoro sprints, time capsules, and more.  
-    - 📦 [FlashSuite Contracts Repository](https://github.com/suhasamaresh/FlashSuite)
+        Micro-task bounty board, study/resource pooling, Pomodoro sprints, time capsules, and more.  
+        **All other modules currently work with USDC.**  
+        - 📦 [FlashSuite Contracts Repository](https://github.com/suhasamaresh/FlashSuite)
 
 All contracts are deployed and tested on Etherlink.
 
@@ -36,20 +38,20 @@ All contracts are deployed and tested on Etherlink.
 ## What We've Done So Far
 
 - **Smart Contracts:**  
-        - **FlashSplit:** Group expense management (see repo above).
-        - **FlashBounty:** Micro-task bounty board with USDC staking, task claims, and on-chain settlements.
-        - **Other Modules (Deployed):**
-                - **FlashStudy:** Resource pooling for shared educational or productivity costs.
-                - **FlashTasks:** On-chain task and accountability assignments.
-                - **FlashSprint:** Staked Pomodoro sprints for team focus, forfeitures feed a group "focus fund."
-                - **FlashTimeCapsule:** Community memory capsules, hidden until a future reveal date.
+                - **FlashSplit:** Group expense management (see repo above).
+                - **FlashBounty:** Micro-task bounty board with USDC staking, task claims, and on-chain settlements.
+                - **Other Modules (Deployed):**
+                                - **FlashStudy:** Resource pooling for shared educational or productivity costs.
+                                - **FlashTasks:** On-chain task and accountability assignments.
+                                - **FlashSprint:** Staked Pomodoro sprints for team focus, forfeitures feed a group "focus fund."
+                                - **FlashTimeCapsule:** Community memory capsules, hidden until a future reveal date.
 
 - **Frontend:**  
-        The **frontend for FlashSplit and FlashBounty is fully ready and live**, providing a seamless, user-friendly interface trusted by early users.  
-        We are actively building the frontends for the other FlashSuite modules—FlashStudy, FlashTasks, FlashSprint, and FlashTimeCapsule—to bring the full social finance experience under one roof.
+                The **frontend for FlashSplit and FlashBounty is fully ready and live**, providing a seamless, user-friendly interface trusted by early users.  
+                We are actively building the frontends for the other FlashSuite modules—FlashStudy, FlashTasks, FlashSprint, and FlashTimeCapsule—to bring the full social finance experience under one roof.
 
 - **Event structure and analytics:**  
-        Smart contracts emit rich events designed for indexing with GoldSky subgraphs, powering real-time dashboards and user activity tracking.
+                Smart contracts emit rich events designed for indexing with GoldSky subgraphs, powering real-time dashboards and user activity tracking.
 
 ---
 
@@ -70,7 +72,7 @@ All contracts are deployed and tested on Etherlink.
 
 ### 🔴 RedStone Oracle
 
-- Used primarily in FlashSplit for on-demand price feeds to guarantee precise and stable USDC value calculations.  
+- Used primarily in FlashSplit for on-demand price feeds to guarantee precise and stable XTZ value calculations.  
 - Chosen for gas efficiency and robustness, with plans to extend oracle data to other modules for accurate valuations.
 
 ### 🟠 GoldSky Subgraphs
@@ -117,23 +119,12 @@ app/
 2. Set environment variables (`PRIVATE_KEY`, `RPC_URL`, etc.).  
 3. Use deployed testnet contracts or deploy your own with the provided scripts.  
 4. Start the frontend with:  
-         ```bash
-         npm run dev
-         ```
+                 ```bash
+                 npm run dev
+                 ```
 5. Connect your Sequence wallet and begin coordinating with your groups!
 
 ---
 
-## Acknowledgments
+**FlashSuite: The Web3 social toolkit for groups that want to build, create, and grow together.**
 
-Special thanks to:
-
-- **Sequence** for revolutionizing wallet onboarding.  
-- **RedStone** for modern, efficient oracle data feeds.  
-- **GoldSky** for making on-chain data beautifully accessible realtime.  
-- The Etherlink network for powering our Ethereum-compatible environment.  
-- All contributors who make FlashSuite a vibrant open-source project.
-
----
-
-**FlashSuite: The Web3 social toolkit for groups that want to build, create, and grow together. **
