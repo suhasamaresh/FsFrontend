@@ -56,15 +56,6 @@ All contracts are deployed and tested on Etherlink.
 
 ---
 
-> **Note:**  
-> In future releases, we aim to map each wallet address to a verified email. Email verification will ensure that only one wallet address is linked per email, and only wallets mapped to an email can be used. This will help keep accounts clean and secure for all users.
-                The **frontend for FlashSplit and FlashBounty is fully ready and live**, providing a seamless, user-friendly interface trusted by early users.  
-                We are actively building the frontends for the other FlashSuite modules—FlashStudy, FlashTasks, FlashSprint, and FlashTimeCapsule—to bring the full social finance experience under one roof.
-
-- **Event structure and analytics:**  
-                Smart contracts emit rich events designed for indexing with GoldSky subgraphs, powering real-time dashboards and user activity tracking.
-
----
 
 ## Current State and Next Steps
 
