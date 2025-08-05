@@ -142,3 +142,9 @@ app/
 
 **FlashSuite: The Web3 social toolkit for groups that want to build, create, and grow together.**
 
+
+**Important:**  
+In some sections of certain pages, I was unable to fetch data correctly.  
+I appreciate your patience as I work on resolving this.
+
+
