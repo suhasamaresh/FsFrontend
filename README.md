@@ -37,16 +37,27 @@ All contracts are deployed and tested on Etherlink.
 
 ## What We've Done So Far
 
-- **Smart Contracts:**  
-                - **FlashSplit:** Group expense management (see repo above).
-                - **FlashBounty:** Micro-task bounty board with USDC staking, task claims, and on-chain settlements.
-                - **Other Modules (Deployed):**
-                                - **FlashStudy:** Resource pooling for shared educational or productivity costs.
-                                - **FlashTasks:** On-chain task and accountability assignments.
-                                - **FlashSprint:** Staked Pomodoro sprints for team focus, forfeitures feed a group "focus fund."
-                                - **FlashTimeCapsule:** Community memory capsules, hidden until a future reveal date.
+### Platform Modules Overview
 
-- **Frontend:**  
+#### **Smart Contracts**
+- **FlashSplit:**  
+        Group expense management (see repo above).
+- **FlashBounty:**  
+        Micro-task bounty board with USDC staking, task claims, and on-chain settlements.
+- **Other Modules (Deployed):**
+        - **FlashStudy:** Resource pooling for shared educational or productivity costs.
+        - **FlashTasks:** On-chain task and accountability assignments.
+        - **FlashSprint:** Staked Pomodoro sprints for team focus; forfeitures feed a group "focus fund."
+        - **FlashTimeCapsule:** Community memory capsules, hidden until a future reveal date.
+
+#### **Frontend**
+- FlashSplit and FlashBounty: Fully live and operational.
+- FlashStudy, FlashTasks, FlashSprint, and FlashTimeCapsule: Frontend development in progress.
+
+---
+
+> **Note:**  
+> In future releases, we aim to map each wallet address to a verified email. Email verification will ensure that only one wallet address is linked per email, and only wallets mapped to an email can be used. This will help keep accounts clean and secure for all users.
                 The **frontend for FlashSplit and FlashBounty is fully ready and live**, providing a seamless, user-friendly interface trusted by early users.  
                 We are actively building the frontends for the other FlashSuite modules—FlashStudy, FlashTasks, FlashSprint, and FlashTimeCapsule—to bring the full social finance experience under one roof.
 
@@ -125,6 +136,9 @@ app/
 5. Connect your Sequence wallet and begin coordinating with your groups!
 
 ---
+
+**Note:**  
+> In future releases, we aim to map each wallet address to a verified email. Only wallets mapped to an email will be usable, ensuring account integrity and preventing the use of temporary or fake wallets. Email verification will help keep accounts clean and secure for all users.  
 
 **FlashSuite: The Web3 social toolkit for groups that want to build, create, and grow together.**
 
